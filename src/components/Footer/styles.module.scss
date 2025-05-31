@@ -1,0 +1,31 @@
+.root {
+  display: flex;
+  flex-direction: row;
+  width: 1200px;
+  justify-content: space-between;
+  align-items: center;
+  border: 10px solid blue;
+}
+
+.footerPages {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  border: 2px solid cadetblue;
+}
+
+.socials {
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 200px;
+  list-style-type: none;
+  border: 2px solid greenyellow;
+}
+
+.feedback {
+  color: cadetblue;
+  background-color: #3a2d2d;
+}

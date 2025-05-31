@@ -1,0 +1,27 @@
+.root {
+  display: flex;
+  flex-direction: row;
+  width: 1200px;
+  justify-content: space-between;
+  align-items: center;
+  border: 10px solid red;
+}
+
+.headerPages {
+  padding: 0;
+  display: flex;
+  list-style: none;
+  border: 2px solid cadetblue;
+}
+
+.helpers {
+  padding: 0;
+  display: flex;
+  list-style-type: none;
+  border: 2px solid greenyellow;
+}
+
+.logo {
+  width: 240px;
+  height: 138px;
+}
