@@ -1,16 +1,20 @@
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import Layout from "../Layout/Layout.tsx";
+import Main from "../../pages/Main/Main.tsx";
+import News from "../../pages/News/News.tsx";
+import Courses from "../../pages/Courses/Courses.tsx";
+import Championships from "../../pages/Сhampionships/Championships.tsx";
 
 function App() {
     return (
         <>
             <BrowserRouter>
                 <Routes>
-                    <Route path="/" element={
-                        <Layout>
-                            <h1>Bee Barista</h1>
-                        </Layout>
-                    }>
+                    <Route path="/" element={<Layout />}>
+                        <Route index element={<Main />} />
+                        <Route path={"/news"} element={<News />} />
+                        <Route path={"/courses"} element={<Courses />} />
+                        <Route path={"/championships"} element={<Championships />} />
                     </Route>
                 </Routes>
             </BrowserRouter>
