@@ -1,18 +1,20 @@
 import classNames from "classnames";
 import styles from "./styles.module.scss";
+import {NavLink} from "react-router";
+import {Link} from "react-router-dom";
 
 function Footer() {
     return (
         <div className={classNames(styles.root)}>
-            <a href="#">
+            <Link to={"/"}>
                 <img src={"src/assets/BBLogoTabletop.png"} alt="Bee Barista Logo"/>
-            </a>
-            <ul className={classNames(styles.footerPages)}>
-                <li>Главная</li>
-                <li>Новости</li>
-                <li>Курсы</li>
-                <li>Чемпионаты</li>
-            </ul>
+            </Link>
+            <nav className={classNames(styles.footerPages)}>
+                <NavLink to={"/"}>Главная</NavLink>
+                <NavLink to={"/news"}>Новости</NavLink>
+                <NavLink to={"/courses"}>Курсы</NavLink>
+                <NavLink to={"/championships"}>Чемпионаты</NavLink>
+            </nav>
             <button className={classNames(styles.feedback)}>
                 Оставьте нам сообщение
             </button>
