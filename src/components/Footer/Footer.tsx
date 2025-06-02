@@ -7,7 +7,7 @@ function Footer() {
     return (
         <div className={classNames(styles.root)}>
             <Link to={"/"}>
-                <img src={"src/assets/BBLogoTabletop.png"} alt="Bee Barista Logo"/>
+                <img className={classNames(styles.logo)} src={"src/assets/Logo.png"} alt="Bee Barista Logo"/>
             </Link>
             <nav className={classNames(styles.footerPages)}>
                 <NavLink to={"/"}>Главная</NavLink>

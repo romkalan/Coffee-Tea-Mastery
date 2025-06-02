@@ -1,7 +1,6 @@
 .root {
-  width: 1920px;
-  height: 100dvw;
-  text-align: center;
-  align-content: center;
-  border: 10px solid goldenrod;
+  min-width: 1920px;
+  display: flex;
+  flex-direction: column;
+  gap: 90px;
 }

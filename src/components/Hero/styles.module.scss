@@ -1,0 +1,32 @@
+.root {
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  margin-top: 50px;
+}
+
+.heroText {
+  max-width: 800px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.heroTitle {
+  margin: 0 auto;
+  font-size: 90px;
+  line-height: 100px;
+}
+
+.heroSpan {
+  font-size: 46px;
+}
+
+.heroButton {
+  width: 230px;
+}
+
+.heroImage {
+  scale: 1.35;
+}
