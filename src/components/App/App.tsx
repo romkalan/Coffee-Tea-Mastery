@@ -12,9 +12,9 @@ function App() {
                 <Routes>
                     <Route path="/" element={<Layout />}>
                         <Route index element={<Main />} />
-                        <Route path={"/news"} element={<News />} />
-                        <Route path={"/courses"} element={<Courses />} />
-                        <Route path={"/championships"} element={<Championships />} />
+                        <Route path={"news"} element={<News />} />
+                        <Route path={"courses"} element={<Courses />} />
+                        <Route path={"championships"} element={<Championships />} />
                     </Route>
                 </Routes>
             </BrowserRouter>

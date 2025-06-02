@@ -1,0 +1,65 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.title {
+  width: 1000px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  font-size: 40px;
+  line-height: 0;
+  margin-bottom: 5px;
+}
+
+.firstTitle {
+  align-self: start;
+}
+
+.secondTitle {
+  align-self: center;
+}
+
+.blockAboutText {
+  width: 800px;
+  justify-content: space-between;
+  display: flex;
+  align-self: center;
+}
+
+.aboutUsTitle {
+  font-size: 40px;
+  line-height: 20px;
+  position: relative;
+}
+
+.aboutUsTitle::after {
+  content: "";
+  position: absolute;
+  width: 3px;
+  height: 100px;
+  background-color: #4D0505;
+  transform: translate(-50%);
+  left: 50%;
+  top: 10%;
+}
+
+.text {
+  width: 600px;
+  font-size: 24px;
+  line-height: 45px;
+}
+
+.disk {
+  position: absolute;
+  transform: translate(-50%, 50%);
+  right: 0;
+}
+
+.linkToCompetition {
+  font-size: 28px;
+  align-self: flex-end;
+  padding-right: 15%;
+}
