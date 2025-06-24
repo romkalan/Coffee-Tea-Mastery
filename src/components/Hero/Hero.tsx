@@ -9,9 +9,7 @@ function Hero() {
                 <p className={classNames(style.heroSpan)}>Где каждый глоток - новое знание!</p>
                 <button className={classNames(style.heroButton)}>Подобрать курс</button>
             </div>
-            <div className={classNames(style.heroImage)}>
-                <img src={"src/assets/coffeeBeans.png"} alt="Кофейные зерна"/>
-            </div>
+                <img className={classNames(style.heroImage)} src={"src/assets/coffeeBeans.png"} alt="Кофейные зерна"/>
         </div>
     );
 }

@@ -1,0 +1,48 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  width: 1920px;
+  gap: 70px;
+}
+
+.root h2 {
+  font-size: 60px;
+  align-self: flex-end;
+  line-height: 0;
+  margin-bottom: 70px;
+}
+
+.advantagesList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.advantagesList li {
+  width: 22%;
+  position: relative;
+  counter-increment: item-counter;
+}
+
+.advantagesList li h3 {
+  font-size: 34px;
+  line-height: 38px;
+}
+
+.advantagesList li p {
+  font-size: 24px;
+}
+
+.advantagesList li::after {
+  content: counter(item-counter);
+  position: absolute;
+  transform: translate(0, 10%);
+  bottom: 0;
+  right: 0;
+  color: #F0E6D2;
+  font-size: 430px;
+  z-index: -1;
+}

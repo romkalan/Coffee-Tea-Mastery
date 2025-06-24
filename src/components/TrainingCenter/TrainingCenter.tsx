@@ -1,0 +1,31 @@
+import styles from "./styles.module.scss";
+import classNames from "classnames";
+
+function TrainingCenter() {
+    return (
+        <div className={classNames(styles.root)}>
+            <div className={classNames(styles.imageContainer)}>
+                <img className={classNames(styles.image)} src={"src/assets/trainingCenter.jpg"}
+                     alt="Фото учебного центра"/>
+                <img className={classNames(styles.imageOverlay)} src={"src/assets/dividerOverlay.svg"}
+                     alt="Рамка для учебного центра"/>
+            </div>
+            <div className={classNames(styles.text)}>
+                <p>
+                    Наш тренинг центр - одна из самых технологичных
+                    <br/>
+                    и оборудованных площадок для обучения работе с кофе и чаем в России.
+                    <br/>
+                    Мы сотрудничаем с ведущими производителями профессионального оборудования.
+                    <br/>
+                    <br/>
+                    Наша команда - сертифицированные бариста-тренеры,
+                    <br/>
+                    которые работают по международным стандартам.
+                </p>
+            </div>
+        </div>
+    );
+}
+
+export default TrainingCenter;
