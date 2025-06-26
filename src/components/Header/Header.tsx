@@ -6,7 +6,7 @@ import {Link} from "react-router-dom";
 function Header() {
     return (
         <div className={classNames(styles.root)}>
-            <Link className={classNames(styles.logo)} to={"/"}>
+            <Link className={classNames(styles.logo, styles.link)} to={"/"}>
                 <img className={classNames(styles.logoImage)} src={"src/assets/Logo.png"} alt="Bee Barista Logo"/>
                 <div className={classNames(styles.logoText)}>
                     <h2 className={classNames(styles.logoTitle)}>Bee Barista</h2>
@@ -14,10 +14,14 @@ function Header() {
                 </div>
             </Link>
             <nav className={classNames(styles.headerPages)}>
-                <NavLink to={"/"}>Главная</NavLink>
-                <NavLink to={"/news"}>Новости</NavLink>
-                <NavLink to={"/courses"}>Курсы</NavLink>
-                <NavLink to={"/championships"}>Чемпионаты</NavLink>
+                <NavLink to={"/"}
+                         className={({isActive}) => classNames(isActive ? styles.linkActive : styles.link)}>Главная</NavLink>
+                <NavLink to={"/news"}
+                         className={({isActive}) => classNames(isActive ? styles.linkActive : styles.link)}>Новости</NavLink>
+                <NavLink to={"/courses"}
+                         className={({isActive}) => classNames(isActive ? styles.linkActive : styles.link)}>Курсы</NavLink>
+                <NavLink to={"/championships"}
+                         className={({isActive}) => classNames(isActive ? styles.linkActive : styles.link)}>Чемпионаты</NavLink>
             </nav>
             <ul className={classNames(styles.helpers)}>
                 <li>
