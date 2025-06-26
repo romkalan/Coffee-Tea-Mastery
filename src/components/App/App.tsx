@@ -17,9 +17,7 @@ function App() {
                         <Route path={"courses"} element={<Courses />} />
                         <Route path={"championships"} element={<Championships />} />
                     </Route>
-                    <Route path="*" element={< NotFoundPage />}>
-
-                    </Route>
+                    <Route path="*" element={< NotFoundPage />} />
                 </Routes>
             </BrowserRouter>
         </>
