@@ -1,0 +1,23 @@
+.root {
+  width: 1920px;
+  margin: 0;
+}
+
+.title {
+  font-size: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  line-height: 0;
+  margin-bottom: 100px;
+  color: #8B4513;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 50px;
+  list-style-type: none;
+}

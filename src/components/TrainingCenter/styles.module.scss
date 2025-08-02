@@ -3,6 +3,16 @@
   margin: 0;
 }
 
+.title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  font-size: 60px;
+  line-height: 0;
+  margin-bottom: 100px;
+}
+
 .imageContainer {
   position: relative;
   margin-bottom: 160px;

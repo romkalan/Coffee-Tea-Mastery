@@ -5,6 +5,7 @@ import Experience from "../../components/Experience/Experience.tsx";
 import About from "../../components/About/About.tsx";
 import TrainingCenter from "../../components/TrainingCenter/TrainingCenter.tsx";
 import Advantages from "../../components/Advantages/Advantages.tsx";
+import Services from "../../components/Services/Services.tsx";
 
 function Main() {
     return (
@@ -14,6 +15,7 @@ function Main() {
             <About />
             <TrainingCenter />
             <Advantages />
+            <Services />
         </div>
     );
 }
