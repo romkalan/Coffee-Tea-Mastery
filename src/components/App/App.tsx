@@ -1,4 +1,4 @@
-import {BrowserRouter, Routes, Route} from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "../Layout/Layout.tsx";
 import Main from "../../pages/Main/Main.tsx";
 import News from "../../pages/News/News.tsx";

@@ -1,0 +1,43 @@
+.root {
+  width: 575px;
+  background-color: rgba(240, 230, 210, 0.3);
+
+}
+
+.image {
+  margin: 0;
+  padding: 0;
+}
+
+.description {
+  padding: 0 25px 72px;
+}
+
+.descriptionTitle {
+  font-size: 28px;
+  line-height: 32px;
+  margin-bottom: 18px;
+  color: #D2691E;
+}
+
+.descriptionInfo {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.descriptionText {
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.linkButton {
+  background-color: #D2691E;
+  color: #F0E6D2;
+  padding: 8px 25px;
+  border-radius: 8px;
+  font-size: 24px;
+  line-height: 32px;
+}
