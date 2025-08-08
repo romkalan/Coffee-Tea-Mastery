@@ -1,0 +1,50 @@
+import type { TService } from "../types/service.ts";
+import {generateUUID} from "../utils/utils.ts";
+
+export const services: TService[] = [
+    {
+        id: generateUUID(),
+        title: "Обслуживание кофейного оборудования",
+        type: "services",
+        price: 10000,
+        time: "1 день",
+        format: "На выбор",
+        previewImage: "#",
+    },
+    {
+        id: generateUUID(),
+        title: "Каппинг-сессия",
+        type: "services",
+        price: 10000,
+        time: "1 день",
+        format: "На выбор",
+        previewImage: "#",
+    },
+    {
+        id: generateUUID(),
+        title: "Разработка меню кофейни",
+        type: "services",
+        price: 20000,
+        time: "1 день",
+        format: "На выбор",
+        previewImage: "#",
+    },
+    {
+        id: generateUUID(),
+        title: "Проведение обучения бариста",
+        type: "services",
+        price: 15000,
+        time: "1 день",
+        format: "На выбор",
+        previewImage: "#",
+    },
+    {
+        id: generateUUID(),
+        title: "Обслуживание кофейного оборудования",
+        type: "services",
+        price: 10000,
+        time: "1 день",
+        format: "На выбор",
+        previewImage: "#",
+    },
+]
