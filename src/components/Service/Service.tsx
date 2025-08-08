@@ -1,8 +1,13 @@
 import classNames from "classnames";
 import styles from "./styles.module.scss";
 import {NavLink} from "react-router";
+import type {TService} from "../../types/service.ts";
 
-function Service() {
+export interface ServiceProps {
+    service: TService;
+}
+
+function Service({service}: ServiceProps) {
     return (
         <li className={classNames(styles.root)}>
             <div className={classNames(styles.image)}>
@@ -10,16 +15,16 @@ function Service() {
             </div>
             <div className={classNames(styles.description)}>
                 <h3 className={classNames(styles.descriptionTitle)}>
-                    Обслуживание кофейного оборудования
+                    {service.title}
                 </h3>
                 <div className={classNames(styles.descriptionInfo)}>
                     <div className={classNames(styles.descriptionText)}>
                         <span>Стоимость</span>
-                        <span>10 000 руб.</span>
+                        <span>{service.price} руб.</span>
                     </div>
                     <div className={classNames(styles.descriptionText)}>
                         <span>Время</span>
-                        <span>1 день</span>
+                        <span>{service.time}</span>
                     </div>
                     <div className={classNames(styles.descriptionText)}>
                         <span>Формат</span>
