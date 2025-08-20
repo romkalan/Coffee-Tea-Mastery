@@ -68,36 +68,6 @@
   width: 40px;
 }
 
-.feedback {
-  width: 450px;
-}
-
-.feedbackTitle {
-  font-size: 24px;
-  line-height: 24px;
-  color: #4D0505;
-}
-
-.feedbackAddress {
-  justify-items: center;
-}
-
-.feedbackAddress input {
-  height: 20px;
-  padding: 10px;
-  border: 1px solid #D2691E;
-  border-bottom-left-radius: 10px;
-  border-top-left-radius: 10px;
-  background-color: #F0E6D2;
-  color: #D2691E;
-}
-
-.feedbackAddress button {
-  width: 60%;
-  border-bottom-left-radius: 0;
-  border-top-left-radius: 0;
-}
-
 .rights {
   font-size: 18px;
   line-height: 30px;
@@ -108,10 +78,9 @@
   content: "";
   position: absolute;
   transform: translate(-50%);
-  top: 530px;
   height: 2px;
   background-color: #F0E6D2;
   width: 55%;
-  bottom: -90px;
+  bottom: 110px;
   left: 50%;
 }
