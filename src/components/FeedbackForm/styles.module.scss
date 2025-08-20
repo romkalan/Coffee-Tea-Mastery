@@ -1,0 +1,35 @@
+.feedback {
+  width: 450px;
+}
+
+.feedbackTitle {
+  text-align: center;
+  font-size: 24px;
+  line-height: 24px;
+  color: #4D0505;
+}
+
+.feedbackAddress {
+  display: flex;
+}
+
+.feedbackAddress input {
+  font-size: 18px;
+  height: 20px;
+  padding: 10px;
+  border: 1px solid #D2691E;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+  background-color: #F0E6D2;
+  color: #D2691E;
+}
+
+.feedbackAddress button {
+  width: 60%;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+
+.feedbackText {
+  text-align: center;
+}

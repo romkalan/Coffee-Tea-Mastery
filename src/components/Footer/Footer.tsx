@@ -2,22 +2,9 @@ import classNames from "classnames";
 import styles from "./styles.module.scss";
 import {NavLink} from "react-router";
 import Logo from "../Logo/Logo.tsx";
-import {type ChangeEvent, type FormEvent, useState,} from "react";
+import FeedbackForm from "../FeedbackForm/FeedbackForm.tsx";
 
 function Footer() {
-    const [email, setEmail] = useState("");
-
-    const writeEmail = (event: ChangeEvent<HTMLInputElement>) => {
-        setEmail(event.target.value);
-    }
-
-    const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
-        event.preventDefault();
-        event.target
-        console.log(email + " Успешно отправлен");
-        console.log("Спасибо за ваше обращение. Мы скоро с Вами свяжемся");
-        setEmail('');
-    }
 
     return (
         <div className={classNames(styles.root)}>
@@ -99,17 +86,7 @@ function Footer() {
                         </li>
                     </ul>
                 </div>
-                <div className={classNames(styles.feedback)}>
-                    <h4 className={classNames(styles.feedbackTitle)}>Хотите быть в курсе всех новостей?</h4>
-                    <form className={classNames(styles.feedbackAddress)} onSubmit={handleSubmit}>
-                        <input type="email" value={email} onChange={writeEmail} placeholder="Введите Ваш эл. адрес"/>
-                        <button type="submit">Оставьте нам сообщение</button>
-                    </form>
-                    <p>
-                        Хотите всегда отсаваться в кусре всех новинок и актульаных новостей нашего издательства? Тогда
-                        оставляйте свою почту и мы будем оповещать Вас о всех новинках!
-                    </p>
-                </div>
+                <FeedbackForm />
             </div>
             <p className={classNames(styles.rights)}>© 2025 Bee Barista. All Rights Reserved</p>
         </div>
