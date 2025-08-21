@@ -9,6 +9,7 @@ export const services: TService[] = [
         price: 10000,
         time: "1 день",
         format: "На выбор",
+        description: "",
         previewImage: "#",
     },
     {
@@ -18,6 +19,7 @@ export const services: TService[] = [
         price: 10000,
         time: "1 день",
         format: "На выбор",
+        description: "",
         previewImage: "#",
     },
     {
@@ -27,6 +29,7 @@ export const services: TService[] = [
         price: 20000,
         time: "1 день",
         format: "На выбор",
+        description: "",
         previewImage: "#",
     },
     {
@@ -36,6 +39,7 @@ export const services: TService[] = [
         price: 15000,
         time: "1 день",
         format: "На выбор",
+        description: "",
         previewImage: "#",
     },
     {
@@ -45,6 +49,7 @@ export const services: TService[] = [
         price: 10000,
         time: "1 день",
         format: "На выбор",
+        description: "",
         previewImage: "#",
     },
 ]

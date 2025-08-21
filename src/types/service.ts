@@ -4,6 +4,7 @@ export type TService = {
     type: string;
     price: number;
     time: string;
-    format: string
+    format: string;
+    description: string;
     previewImage: string;
 };

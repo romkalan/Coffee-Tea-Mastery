@@ -1,13 +1,19 @@
 import classNames from "classnames";
 import styles from "./styles.module.scss";
-import {NavLink} from "react-router";
 import type {TService} from "../../types/service.ts";
+import {useNavigate} from "react-router-dom";
 
 export interface ServiceProps {
     service: TService;
 }
 
 function Service({service}: ServiceProps) {
+    const navigate = useNavigate();
+
+    const handleOfferClick = () => {
+        navigate("/service/" + service.id);
+    }
+
     return (
         <li className={classNames(styles.root)}>
             <div className={classNames(styles.image)}>
@@ -31,7 +37,7 @@ function Service({service}: ServiceProps) {
                         <span>На выбор</span>
                     </div>
                 </div>
-                <NavLink to={"#"} className={classNames(styles.linkButton)}>Подробнее</NavLink>
+                <button className={classNames(styles.linkButton)} onClick={handleOfferClick}>Подробнее</button>
             </div>
         </li>
     );
