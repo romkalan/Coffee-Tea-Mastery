@@ -18,7 +18,7 @@ function App() {
                         <Route path={"news"} element={<News />} />
                         <Route path={"courses"} element={<Courses />} />
                         <Route path={"championships"} element={<Championships />} />
-                        <Route path="service/:id" element={<OfferDetail services={services}/>}/>
+                        <Route path="services/:id" element={<OfferDetail services={services}/>}/>
                     </Route>
                     <Route path="*" element={< NotFoundPage />} />
                 </Routes>
