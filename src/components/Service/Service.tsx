@@ -1,19 +1,13 @@
 import classNames from "classnames";
 import styles from "./styles.module.scss";
 import type {TService} from "../../types/service.ts";
-import {useNavigate} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 export interface ServiceProps {
     service: TService;
 }
 
 function Service({service}: ServiceProps) {
-    const navigate = useNavigate();
-
-    const handleOfferClick = () => {
-        navigate("/service/" + service.id);
-    }
-
     return (
         <li className={classNames(styles.root)}>
             <div className={classNames(styles.image)}>
@@ -37,7 +31,7 @@ function Service({service}: ServiceProps) {
                         <span>На выбор</span>
                     </div>
                 </div>
-                <button className={classNames(styles.linkButton)} onClick={handleOfferClick}>Подробнее</button>
+                <Link to={`services/${service.id}`} className={classNames(styles.linkButton)}>Подробнее</Link>
             </div>
         </li>
     );
