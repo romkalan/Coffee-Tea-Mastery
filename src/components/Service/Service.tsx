@@ -3,7 +3,7 @@ import styles from "./styles.module.scss";
 import type {TService} from "../../types/service.ts";
 import {Link} from "react-router-dom";
 
-export interface ServiceProps {
+interface ServiceProps {
     service: TService;
 }
 
