@@ -1,7 +1,34 @@
 .root {
   width: 1920px;
   height: 100dvw;
-  text-align: center;
   align-content: center;
-  border: 10px solid #9D3C3C;
+}
+
+.title {
+  margin-bottom: 70px;
+}
+
+.preview {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 70px;
+}
+
+.previewImage {
+  width: 100%;
+  border-bottom-right-radius: 40px;
+  border-top-right-radius: 40px;
+}
+
+.previewInfo {
+  font-size: 24px;
+  text-align: center;
+  padding: 50px 100px;
+  background-color: rgba(240, 230,210,0.3);
+  width: 100%;
+}
+
+.previewText {
+  //width: 600px;
 }

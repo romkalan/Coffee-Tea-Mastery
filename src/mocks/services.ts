@@ -1,55 +1,70 @@
-import type { TService } from "../types/service.ts";
+import type {TService} from "../types/service.ts";
 import {generateUUID} from "../utils/utils.ts";
+
+const Services = {
+    "services": "Услуги",
+    "news": "Новости"
+}
 
 export const services: TService[] = [
     {
         id: generateUUID(),
         title: "Обслуживание кофейного оборудования",
-        type: "services",
+        type: Services.services,
         price: 10000,
         time: "1 день",
         format: "На выбор",
-        description: "",
+        description: "Вы когда-нибудь задумывались, почему кофе описывается как “с нотками черники и шоколада”, а чай как “с оттенками меда и цветов”. Все дело в сложных химических соединениях, формирующихся в процессе выращивания, обработки и приготовления!",
+        image: "#",
         previewImage: "#",
+        video: "#",
     },
     {
         id: generateUUID(),
         title: "Каппинг-сессия",
-        type: "services",
+        type: Services.services,
         price: 10000,
         time: "1 день",
         format: "На выбор",
-        description: "",
+        description: "Вы когда-нибудь задумывались, почему кофе описывается как “с нотками черники и шоколада”, а чай как “с оттенками меда и цветов”. Все дело в сложных химических соединениях, формирующихся в процессе выращивания, обработки и приготовления!",
+        image: "#",
         previewImage: "#",
+        video: "#",
     },
     {
         id: generateUUID(),
         title: "Разработка меню кофейни",
-        type: "services",
+        type: Services.services,
         price: 20000,
         time: "1 день",
         format: "На выбор",
-        description: "",
+        description: "Вы когда-нибудь задумывались, почему кофе описывается как “с нотками черники и шоколада”, а чай как “с оттенками меда и цветов”. Все дело в сложных химических соединениях, формирующихся в процессе выращивания, обработки и приготовления!",
+        image: "#",
         previewImage: "#",
+        video: "#",
     },
     {
         id: generateUUID(),
         title: "Проведение обучения бариста",
-        type: "services",
+        type: Services.services,
         price: 15000,
         time: "1 день",
         format: "На выбор",
-        description: "",
+        description: "Вы когда-нибудь задумывались, почему кофе описывается как “с нотками черники и шоколада”, а чай как “с оттенками меда и цветов”. Все дело в сложных химических соединениях, формирующихся в процессе выращивания, обработки и приготовления!",
+        image: "#",
         previewImage: "#",
+        video: "#",
     },
     {
         id: generateUUID(),
         title: "Обслуживание кофейного оборудования",
-        type: "services",
+        type: Services.services,
         price: 10000,
         time: "1 день",
         format: "На выбор",
-        description: "",
+        description: "Вы когда-нибудь задумывались, почему кофе описывается как “с нотками черники и шоколада”, а чай как “с оттенками меда и цветов”. Все дело в сложных химических соединениях, формирующихся в процессе выращивания, обработки и приготовления!",
+        image: "#",
         previewImage: "#",
+        video: "#",
     },
 ]

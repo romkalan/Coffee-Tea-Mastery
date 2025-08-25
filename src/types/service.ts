@@ -6,5 +6,7 @@ export type TService = {
     time: string;
     format: string;
     description: string;
-    previewImage: string;
+    image?: string;
+    previewImage?: string;
+    video?: string;
 };
