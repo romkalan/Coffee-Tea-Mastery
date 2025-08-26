@@ -11,7 +11,7 @@ function Service({service}: ServiceProps) {
     return (
         <li className={classNames(styles.root)}>
             <div className={classNames(styles.image)}>
-                <img src={"src/assets/serviceImage.jpg"} alt="Фотография услуги"/>
+                <img src={service.image} alt="Фотография услуги"/>
             </div>
             <div className={classNames(styles.description)}>
                 <h3 className={classNames(styles.descriptionTitle)}>
@@ -31,7 +31,7 @@ function Service({service}: ServiceProps) {
                         <span>На выбор</span>
                     </div>
                 </div>
-                <Link to={`services/${service.id}`} className={classNames(styles.linkButton)}>Подробнее</Link>
+                <Link to={`/services/${service.id}`} className={classNames(styles.linkButton)}>Подробнее</Link>
             </div>
         </li>
     );

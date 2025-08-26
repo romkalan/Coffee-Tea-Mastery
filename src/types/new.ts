@@ -1,13 +1,10 @@
-export type TService = {
+export type TNew = {
     id: string;
     title: string;
     type: string;
-    price: number;
-    time: string;
-    format: string;
     description: string;
+    text: string;
     image: string;
     previewImage: string;
-    reviews: string[];
     video?: string;
 };
