@@ -1,6 +1,5 @@
 .root {
   width: 1920px;
-  height: 100dvw;
   align-content: center;
 }
 
@@ -62,10 +61,26 @@
   color: #8B4513;
 }
 
+.reviews {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+}
+
+.serviceRequestForm {
+  margin-bottom: 120px;
+}
+
+.anotherServices {
+  margin-bottom: 70px;
+}
+
 .carouselList {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
-  gap: 50px;
+  margin: 0;
+  padding: 0;
+  justify-content: space-between;
   list-style-type: none;
 }

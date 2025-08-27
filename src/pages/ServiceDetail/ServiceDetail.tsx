@@ -1,9 +1,10 @@
 import classNames from "classnames";
 import styles from "./styles.module.scss";
-import {useParams} from "react-router";
 import type {TService} from "../../types/service.ts";
-import Service from "../../components/Service/Service.tsx";
+import {useParams} from "react-router";
 import {useEffect} from "react";
+import Service from "../../components/Service/Service.tsx";
+import ServiceRequestFrom from "../../components/ServiceRequestForm/ServiceRequestForm.tsx";
 
 interface ServiceProps {
     services: TService[];
@@ -36,23 +37,14 @@ function ServiceDetail({services}: ServiceProps) {
                         <div><p><b>Формат:</b></p>{service.format}</div>
                         <button className={classNames(styles.previewButton)}>Оставить заявку</button>
                     </div>
-
                 </div>
             </div>
-            <div>
-                <h2 className={classNames(styles.subtitle)}>
-                    Отзывы
-                </h2>
-                <ul className={classNames(styles.carouselList)}>
-                    {service.reviews.map((review) => (
-                        <div>Я комментарий {review}</div>
-                    ))}
-                </ul>
+            <div className={classNames(styles.serviceRequestForm)}>
+                <h2 className={classNames(styles.subtitle)}>Оставить заявку</h2>
+                <ServiceRequestFrom />
             </div>
-            <div>
-                <h2 className={classNames(styles.subtitle)}>
-                    Другие услуги
-                </h2>
+            <div className={classNames(styles.anotherServices)}>
+                <h2 className={classNames(styles.subtitle)}>Другие услуги</h2>
                 <ul className={classNames(styles.carouselList)}>
                     {services.sort((() => Math.random() - 0.5)).slice(0, 3).map((service) => (
                         <Service key={service.id} service={service}/>
