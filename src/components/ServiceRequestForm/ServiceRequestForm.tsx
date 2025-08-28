@@ -38,19 +38,23 @@ function ServiceRequestFrom() {
     }
 
     return (
-        <div className={classNames(styles.root)}>
-            <div className={classNames(styles.card)}></div>
-            <form className={classNames(styles.form)} onSubmit={handleSubmit}>
-                <input type="text" name="name" value={formData.name} onChange={handleInputChange} placeholder="Роман"
-                       required/>
-                <input type="tel" name="phone" value={formData.phone} onChange={handleInputChange}
-                       placeholder="+7 (9**) ***-**-**" required/>
-                <input type="email" name="email" value={formData.email} onChange={handleInputChange}
-                       placeholder="email@domen.ru" required/>
-                <textarea value={formData.message} name="message" onChange={handleInputChange}
-                          placeholder="Ваше сообщение"/>
-                <button type="submit">Отправить заявку</button>
-            </form>
+        <div>
+            <h2 className={classNames(styles.subtitle)}>Оставить заявку</h2>
+            <div className={classNames(styles.root)}>
+                <div className={classNames(styles.card)}></div>
+                <form className={classNames(styles.form)} onSubmit={handleSubmit}>
+                    <input type="text" name="name" value={formData.name} onChange={handleInputChange}
+                           placeholder="Роман"
+                           required/>
+                    <input type="tel" name="phone" value={formData.phone} onChange={handleInputChange}
+                           placeholder="+7 (9**) ***-**-**" required/>
+                    <input type="email" name="email" value={formData.email} onChange={handleInputChange}
+                           placeholder="email@domen.ru" required/>
+                    <textarea value={formData.message} name="message" onChange={handleInputChange}
+                              placeholder="Ваше сообщение"/>
+                    <button type="submit">Отправить заявку</button>
+                </form>
+            </div>
         </div>
     );
 }
