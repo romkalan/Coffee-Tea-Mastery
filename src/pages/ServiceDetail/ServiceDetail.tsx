@@ -5,6 +5,7 @@ import {useParams} from "react-router";
 import {useEffect} from "react";
 import Service from "../../components/Service/Service.tsx";
 import ServiceRequestFrom from "../../components/ServiceRequestForm/ServiceRequestForm.tsx";
+import ServiceOptionsBlock from "../../components/ServiceOptionsBlock/ServiceOptionsBlock.tsx";
 
 interface ServiceProps {
     services: TService[];
@@ -39,10 +40,8 @@ function ServiceDetail({services}: ServiceProps) {
                     </div>
                 </div>
             </div>
-            <div className={classNames(styles.serviceRequestForm)}>
-                <h2 className={classNames(styles.subtitle)}>Оставить заявку</h2>
-                <ServiceRequestFrom />
-            </div>
+            <ServiceOptionsBlock options={service.options}/>
+            <ServiceRequestFrom/>
             <div className={classNames(styles.anotherServices)}>
                 <h2 className={classNames(styles.subtitle)}>Другие услуги</h2>
                 <ul className={classNames(styles.carouselList)}>
