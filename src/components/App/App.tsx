@@ -7,6 +7,7 @@ import Championships from "../../pages/Сhampionships/Championships.tsx";
 import NotFoundPage from "../../pages/NotFoundPage/NotFoundPage.tsx";
 import {services} from "../../mocks/services.ts";
 import ServiceDetail from "../../pages/ServiceDetail/ServiceDetail.tsx";
+import ServicesPage from "../../pages/ServicesPage/ServicesPage.tsx";
 
 function App() {
     return (
@@ -18,6 +19,7 @@ function App() {
                         <Route path={"news"} element={<News />} />
                         <Route path={"courses"} element={<Courses />} />
                         <Route path={"championships"} element={<Championships />} />
+                        <Route path={"services"} element={<ServicesPage/>} />
                         <Route path={"services/:id"} element={<ServiceDetail services={services}/>}/>
                     </Route>
                     <Route path="*" element={< NotFoundPage />} />

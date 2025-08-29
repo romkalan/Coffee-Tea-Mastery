@@ -6,8 +6,12 @@ import About from "../../components/About/About.tsx";
 import TrainingCenter from "../../components/TrainingCenter/TrainingCenter.tsx";
 import Advantages from "../../components/Advantages/Advantages.tsx";
 import Services from "../../components/Services/Services.tsx";
+import {services} from "../../mocks/services.ts";
+
 
 function Main() {
+    const allServices = services;
+
     return (
         <div className={classNames(styles.root)}>
             <Hero />
@@ -15,7 +19,7 @@ function Main() {
             <About />
             <TrainingCenter />
             <Advantages />
-            <Services />
+            <Services services={allServices}>Услуги для бизнеса</Services>
         </div>
     );
 }

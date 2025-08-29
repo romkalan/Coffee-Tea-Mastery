@@ -14,6 +14,8 @@ function Header() {
                          className={({isActive}) => classNames(isActive ? styles.linkActive : styles.link)}>Новости</NavLink>
                 <NavLink to={"/courses"}
                          className={({isActive}) => classNames(isActive ? styles.linkActive : styles.link)}>Курсы</NavLink>
+                <NavLink to={"/services"}
+                         className={({isActive}) => classNames(isActive ? styles.linkActive : styles.link)}>Услуги</NavLink>
                 <NavLink to={"/championships"}
                          className={({isActive}) => classNames(isActive ? styles.linkActive : styles.link)}>Чемпионаты</NavLink>
             </nav>
