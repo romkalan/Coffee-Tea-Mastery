@@ -3,9 +3,10 @@ import styles from "./styles.module.scss";
 import type {TService} from "../../types/service.ts";
 import {useParams} from "react-router";
 import {useEffect} from "react";
-import Service from "../../components/Service/Service.tsx";
 import ServiceRequestFrom from "../../components/ServiceRequestForm/ServiceRequestForm.tsx";
 import ServiceOptionsBlock from "../../components/ServiceOptionsBlock/ServiceOptionsBlock.tsx";
+import Services from "../../components/Services/Services.tsx";
+import DetailServiceInfo from "../../components/DetailServiceInfo/DetailServiceInfo.tsx";
 
 interface ServiceProps {
     services: TService[];
@@ -14,6 +15,7 @@ interface ServiceProps {
 function ServiceDetail({services}: ServiceProps) {
     const params = useParams();
     const service = services.find((service) => service.id === params.id);
+    const anotherServices = services.sort((() => Math.random() - 0.5)).slice(0, 3);
 
     useEffect(() => {
         window.scrollTo({top: 0, behavior: "smooth"});
@@ -25,31 +27,10 @@ function ServiceDetail({services}: ServiceProps) {
 
     return (
         <div className={classNames(styles.root)}>
-            <h1 className={classNames(styles.title)}>{service.type} / {service.title}</h1>
-            <div className={classNames(styles.preview)}>
-                <img className={classNames(styles.previewImage)} src={"../src/assets/serviceImage.jpg"}
-                     alt="Фотография услуги"/>
-                <div className={classNames(styles.previewInfo)}>
-                    <h2 className={classNames(styles.previewTitle)}>{service.title}</h2>
-                    <p className={classNames(styles.previewText)}>{service.description}</p>
-                    <div className={classNames(styles.previewInfoDetails)}>
-                        <div><p><b>Время:</b></p>{service.time}</div>
-                        <div><p><b>Стоимость:</b></p>От {service.price} руб</div>
-                        <div><p><b>Формат:</b></p>{service.format}</div>
-                        <button className={classNames(styles.previewButton)}>Оставить заявку</button>
-                    </div>
-                </div>
-            </div>
+            <DetailServiceInfo service={service}/>
             <ServiceOptionsBlock options={service.options}/>
             <ServiceRequestFrom/>
-            <div className={classNames(styles.anotherServices)}>
-                <h2 className={classNames(styles.subtitle)}>Другие услуги</h2>
-                <ul className={classNames(styles.carouselList)}>
-                    {services.sort((() => Math.random() - 0.5)).slice(0, 3).map((service) => (
-                        <Service key={service.id} service={service}/>
-                    ))}
-                </ul>
-            </div>
+            <Services services={anotherServices}>Другие услуги</Services>
         </div>
     );
 }
