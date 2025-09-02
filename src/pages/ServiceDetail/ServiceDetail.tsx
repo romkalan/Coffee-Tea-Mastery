@@ -28,7 +28,7 @@ function ServiceDetail({services}: ServiceProps) {
     return (
         <div className={classNames(styles.root)}>
             <DetailServiceInfo service={service}/>
-            <ServiceOptionsBlock options={service.options}/>
+            <ServiceOptionsBlock actions={service.actions} results={service.results}/>
             <ServiceRequestFrom/>
             <Services services={anotherServices}>Другие услуги</Services>
         </div>

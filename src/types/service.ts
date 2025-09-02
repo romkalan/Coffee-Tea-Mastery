@@ -6,7 +6,8 @@ export type TService = {
     time: string;
     format: string;
     description: string;
-    options: string[];
+    actions: string[];
+    results: string[];
     image: string;
     previewImage: string;
     reviews: string[];

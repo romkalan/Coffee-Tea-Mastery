@@ -5,9 +5,9 @@ import News from "../../pages/News/News.tsx";
 import Courses from "../../pages/Courses/Courses.tsx";
 import Championships from "../../pages/Сhampionships/Championships.tsx";
 import NotFoundPage from "../../pages/NotFoundPage/NotFoundPage.tsx";
-import {services} from "../../mocks/services.ts";
 import ServiceDetail from "../../pages/ServiceDetail/ServiceDetail.tsx";
 import ServicesPage from "../../pages/ServicesPage/ServicesPage.tsx";
+import {services} from "../../mocks/services.ts";
 
 function App() {
     return (
