@@ -1,7 +1,17 @@
 .root {
   width: 1920px;
-  height: 100dvw;
-  text-align: center;
   align-content: center;
-  border: 10px solid rgba(0, 0, 0, 0.22);
+  margin-bottom: 120px;
+}
+
+.title {
+
+}
+
+.newsList {
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+  margin: 0;
+  padding: 0;
 }
