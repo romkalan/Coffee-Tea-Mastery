@@ -6,4 +6,16 @@ function generateUUID() {
   });
 }
 
-export {generateUUID}
+function formatDate(date: Date) {
+  const day = date.getDate();
+  const month = date.toLocaleString('ru-RU', { month: 'long' });
+  const year = date.getFullYear();
+
+  return `${day} ${month} ${year}`
+}
+
+function sortByDate <T extends { date: Date }>(array: T[]) {
+  return [...array].sort((a, b) => b.date.getTime() - a.date.getTime());
+}
+
+export {generateUUID, formatDate, sortByDate};
