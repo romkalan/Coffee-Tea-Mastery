@@ -6,7 +6,7 @@ function TrainingCenter() {
         <div className={classNames(styles.root)}>
             <div className={classNames(styles.imageContainer)}>
                 <h2 className={classNames(styles.title)}>
-                    Наш тренинг центер
+                    Наш тренинг центр
                 </h2>
                 <img className={classNames(styles.image)} src={"src/assets/trainingCenter.jpg"}
                      alt="Фото учебного центра"/>

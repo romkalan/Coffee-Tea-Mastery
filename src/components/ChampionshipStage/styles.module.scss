@@ -1,0 +1,26 @@
+.root {
+  display: inline-flex;
+  align-items: start;
+  background-color: rgba(210, 105, 30, 0.3);
+  width: auto;
+  border-radius: 15px;
+  padding: 10px 20px 10px 0;
+}
+
+.info {
+  flex-direction: column;
+  margin: 0;
+  align-items: start;
+}
+
+.info p {
+  margin: 0;
+}
+
+.stage {
+  font-size: 30px;
+}
+
+.date {
+  font-size: 20px;
+}
