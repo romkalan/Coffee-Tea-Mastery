@@ -2,6 +2,7 @@ import classNames from "classnames";
 import styles from "./styles.module.scss";
 import Service from "../Service/Service.tsx";
 import type {TService} from "../../types/service.ts";
+import SliderButtons from "../SliderButtons/SliderButtons.tsx";
 
 interface ServicesProps {
     children: string;
@@ -19,6 +20,7 @@ function Services({children, services}: ServicesProps) {
                     <Service key={service.id} service={service}/>
                 ))}
             </ul>
+            <SliderButtons />
         </div>
     );
 }

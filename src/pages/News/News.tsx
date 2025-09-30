@@ -5,6 +5,7 @@ import NewsCard from "../../components/NewsCard/NewsCard.tsx";
 import {news} from "../../mocks/news.ts";
 import type {TNew} from "../../types/new.ts";
 import {sortByDate} from "../../utils/utils.ts";
+import SliderButtons from "../../components/SliderButtons/SliderButtons.tsx";
 
 
 function News() {
@@ -23,6 +24,7 @@ function News() {
                     <NewsCard key={newInfo.id} newInfo={newInfo} index={index}/>
                 ))}
             </ul>
+            <SliderButtons />
         </div>
     );
 }

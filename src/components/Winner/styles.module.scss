@@ -1,0 +1,34 @@
+.root {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  color: #8B4513;
+  gap: 20px;
+
+  &:hover .image {
+    transform: scale(1.05);
+  }
+}
+
+.year {
+  font-size: 60px;
+  margin: 0;
+}
+
+.image {
+  width: 300px;
+  border-radius: 50%;
+  transition: all 400ms ease-in-out;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  font-size: 36px;
+}
+
+.name {
+  font-size: 30px;
+}
+
