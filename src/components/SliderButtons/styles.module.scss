@@ -1,0 +1,34 @@
+.root {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.pages {
+  display: flex;
+  gap: 12px;
+}
+
+.button {
+  background-color: transparent;
+  border: none;
+  padding: 8px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: rgba(210, 105, 30, 0.1);
+    transform: scale(1.1);
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(210, 105, 30, 0.5);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}

@@ -3,6 +3,7 @@ import styles from "./styles.module.scss";
 import AboutCompetition from "../../components/AboutCompetition/AboutCompetition.tsx";
 import CompetitiveTask from "../../components/CompetitveTask/CompetitiveTask.tsx";
 import ChampionshipCycle from "../../components/ChampionshipCycle/ChampionshipCycle.tsx";
+import Winners from "../../components/Winners/Winners.tsx";
 
 function ChampionshipsPage() {
     return (
@@ -10,6 +11,7 @@ function ChampionshipsPage() {
             <AboutCompetition />
             <CompetitiveTask />
             <ChampionshipCycle/>
+            <Winners />
         </div>
     );
 }
