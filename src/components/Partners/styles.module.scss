@@ -1,0 +1,22 @@
+.title {
+  font-size: 60px;
+  line-height: 0;
+  margin-bottom: 100px;
+}
+
+.partnersList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 70px;
+  list-style: none;
+  flex-wrap: wrap;
+  margin: 0;
+}
+
+.imageContainer {
+  width: 200px;
+  height: 200px;
+  border: solid 3px #4D0505;
+  border-radius: 50%;
+  align-content: center;
+}
