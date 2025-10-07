@@ -2,12 +2,15 @@ import classNames from "classnames";
 import styles from "./styles.module.scss";
 import type {TService} from "../../types/service.ts";
 import {Link} from "react-router-dom";
+import type {TCourse} from "../../types/course.ts";
 
 interface ServiceProps {
-    service: TService;
+    service: TService | TCourse;
 }
 
 function Service({service}: ServiceProps) {
+    const buttonText = 'date' in service ? 'Записаться' : 'Подробнее';
+
     return (
         <li className={classNames(styles.root)}>
             <div className={classNames(styles.image)}>
@@ -30,8 +33,14 @@ function Service({service}: ServiceProps) {
                         <span>Формат</span>
                         <span>На выбор</span>
                     </div>
+                    {"date" in service &&
+                        (<div className={classNames(styles.descriptionText)}>
+                            <span>Дата</span>
+                            <span>{service.date}</span>
+                        </div>)
+                    }
                 </div>
-                <Link to={`/services/${service.id}`} className={classNames(styles.linkButton)}>Подробнее</Link>
+                <Link to={`/services/${service.id}`} className={classNames(styles.linkButton)}>{buttonText}</Link>
             </div>
         </li>
     );

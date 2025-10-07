@@ -3,10 +3,11 @@ import styles from "./styles.module.scss";
 import Service from "../Service/Service.tsx";
 import type {TService} from "../../types/service.ts";
 import SliderButtons from "../SliderButtons/SliderButtons.tsx";
+import type {TCourse} from "../../types/course.ts";
 
 interface ServicesProps {
     children: string;
-    services: TService[];
+    services: TService[] | TCourse[];
 }
 
 function Services({children, services}: ServicesProps) {

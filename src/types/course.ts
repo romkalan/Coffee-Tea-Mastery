@@ -4,6 +4,8 @@ export type TCourse = {
     type: string;
     price: number;
     time: string;
+    date?: string;
+    seats?: number;
     format: string;
     description: string;
     text: string;
