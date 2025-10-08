@@ -1,17 +1,42 @@
 .root {
-  max-width: 800px;
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
   text-align: left;
+  width: 50%;
+}
+
+.imageContainer {
+  position: relative;
+}
+
+.image {
+  width: 100%;
+}
+
+.imageOverlay {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 101%;
 }
 
 .title {
-  margin: 0 auto;
+  margin: 0;
   font-size: 60px;
   line-height: 100px;
+  text-align: left;
   color: #8B4513;
 }
 
 .description {
-  font-size: 40px;
+  font-size: 32px;
 }
 
 .button {

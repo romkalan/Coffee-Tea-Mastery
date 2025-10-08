@@ -1,6 +1,6 @@
 .root {
   width: 1920px;
-  height: 100dvw;
-  text-align: center;
-  align-content: center;
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
 }
