@@ -1,5 +1,5 @@
 .root {
-  width: 1920px;
+
 }
 
 .title {
@@ -13,10 +13,8 @@
   color: #8B4513;
 }
 
-.list {
+.expertsList {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  gap: 50px;
+  justify-content: space-between;
   list-style-type: none;
 }
