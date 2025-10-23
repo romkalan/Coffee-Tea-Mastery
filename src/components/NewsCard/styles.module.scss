@@ -3,6 +3,11 @@
   align-items: stretch;
   height: 500px;
   flex-basis: inherit;
+
+  &:hover .image img {
+    filter: grayscale(0%) brightness(100%) contrast(100%);
+  }
+
 }
 
 .even {
@@ -20,6 +25,8 @@
   height: 100%;
   object-fit: cover;
   border-top-left-radius: 130px;
+  transition: all 600ms cubic-bezier(0.4, 0, 0.2, 1);
+  filter: grayscale(100%) brightness(90%) contrast(120%);
 }
 
 .even .image img {
@@ -32,7 +39,11 @@
   flex-direction: column;
   text-align: center;
   justify-content: center;
-  background: rgba(240, 230, 210, 0.3);
+  background: linear-gradient(135deg, #FFFFFF 0%, #FDF5E6 100%);
+  border: 1px solid rgba(210, 105, 30, 0.1);
+  box-shadow:
+          0 10px 30px rgba(141, 69, 19, 0.1),
+          inset 0 1px 0 rgba(255, 255, 255, 0.9);;
 }
 
 .title {
@@ -67,3 +78,5 @@
   line-height: 1.5;
   padding: 30px;
 }
+
+
