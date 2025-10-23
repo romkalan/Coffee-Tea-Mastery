@@ -14,9 +14,10 @@
 }
 
 .list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  gap: 50px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 90px;
   list-style-type: none;
+  padding: 0;
+  margin-bottom: 70px;
 }
