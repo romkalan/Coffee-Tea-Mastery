@@ -1,3 +1,5 @@
+@import '../../styles/mixins';
+
 .root {
   display: flex;
   flex-direction: column;
@@ -44,7 +46,7 @@
   position: absolute;
   width: 3px;
   height: 100px;
-  background-color: #4D0505;
+  background-color: $color-primary;
   transform: translate(-50%);
   left: 50%;
   top: 10%;
@@ -52,7 +54,7 @@
 
 .text {
   width: 700px;
-  font-size: 24px;
+  font-size: $font-medium;
   line-height: 45px;
 }
 

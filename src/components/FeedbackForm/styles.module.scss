@@ -1,33 +1,37 @@
+@import '../../styles/mixins';
+
 .feedback {
-  width: 450px;
+
 }
 
 .feedbackTitle {
   text-align: center;
-  font-size: 24px;
+  font-size: $font-medium;
   line-height: 24px;
-  color: #4D0505;
+  color: $color-primary;
 }
 
 .feedbackAddress {
-  display: flex;
+  display: grid;
+  grid-template-columns: 0.8fr auto;
 }
 
 .feedbackAddress input {
-  font-size: 18px;
-  height: 20px;
-  padding: 10px;
+  @include input-base;
   border: 1px solid #D2691E;
+  padding: 10px;
   border-bottom-left-radius: 10px;
   border-top-left-radius: 10px;
-  background-color: #F0E6D2;
-  color: #D2691E;
 }
 
 .feedbackAddress button {
-  width: 60%;
+  @include button-secondary;
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
+
+  &:hover {
+    transform: translateY(0);
+  }
 }
 
 .feedbackText {

@@ -1,3 +1,5 @@
+@import '../../styles/mixins';
+
 .root {
   width: 100%;
   margin: 0;
@@ -5,22 +7,22 @@
 }
 
 .title {
-  font-size: 60px;
-  line-height: 68px;
+  font-size: $font-giant;
+  line-height: 60px;
   text-align: start;
 }
 
 .description {
   display: flex;
   justify-content: space-between;
-  font-size: 34px;
+  font-size: $font-large;
   line-height: 45px;
   text-align: start;
   margin-bottom: 60px;
 }
 
 .link {
-  font-size: 24px;
+  font-size: $font-medium;
   display: block;
   text-align: right;
 }
@@ -33,6 +35,5 @@
   height: 5px;
   bottom: -50px;
   left: 50%;
-  background-color: #F0E6D2;
 }
 
