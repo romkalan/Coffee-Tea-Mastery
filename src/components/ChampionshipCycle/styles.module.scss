@@ -1,3 +1,5 @@
+@import "../../styles/mixins";
+
 .root {
   width: 1920px;
   margin: 0 auto;
@@ -17,7 +19,7 @@
   transform: translateX(-50%);
   width: 8px;
   height: 100%;
-  background: linear-gradient(to bottom, #D2691E, #F0E6D2);
+  background: $gradient-line;
   border-radius: 20px;
 }
 

@@ -17,7 +17,6 @@ function Expert({expert}: ExpertProps) {
                     alt={expert.name}
                 />
             </div>
-            {/*<img className={classNames(styles.photo)} src={expert.photo} alt={expert.name}/>*/}
             <div className={classNames(styles.info)}>
                 <p className={classNames(styles.name)}>{expert.name}</p>
                 <p className={classNames(styles.description)}>{expert.description}</p>

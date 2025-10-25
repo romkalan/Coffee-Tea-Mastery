@@ -1,0 +1,442 @@
+// VARIABLES
+
+// COLORS
+$color-primary: #4D0505;
+$color-secondary: #8B4513;
+$color-accent: #D2691E;
+$color-background: #FAF9F6;
+
+$color-info-text: #666;
+$color-info-text-dark: #333;
+$color-button-text: #F0E6D2;
+
+$color-link-hover: darken($color-accent, 15%);
+$color-button-disabled: rgba(210, 105, 30, 0.5);
+
+$color-input-background: #FFFFFF;
+$color-input-border: rgba(77, 5, 5, 0.2);
+$color-input-border-focus: $color-accent;
+$color-input-text: $color-info-text-dark;
+$color-input-placeholder: rgba(77, 5, 5, 0.4);
+$color-input-error: #FF6B6B;
+$color-input-success: #4ECDC4;
+
+$border-color: rgba(77, 5, 5, 0.1);
+
+$gradient-card: linear-gradient(135deg, #FFFFFF 0%, #FDF5E6 100%);
+$gradient-card-hover: linear-gradient(135deg, #FFFFFF 0%, #FFF8F0 100%);
+$gradient-pre-card: linear-gradient(90deg, #FF6B6B, #b49595, #b49595);
+$gradient-line: linear-gradient(15deg, #D2691E, #F0E6D2);
+
+$shadow-card: 0 10px 30px rgba(141, 69, 19, 0.1),
+              inset 0 1px 0 rgba(255, 255, 255, 0.9);
+$shadow-card-hover: 0 20px 40px rgba(0, 0, 0, 0.12),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+
+// SIZES
+$font-small: 16px;
+$font-standard: 18px;
+$font-medium: 24px;
+$font-large: 32px;
+$font-giant: 60px;
+
+$border-radius-small: 8px;
+$border-radius-medium: 12px;
+$border-radius-large: 50px;
+
+$input-height-small: 36px;
+$input-height-medium: 44px;
+$input-height-large: 52px;
+$input-padding: 12px 16px;
+$input-border-radius: $border-radius-medium;
+
+$padding-small: 8px 16px;
+$padding-medium: 12px 24px;
+$padding-large: 16px 32px;
+
+
+// MIXINS
+
+// Вспомогательные миксины
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+// Миксины-ссылки
+@mixin link-primary {
+  color: $color-accent;
+  text-decoration: none;
+  transition: all 300ms ease;
+  font-weight: 500;
+
+  &:hover {
+    color: $color-link-hover;
+    text-decoration: underline;
+  }
+
+  &:active {
+    color: darken($color-accent, 20%);
+  }
+}
+
+@mixin link-secondary {
+  color: $color-secondary;
+  text-decoration: none;
+  transition: all 300ms ease;
+  opacity: 0.8;
+
+  &:hover {
+    color: $color-primary;
+    opacity: 1;
+  }
+}
+
+// Миксины-кнопки
+@mixin button-style {
+  background-color: $color-accent;
+  color: #F0E6D2;
+  padding: 8px 25px;
+  border-radius: 8px;
+  font-size: 24px;
+  line-height: 32px;
+  transition: all 300ms ease;
+
+  &:hover {
+    background-color: darken($color-accent, 10%);
+  }
+}
+
+@mixin button-primary {
+  @include button-style;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  &:disabled {
+    background-color: $color-button-disabled;
+    cursor: not-allowed;
+    transform: none;
+
+    &:hover {
+      background-color: $color-button-disabled;
+    }
+  }
+}
+
+@mixin button-secondary {
+  background-color: transparent;
+  color: $color-accent;
+  padding: $padding-small;
+  border: 2px solid $color-accent;
+  border-radius: $border-radius-small;
+  font-size: $font-standard;
+  font-weight: 500;
+  transition: all 300ms ease;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $color-accent;
+    color: $color-button-text;
+    transform: translateY(-2px);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+
+    &:hover {
+      background-color: transparent;
+      color: $color-accent;
+      transform: none;
+    }
+  }
+}
+
+@mixin button-ghost {
+  background-color: transparent;
+  color: $color-primary;
+  padding: $padding-small;
+  border: 1px solid $border-color;
+  border-radius: $border-radius-small;
+  font-size: $font-standard;
+  transition: all 300ms ease;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgba($color-primary, 0.05);
+    border-color: $color-primary;
+  }
+}
+
+// Кнопка small
+@mixin button-small {
+  padding: 6px 12px;
+  font-size: $font-small;
+  line-height: 1.2;
+}
+// Кнопка large
+@mixin button-large {
+  padding: $padding-large;
+  font-size: $font-medium;
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+// Ссылка-кнопка (когда ссылка выглядит как кнопка)
+@mixin link-button {
+  @include button-primary;
+  text-decoration: none;
+  display: inline-block;
+
+  &:hover {
+    text-decoration: none;
+    color: $color-button-text;
+  }
+}
+
+// Иконная кнопка (только иконка)
+@mixin button-icon {
+  @include flex-center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: none;
+  background: $gradient-card;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 300ms ease;
+
+  &:hover {
+    background: $gradient-card-hover;
+    transform: scale(1.1);
+  }
+}
+
+// Базовый инпут
+@mixin input-base {
+  background-color: $color-input-background;
+  border: 1px solid $color-input-border;
+  padding: $input-padding;
+  font-size: $font-standard;
+  color: $color-input-text;
+  transition: all 300ms ease;
+  outline: none;
+
+  &::placeholder {
+    color: $color-input-placeholder;
+    font-weight: 400;
+  }
+
+  &:focus {
+    border-color: $color-input-border-focus;
+    box-shadow: 0 0 0 3px rgba($color-accent, 0.1);
+  }
+
+  &:disabled {
+    background-color: rgba($color-input-background, 0.5);
+    color: $color-input-placeholder;
+    cursor: not-allowed;
+
+    &::placeholder {
+      color: rgba($color-input-placeholder, 0.5);
+    }
+  }
+}
+
+// Инпут с иконкой
+@mixin input-with-icon($icon-position: left) {
+  @include input-base;
+  position: relative;
+
+  @if $icon-position == left {
+    padding-left: 48px;
+  } @else {
+    padding-right: 48px;
+  }
+}
+
+// Инпут с ошибкой
+@mixin input-error {
+  border-color: $color-input-error;
+
+  &:focus {
+    border-color: $color-input-error;
+    box-shadow: 0 0 0 3px rgba($color-input-error, 0.1);
+  }
+}
+
+// Инпут с успехом
+@mixin input-success {
+  border-color: $color-input-success;
+
+  &:focus {
+    border-color: $color-input-success;
+    box-shadow: 0 0 0 3px rgba($color-input-success, 0.1);
+  }
+}
+
+// Размеры инпутов
+@mixin input-small {
+  height: $input-height-small;
+  padding: 8px 12px;
+  font-size: $font-small;
+}
+
+@mixin input-medium {
+  height: $input-height-medium;
+  padding: $input-padding;
+  font-size: $font-standard;
+}
+
+@mixin input-large {
+  height: $input-height-large;
+  padding: 16px 20px;
+  font-size: $font-medium;
+}
+
+// Стиль для textarea
+@mixin textarea {
+  @include input-base;
+  min-height: 120px;
+  resize: vertical;
+  line-height: 1.5;
+
+  &:focus {
+    box-shadow: 0 0 0 3px rgba($color-accent, 0.1);
+  }
+}
+
+// Стиль для select
+@mixin select {
+  @include input-base;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%234D0505' d='M6 8L2 4h8z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  padding-right: 40px;
+  cursor: pointer;
+
+  &:focus {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23D2691E' d='M6 8L2 4h8z'/%3E%3C/svg%3E");
+  }
+}
+
+// Группа инпутов (для форм)
+@mixin input-group {
+  display: flex;
+  gap: 0;
+
+  & > *:first-child {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  & > *:not(:first-child):not(:last-child) {
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+  }
+
+  & > *:last-child {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-left: none;
+  }
+}
+
+// Стиль для чекбокса и радио
+@mixin checkbox-radio {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid $color-input-border;
+  border-radius: 4px;
+  background: $color-input-background;
+  cursor: pointer;
+  position: relative;
+  transition: all 300ms ease;
+
+  &:checked {
+    background-color: $color-accent;
+    border-color: $color-accent;
+
+    &::before {
+      content: '✓';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-size: 12px;
+      font-weight: bold;
+    }
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 3px rgba($color-accent, 0.1);
+  }
+}
+
+// Стиль для радио (круглый)
+@mixin radio {
+  @include checkbox-radio;
+  border-radius: 50%;
+
+  &:checked::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background: white;
+    border-radius: 50%;
+  }
+}
+
+// Label для форм
+@mixin form-label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: $font-standard;
+  font-weight: 500;
+  color: $color-primary;
+}
+
+// Текст ошибки
+@mixin error-text {
+  color: $color-input-error;
+  font-size: $font-small;
+  margin-top: 4px;
+  display: block;
+}
+
+// Миксины-карточки
+@mixin card-style {
+  background: $gradient-card;
+  border: 1px solid rgba(210, 105, 30, 0.1);
+  border-radius: 20px;
+  box-shadow: $shadow-card;
+  transition: all 400ms ease-in-out;
+}
+
+@mixin card-hover {
+  transform: translateY(-8px);
+  box-shadow: $shadow-card-hover;
+}
+
+@mixin image-hover {
+  transform: scale(1.05);
+  filter: none;
+  box-shadow: 0 15px 30px rgba(77, 5, 5, 0.15);
+}

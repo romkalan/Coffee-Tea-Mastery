@@ -1,16 +1,18 @@
+@import '../../styles/mixins';
+
 .root {
 
 }
 
 .title {
-  font-size: 60px;
+  font-size: $font-giant;
   display: flex;
   flex-direction: column;
   align-items: center;
   align-content: center;
   line-height: 0;
   margin-bottom: 100px;
-  color: #8B4513;
+  color: $color-secondary;
 }
 
 .expertsList {

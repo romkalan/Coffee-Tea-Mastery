@@ -1,3 +1,5 @@
+@import "../../styles/mixins";
+
 .root {
   width: 1920px;
 }
@@ -9,9 +11,7 @@
 .imagesContainer {
   position: relative;
   display: flex;
-  justify-content: center;
   align-items: center;
-  margin: 40px 0;
   padding: 20px;
 }
 
@@ -27,7 +27,7 @@
 .imageWrapper {
   position: relative;
   width: 33%;
-  border-radius: 12px;
+  border-radius: $border-radius-medium;
   overflow: hidden;
   cursor: pointer;
   transition: all 400ms ease-in-out;
@@ -44,7 +44,7 @@
   object-fit: cover;
   object-position: center;
   border: 3px solid #ffffff;
-  border-radius: 12px;
+  border-radius: $border-radius-medium;
   filter: grayscale(100%);
   transition: all 400ms ease-in-out;
 
@@ -59,14 +59,14 @@
   left: 50%;
   transform: translate(-50%, -50%) scale(0.9);
   color: #F0E6D2;
-  font-size: 36px;
+  font-size: $font-large;
   font-weight: bold;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
   opacity: 0;
   transition: all 400ms ease-in-out;
-  padding: 12px 20px;
+  padding: $padding-medium;
   background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.5) 100%);
-  border-radius: 8px;
+  border-radius: $border-radius-small;
   backdrop-filter: blur(4px);
   white-space: nowrap;
   pointer-events: none;
