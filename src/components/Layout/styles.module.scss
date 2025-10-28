@@ -1,7 +1,7 @@
+@import '../../styles/mixins';
+
 .root {
-  display: flex;
+  @include flex-between;
   flex-direction: column;
   height: 100dvh;
-  align-items: center;
-  justify-content: space-between;
 }
