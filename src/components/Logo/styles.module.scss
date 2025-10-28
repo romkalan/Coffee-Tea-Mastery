@@ -1,21 +1,12 @@
-.link {
-  text-decoration: none;
-  color: #4D0505;
-}
+@import '../../styles/mixins';
 
-.link:hover {
-  color: #4D0505;
+.link {
+  @include link-base;
 }
 
 .logo {
-  display: flex;
+  @include flex-center;
   gap: 10px;
-  align-items: center;
-  justify-content: center;
-}
-
-.logo:hover {
-
 }
 
 .logoImage {
@@ -30,8 +21,8 @@
 
 .logoTitle {
   margin: 0;
-  color: #D2691E;
-  font-size: 32px;
+  color: $color-accent;
+  font-size: $font-large;
   align-self: center;
   position: relative;
 }
@@ -43,11 +34,11 @@
   bottom: 0;
   width: 100%;
   height: 3px;
-  background-color: #D2691E;
+  background-color: $color-accent;
 }
 
 .logoSubTitle {
   margin: 0;
   font-size: 22px;
-  color: #4D0505;
+  color: $color-primary;
 }

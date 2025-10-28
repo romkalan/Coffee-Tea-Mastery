@@ -2,8 +2,23 @@ import classNames from "classnames";
 import styles from "./styles.module.scss";
 import {NavLink} from "react-router";
 import Logo from "../Logo/Logo.tsx";
+import {type ChangeEvent, type FormEvent, useState} from "react";
 
 function Header() {
+    const [info, setInfo] = useState("");
+
+    const writeRequest = (event: ChangeEvent<HTMLInputElement>) => {
+        setInfo(event.target.value);
+    }
+
+    const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+        event.target
+        console.log(info + " пытаюсь найти это");
+        console.log("Мы искали мы искали, ничего не нашли");
+        setInfo('');
+    }
+
     return (
         <div className={classNames(styles.root)}>
             <Logo />
@@ -20,17 +35,21 @@ function Header() {
                          className={({isActive}) => classNames(isActive ? styles.linkActive : styles.link)}>Чемпионаты</NavLink>
             </nav>
             <ul className={classNames(styles.helpers)}>
+                {/*<li>*/}
+                {/*    <button>Сменить тему</button>*/}
+                {/*</li>*/}
                 <li>
-                    <button>Сменить тему</button>
+                    <form className={classNames(styles.infoForSearch)} onSubmit={handleSubmit}>
+                        <input type="text" value={info} onChange={writeRequest} placeholder="Что ищем?"
+                               required/>
+                        <button type="submit">Поиск</button>
+                    </form>
                 </li>
+                {/*<li>*/}
+                {/*    <button>Почта</button>*/}
+                {/*</li>*/}
                 <li>
-                    <button>Поиск</button>
-                </li>
-                <li>
-                    <button>Почта</button>
-                </li>
-                <li>
-                    <button>Личный кабинет</button>
+                    <button>Войти</button>
                 </li>
             </ul>
         </div>
