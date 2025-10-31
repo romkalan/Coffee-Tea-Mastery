@@ -1,8 +1,10 @@
+@import "../../styles/mixins";
+
 .root {
   position: relative;
   display: flex;
   flex-direction: column;
-  color: #8B4513;
+  color: $color-secondary;
   gap: 20px;
 
   &:hover .image {
@@ -11,7 +13,7 @@
 }
 
 .year {
-  font-size: 60px;
+  font-size: $font-giant;
   margin: 0;
 }
 
@@ -25,10 +27,10 @@
   display: flex;
   flex-direction: column;
   text-align: left;
-  font-size: 36px;
+  font-size: $font-large;
 }
 
 .name {
-  font-size: 30px;
+  font-size: $font-large;
 }
 

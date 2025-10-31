@@ -1,6 +1,12 @@
+@import "../../styles/mixins";
+
 .root {
   display: flex;
   gap: 30px;
+}
+
+.searchField {
+  @include input-base;
 }
 
 .button {

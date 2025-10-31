@@ -1,5 +1,7 @@
+@import "../../styles/mixins";
+
 .title {
-  font-size: 60px;
+  font-size: $font-giant;
   line-height: 0;
   margin-bottom: 100px;
 }
@@ -16,7 +18,7 @@
 .imageContainer {
   width: 200px;
   height: 200px;
-  border: solid 3px #4D0505;
+  border: solid 3px $color-primary;
   border-radius: 50%;
   align-content: center;
 }

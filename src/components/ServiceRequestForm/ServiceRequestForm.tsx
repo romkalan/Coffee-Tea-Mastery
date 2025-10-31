@@ -43,8 +43,7 @@ function ServiceRequestFrom() {
             <div className={classNames(styles.root)}>
                 <div className={classNames(styles.card)}>
                     <h3 className={classNames(styles.cardTitle)}>Заполните форму и с Вами свяжеться наш сотрудник, чтобы
-                        обговрить все детали и ответить на все
-                        Ваши вопросы</h3>
+                        обговрить все детали и ответить на все Ваши вопросы</h3>
                     <p className={classNames(styles.cardText)}>* Помните, что наша команда в праве отказать в выполнении услуги, если это противоречит политике нашего сообщества</p>
                 </div>
                 <form className={classNames(styles.form)} onSubmit={handleSubmit}>

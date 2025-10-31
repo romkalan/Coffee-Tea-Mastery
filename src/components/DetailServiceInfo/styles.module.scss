@@ -13,8 +13,7 @@
 
 .previewImage {
   width: 100%;
-  border-bottom-right-radius: 40px;
-  border-top-right-radius: 40px;
+  border-radius: 40px;
 }
 
 .preview {
@@ -23,7 +22,6 @@
   font-size: $font-medium;
   text-align: center;
   padding: 50px 100px;
-  //background-color: rgba(240, 230,210,0.3);
   gap: 40px;
   width: 100%;
 }
@@ -45,4 +43,9 @@
 .previewInfoDetails p {
   padding: 0;
   margin: 0;
+}
+
+.previewButton {
+  @include button-secondary;
+  @include button-large;
 }

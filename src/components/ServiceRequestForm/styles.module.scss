@@ -1,3 +1,5 @@
+@import "../../styles/mixins";
+
 .root {
   display: flex;
   justify-content: center;
@@ -7,29 +9,26 @@
 
 .subtitle {
   font-size: 50px;
-  display: flex;
+  @include flex-center;
   flex-direction: column;
-  align-items: center;
-  align-content: center;
   line-height: 0;
   margin-bottom: 100px;
-  color: #8B4513;
+  color: $color-secondary;
 }
 
 .card {
-  background-color: rgba(240, 230,210,0.3);
   width: 700px;
 }
 
 .cardTitle {
-  font-size: 24px;
+  font-size: $font-medium;
   line-height: 38px;
   padding: 20px;
   text-align: center;
 }
 
 .cardText {
-  font-size: 24px;
+  font-size: $font-medium;
   padding: 20px;
   text-align: center;
 }
@@ -42,19 +41,20 @@
 }
 
 .form input {
+  @include input-base;
   background-color: transparent;
   padding: 10px;
-  color: #3a2d2d;
 }
 
 .form textarea {
+  @include textarea;
   background-color: transparent;
   height: 100px;
   padding: 10px;
-  color: #3a2d2d;
 }
 
 .form button {
+  @include button-primary;
   padding: 15px;
   font-size: 20px;
 }
