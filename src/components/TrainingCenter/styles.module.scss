@@ -1,14 +1,14 @@
+@import "../../styles/mixins";
+
 .root {
   width: 100%;
   margin: 0;
 }
 
 .title {
-  display: flex;
+  @include flex-center;
   flex-direction: column;
-  align-items: center;
-  align-content: center;
-  font-size: 60px;
+  font-size: $font-giant;
   line-height: 0;
   margin-bottom: 100px;
 }
@@ -26,7 +26,7 @@
   height: 5px;
   bottom: -90px;
   left: 50%;
-  background-color: #F0E6D2;
+  background-color: $color-button-text;
 }
 
 .image {
@@ -46,5 +46,5 @@
   margin: 0 auto 0;
   text-align: center;
   width: 55%;
-  font-size: 24px;
+  font-size: $font-medium;
 }

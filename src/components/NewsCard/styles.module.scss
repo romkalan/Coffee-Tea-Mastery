@@ -37,11 +37,10 @@
 }
 
 .content {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  justify-content: center;
+  @include flex-center;
   @include card-style;
+  text-align: center;
+  flex-direction: column;
   border-radius: 0;
 }
 

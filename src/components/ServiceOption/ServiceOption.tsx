@@ -13,12 +13,9 @@ function ServiceOption({options, children}: ServiceOptionProps) {
     return (
         <div className={classNames(styles.root)}>
             <h2 className={classNames(styles.subtitle)}>{children}</h2>
-            <ul className={classNames(styles.options)}>
-                {optionsList}
-            </ul>
+            <ul className={classNames(styles.options)}>{optionsList}</ul>
         </div>
-    )
-        ;
+    );
 }
 
 export default ServiceOption;
