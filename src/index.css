@@ -1,5 +1,14 @@
 @import 'styles/mixins.scss';
 
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 :root {
   font-family: Roboto Slab, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -88,13 +97,13 @@ textarea {
   color: #3a2d2d;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #3a2d2d;
-  }
+/*@media (prefers-color-scheme: light) {*/
+/*  :root {*/
+/*    color: #213547;*/
+/*    background-color: #3a2d2d;*/
+/*  }*/
 
-  button {
-    background-color: #f9f9f9;
-  }
-}
+/*  button {*/
+/*    background-color: #f9f9f9;*/
+/*  }*/
+/*}*/
