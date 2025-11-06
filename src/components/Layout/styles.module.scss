@@ -3,5 +3,6 @@
 .root {
   @include flex-between;
   flex-direction: column;
+  width: 100%;
   height: 100dvh;
 }
