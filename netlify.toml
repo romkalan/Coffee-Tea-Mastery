@@ -11,6 +11,15 @@ from = "/*"
 to = "/index.html"
 status = 200
 
+[[headers]]
+for = "/*"
+[headers.values]
+X-Frame-Options = "DENY"
+X-XSS-Protection = "1; mode=block"
+X-Content-Type-Options = "nosniff"
+# Контроль масштабирования
+Viewport = "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+
 ## Дополнительные настройки (опционально)
 #[headers]
 ## Безопасность
