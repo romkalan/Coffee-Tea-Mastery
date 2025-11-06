@@ -10,8 +10,8 @@ export const news: TNew[] = [
         type: DetailInfoTypes.news,
         description: "Экстракция - это процесс извлечения вкусовых и ароматических веществ из кофейных зерен под воздействием воды. От нее зависит, будет ваш напиток горьким, кислым или сбалансированным",
         text: "Экстракция - это процесс извлечения вкусовых и ароматических веществ из кофейных зерен под воздействием воды. От нее зависит, будет ваш напиток горьким, кислым или сбалансированным",
-        image: "../src/assets/serviceImage.jpg",
-        previewImage: "../src/assets/serviceImage.jpg",
+        image: "/images/serviceImage.jpg",
+        previewImage: "/images/serviceImage.jpg",
         video: "#",
     },
     {
@@ -21,8 +21,8 @@ export const news: TNew[] = [
         type: DetailInfoTypes.news,
         description: "Вы когда-нибудь задумывались, почему кофе описывается как “с нотками черники и шоколада”, а чай как “с оттенками меда и цветов”. Все дело в сложных химических соединениях, формирующихся в процессе выращивания, обработки и приготовления!",
         text: "Вы когда-нибудь задумывались, почему кофе описывается как “с нотками черники и шоколада”, а чай как “с оттенками меда и цветов”. Все дело в сложных химических соединениях, формирующихся в процессе выращивания, обработки и приготовления!",
-        image: "../src/assets/serviceImage.jpg",
-        previewImage: "../src/assets/serviceImage.jpg",
+        image: "/images/serviceImage.jpg",
+        previewImage: "/images/serviceImage.jpg",
         video: "#",
     },
     {
@@ -36,8 +36,8 @@ export const news: TNew[] = [
         text: "Вы когда-нибудь задумывались, что ваша утренняя чашка кофе может стать не просо бодрящим напитком, но и холстом для творчества?\n" +
             "\n" +
             "Латте-арт - это волшебство, которое превращает обычный кофе в произведение искусства",
-        image: "../src/assets/serviceImage.jpg",
-        previewImage: "../src/assets/serviceImage.jpg",
+        image: "/images/serviceImage.jpg",
+        previewImage: "/images/serviceImage.jpg",
         video: "#",
     },
     {
@@ -47,8 +47,8 @@ export const news: TNew[] = [
         type: DetailInfoTypes.news,
         description: "Чайная церемоняи - это культурное наследие и ритуал, отражающий национальную идентичность и мровозрение.",
         text: "Чайная церемоняи - это культурное наследие и ритуал, отражающий национальную идентичность и мровозрение.",
-        image: "../src/assets/serviceImage.jpg",
-        previewImage: "../src/assets/serviceImage.jpg",
+        image: "/images/serviceImage.jpg",
+        previewImage: "/images/serviceImage.jpg",
         video: "#",
     },
     {
@@ -58,8 +58,8 @@ export const news: TNew[] = [
         type: DetailInfoTypes.news,
         description: "Какой-то текст",
         text: "Экстракция - это процесс извлечения вкусовых и ароматических веществ из кофейных зерен под воздействием воды. От нее зависит, будет ваш напиток горьким, кислым или сбалансированным",
-        image: "../src/assets/serviceImage.jpg",
-        previewImage: "../src/assets/serviceImage.jpg",
+        image: "/images/serviceImage.jpg",
+        previewImage: "/images/serviceImage.jpg",
         video: "#",
     },
     {
@@ -69,8 +69,8 @@ export const news: TNew[] = [
         type: DetailInfoTypes.news,
         description: "Какой-то текст",
         text: "Экстракция - это процесс извлечения вкусовых и ароматических веществ из кофейных зерен под воздействием воды. От нее зависит, будет ваш напиток горьким, кислым или сбалансированным",
-        image: "../src/assets/serviceImage.jpg",
-        previewImage: "../src/assets/serviceImage.jpg",
+        image: "/images/serviceImage.jpg",
+        previewImage: "/images/serviceImage.jpg",
         video: "#",
     },
 ]

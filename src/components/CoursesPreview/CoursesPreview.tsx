@@ -18,9 +18,9 @@ function CoursesPreview() {
                     <button className={classNames(styles.button)}>Подобрать курс</button>
                 </div>
                 <div className={classNames(styles.imageContainer)}>
-                    <img className={classNames(styles.image)} src={"src/assets/trainingCenter.jpg"}
+                    <img className={classNames(styles.image)} src={"/images/trainingCenter.jpg"}
                          alt="Фото учебного центра"/>
-                    <img className={classNames(styles.imageOverlay)} src={"src/assets/dividerOverlay.svg"}
+                    <img className={classNames(styles.imageOverlay)} src={"/images/dividerOverlay.svg"}
                          alt="Рамка для учебного центра"/>
                 </div>
             </div>
