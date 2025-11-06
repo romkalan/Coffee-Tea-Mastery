@@ -66,21 +66,21 @@ function Footer() {
                         <li>
                             <a href="#">
                                 <img className={classNames(styles.link)}
-                                     src="../../../src/assets/vkIcon.png"
+                                     src="/images/vkIcon.png"
                                      alt="Ссылка на сообщество в ВК"/>
                             </a>
                         </li>
                         <li>
                             <a href="#">
                                 <img className={classNames(styles.link)}
-                                     src="../../../src/assets/instIcon.png"
+                                     src="/images/instIcon.png"
                                      alt="Ссылка на сообщество в Инстаграм"/>
                             </a>
                         </li>
                         <li>
                             <a href="#">
                                 <img className={classNames(styles.link)}
-                                     src="../../../src/assets/TGIcon.png"
+                                     src="/images/TGIcon.png"
                                      alt="Ссылка на сообщество в Телеграмм"/>
                             </a>
                         </li>
