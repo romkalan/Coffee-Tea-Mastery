@@ -10,7 +10,7 @@ function Winner({winner}: WinnerProps) {
     return (
         <div className={classNames(style.root)}>
             <h3 className={classNames(style.year)}>{winner.year}</h3>
-            <img className={classNames(style.image)} src={"src/assets/Фотография с чемпионата.jpg"} alt="Фотография с чемпионата" />
+            <img className={classNames(style.image)} src={"/images/Фотография с чемпионата.jpg"} alt="Фотография с чемпионата" />
             <div className={classNames(style.info)}>
                 <span>{winner.region}</span>
                 <span className={classNames(style.name)}>{winner.name}</span>

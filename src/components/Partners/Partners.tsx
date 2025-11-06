@@ -14,7 +14,7 @@ function Partners() {
                 {partners.map((partner: TPartner) => (
                     <li key={partner.id}>
                         <div className={classNames(style.imageContainer)}>
-                            <img src={"src/assets/submarine.png"} alt={partner.name}/>
+                            <img src={"/images/submarine.png"} alt={partner.name}/>
                         </div>
                     </li>
                 ))}

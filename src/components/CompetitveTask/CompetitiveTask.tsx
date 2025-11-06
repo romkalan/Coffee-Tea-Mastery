@@ -10,7 +10,7 @@ function CompetitiveTask() {
                     <div className={classNames(styles.imageWrapper)}>
                         <img
                             className={classNames(styles.image)}
-                            src={"src/assets/barista.png"}
+                            src={"/images/barista.png"}
                             alt="Бариста"
                         />
                         <div className={classNames(styles.imageCaption)}>Бариста</div>
@@ -18,7 +18,7 @@ function CompetitiveTask() {
                     <div className={classNames(styles.imageWrapper)}>
                         <img
                             className={classNames(styles.image)}
-                            src={"src/assets/teaMaster.jpg"}
+                            src={"/images/teaMaster.jpg"}
                             alt="Чайный мастер"
                         />
                         <div className={classNames(styles.imageCaption)}>Чайный мастер</div>
@@ -26,13 +26,13 @@ function CompetitiveTask() {
                     <div className={classNames(styles.imageWrapper)}>
                         <img
                             className={classNames(styles.image)}
-                            src={"src/assets/roaster.jpg"}
+                            src={"/images/roaster.jpg"}
                             alt="Обжарщик кофе"
                         />
                         <div className={classNames(styles.imageCaption)}>Обжарщик кофе</div>
                     </div>
                 </div>
-                <img className={classNames(styles.imageOverlay)} src={"src/assets/dividerOverlay.svg"}
+                <img className={classNames(styles.imageOverlay)} src={"/images/dividerOverlay.svg"}
                      alt="Рамка для учебного центра"/>
             </div>
         </div>
