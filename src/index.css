@@ -1,142 +1,142 @@
-@import 'styles/mixins.scss';
+/*@import 'styles/mixins.scss';*/
 
-html {
-  -webkit-text-size-adjust: 100%;
-  text-size-adjust: 100%;
-  width: 100%;
-  height: 100%;
-  overflow-x: hidden;
-}
+/*html {*/
+/*  -webkit-text-size-adjust: 100%;*/
+/*  text-size-adjust: 100%;*/
+/*  width: 100%;*/
+/*  height: 100%;*/
+/*  overflow-x: hidden;*/
+/*}*/
 
-* {
-  box-sizing: border-box;
-}
+/** {*/
+/*  box-sizing: border-box;*/
+/*}*/
 
-:root {
-  font-family: Roboto Slab, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+/*:root {*/
+/*  font-family: Roboto Slab, system-ui, Avenir, Helvetica, Arial, sans-serif;*/
+/*  line-height: 1.5;*/
+/*  font-weight: 400;*/
 
-  /*color-scheme: light dark;*/
-  color: #4D0505;
-  background-color: #FAF9F6;
+/*  !*color-scheme: light dark;*!*/
+/*  color: #4D0505;*/
+/*  background-color: #FAF9F6;*/
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/*  font-synthesis: none;*/
+/*  text-rendering: optimizeLegibility;*/
+/*  -webkit-font-smoothing: antialiased;*/
+/*  -moz-osx-font-smoothing: grayscale;*/
 
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
+/*  -webkit-user-select: none;*/
+/*  -moz-user-select: none;*/
+/*  -ms-user-select: none;*/
+/*  user-select: none;*/
+/*}*/
 
-#root {
-  width: 100%;
-  min-height: 100vh;
-  position: relative;
-}
+/*#root {*/
+/*  width: 100%;*/
+/*  min-height: 100vh;*/
+/*  position: relative;*/
+/*}*/
 
-a {
-  font-weight: 500;
-  text-decoration: inherit;
-  color: #8B4513;
-  text-decoration: none;
-  transition: all 300ms ease;
-  opacity: 0.8;
+/*a {*/
+/*  font-weight: 500;*/
+/*  text-decoration: inherit;*/
+/*  color: #8B4513;*/
+/*  text-decoration: none;*/
+/*  transition: all 300ms ease;*/
+/*  opacity: 0.8;*/
 
-  &:hover {
-    color: #4D0505;
-    opacity: 1;
-  }
+/*  &:hover {*/
+/*    color: #4D0505;*/
+/*    opacity: 1;*/
+/*  }*/
 
-  &:active {
-    color: #D2691E;
-  }
+/*  &:active {*/
+/*    color: #D2691E;*/
+/*  }*/
 
-}
+/*}*/
 
-body {
-  margin: 0;
-  width: 100%;
-  min-height: 100vh;
-  position: relative;
-  overflow-x: hidden;
-  touch-action: pan-y;
-}
+/*body {*/
+/*  margin: 0;*/
+/*  width: 100%;*/
+/*  min-height: 100vh;*/
+/*  position: relative;*/
+/*  overflow-x: hidden;*/
+/*  touch-action: pan-y;*/
+/*}*/
 
-ul {
-  padding: 0;
-}
+/*ul {*/
+/*  padding: 0;*/
+/*}*/
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-  color: #8B4513;
-}
+/*h1 {*/
+/*  font-size: 3.2em;*/
+/*  line-height: 1.1;*/
+/*  color: #8B4513;*/
+/*}*/
 
-h2 {
-  color: #8B4513;
-}
+/*h2 {*/
+/*  color: #8B4513;*/
+/*}*/
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.2em 1em;
-  font-size: 1.2em;
-  font-family: inherit;
-  cursor: pointer;
+/*button {*/
+/*  border-radius: 8px;*/
+/*  border: 1px solid transparent;*/
+/*  padding: 0.2em 1em;*/
+/*  font-size: 1.2em;*/
+/*  font-family: inherit;*/
+/*  cursor: pointer;*/
 
-  background-color: #D2691E;
-  color: #F0E6D2;
-  line-height: 32px;
-  transition: all 300ms ease;
+/*  background-color: #D2691E;*/
+/*  color: #F0E6D2;*/
+/*  line-height: 32px;*/
+/*  transition: all 300ms ease;*/
 
-  &:hover {
-    background-color: #cb6116;
-    color: #FAF9F6;
-  }
-}
+/*  &:hover {*/
+/*    background-color: #cb6116;*/
+/*    color: #FAF9F6;*/
+/*  }*/
+/*}*/
 
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
+/*button:focus,*/
+/*button:focus-visible {*/
+/*  outline: 4px auto -webkit-focus-ring-color;*/
+/*}*/
 
-input {
-  background-color: transparent;
-  padding: 10px;
-  color: #3a2d2d;
-}
+/*input {*/
+/*  background-color: transparent;*/
+/*  padding: 10px;*/
+/*  color: #3a2d2d;*/
+/*}*/
 
-textarea {
-  background-color: transparent;
-  padding: 10px;
-  color: #3a2d2d;
-}
+/*textarea {*/
+/*  background-color: transparent;*/
+/*  padding: 10px;*/
+/*  color: #3a2d2d;*/
+/*}*/
 
-/* ✅ МЕДИА-ЗАПРОСЫ ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ */
-@media (max-width: 768px) {
-  html {
-    font-size: 16px; /* Фиксированный размер шрифта */
-    -webkit-text-size-adjust: none;
-    -moz-text-size-adjust: none;
-    -ms-text-size-adjust: none;
-  }
+/*!* ✅ МЕДИА-ЗАПРОСЫ ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ *!*/
+/*@media (max-width: 768px) {*/
+/*  html {*/
+/*    font-size: 16px; !* Фиксированный размер шрифта *!*/
+/*    -webkit-text-size-adjust: none;*/
+/*    -moz-text-size-adjust: none;*/
+/*    -ms-text-size-adjust: none;*/
+/*  }*/
 
-  body {
-    zoom: 1;
-    -webkit-transform: scale(1);
-    transform: scale(1);
-  }
-}
+/*  body {*/
+/*    zoom: 1;*/
+/*    -webkit-transform: scale(1);*/
+/*    transform: scale(1);*/
+/*  }*/
+/*}*/
 
-/* ✅ МЕДИА-ЗАПРОСЫ ДЛЯ iOS SAFARI */
-@supports (-webkit-touch-callout: none) {
-  body {
-    -webkit-text-size-adjust: none;
-    -webkit-user-select: none;
-    -webkit-touch-callout: none;
-  }
-}
+/*!* ✅ МЕДИА-ЗАПРОСЫ ДЛЯ iOS SAFARI *!*/
+/*@supports (-webkit-touch-callout: none) {*/
+/*  body {*/
+/*    -webkit-text-size-adjust: none;*/
+/*    -webkit-user-select: none;*/
+/*    -webkit-touch-callout: none;*/
+/*  }*/
+/*}*/
