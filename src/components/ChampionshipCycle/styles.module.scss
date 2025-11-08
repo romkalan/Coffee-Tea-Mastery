@@ -1,7 +1,8 @@
 @import "../../styles/mixins";
 
 .root {
-  width: 1920px;
+  width: 90%;
+  max-width: 1920px;
   margin: 0 auto;
 }
 
