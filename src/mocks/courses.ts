@@ -1,6 +1,7 @@
 import type {TCourse} from "../types/course.ts";
 import {formatDateWithoutYear, generateUUID} from "../utils/utils.ts";
 import {DetailInfoTypes, FormatsForDetailInfo} from "../utils/helpers.ts";
+import {experts} from "./experts.ts";
 
 export const courses: TCourse[] = [
     {
@@ -14,6 +15,7 @@ export const courses: TCourse[] = [
         format: FormatsForDetailInfo.offline,
         description: "Вы когда-нибудь задумывались, почему кофе описывается как “с нотками черники и шоколада”, а чай как “с оттенками меда и цветов”. Все дело в сложных химических соединениях, формирующихся в процессе выращивания, обработки и приготовления!",
         text: "",
+        expert: experts[0],
         image: "/images/courseImage.png",
         previewImage: "#",
         video: "#",
@@ -29,6 +31,7 @@ export const courses: TCourse[] = [
         format: FormatsForDetailInfo.offline,
         description: "Вы когда-нибудь задумывались, почему кофе описывается как “с нотками черники и шоколада”, а чай как “с оттенками меда и цветов”. Все дело в сложных химических соединениях, формирующихся в процессе выращивания, обработки и приготовления!",
         text: "",
+        expert: experts[1],
         image: "/images/courseImage.png",
         previewImage: "#",
         video: "#",
@@ -44,6 +47,7 @@ export const courses: TCourse[] = [
         format: FormatsForDetailInfo.offline,
         description: "Вы когда-нибудь задумывались, почему кофе описывается как “с нотками черники и шоколада”, а чай как “с оттенками меда и цветов”. Все дело в сложных химических соединениях, формирующихся в процессе выращивания, обработки и приготовления!",
         text: "",
+        expert: experts[0],
         image: "/images/courseImage.png",
         previewImage: "#",
         video: "#",
@@ -59,6 +63,7 @@ export const courses: TCourse[] = [
         format: FormatsForDetailInfo.online,
         description: "Вы когда-нибудь задумывались, почему кофе описывается как “с нотками черники и шоколада”, а чай как “с оттенками меда и цветов”. Все дело в сложных химических соединениях, формирующихся в процессе выращивания, обработки и приготовления!",
         text: "",
+        expert: experts[3],
         image: "/images/courseImage.png",
         previewImage: "#",
         video: "#",
@@ -74,6 +79,7 @@ export const courses: TCourse[] = [
         format: FormatsForDetailInfo.online,
         description: "Вы когда-нибудь задумывались, почему кофе описывается как “с нотками черники и шоколада”, а чай как “с оттенками меда и цветов”. Все дело в сложных химических соединениях, формирующихся в процессе выращивания, обработки и приготовления!",
         text: "",
+        expert: experts[2],
         image: "/images/courseImage.png",
         previewImage: "#",
         video: "#",
@@ -89,6 +95,7 @@ export const courses: TCourse[] = [
         format: FormatsForDetailInfo.online,
         description: "Вы когда-нибудь задумывались, почему кофе описывается как “с нотками черники и шоколада”, а чай как “с оттенками меда и цветов”. Все дело в сложных химических соединениях, формирующихся в процессе выращивания, обработки и приготовления!",
         text: "",
+        expert: experts[0],
         image: "/images/courseImage.png",
         previewImage: "#",
         video: "#",
@@ -104,6 +111,7 @@ export const courses: TCourse[] = [
         format: FormatsForDetailInfo.offline,
         description: "Вы когда-нибудь задумывались, почему кофе описывается как “с нотками черники и шоколада”, а чай как “с оттенками меда и цветов”. Все дело в сложных химических соединениях, формирующихся в процессе выращивания, обработки и приготовления!",
         text: "",
+        expert: experts[1],
         image: "/images/courseImage.png",
         previewImage: "#",
         video: "#",
@@ -119,6 +127,7 @@ export const courses: TCourse[] = [
         format: FormatsForDetailInfo.offline,
         description: "Вы когда-нибудь задумывались, почему кофе описывается как “с нотками черники и шоколада”, а чай как “с оттенками меда и цветов”. Все дело в сложных химических соединениях, формирующихся в процессе выращивания, обработки и приготовления!",
         text: "",
+        expert: experts[3],
         image: "/images/courseImage.png",
         previewImage: "#",
         video: "#",

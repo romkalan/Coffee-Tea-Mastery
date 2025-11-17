@@ -6,6 +6,6 @@ export const DetailInfoTypes = {
 
 export const FormatsForDetailInfo = {
     "online": "Онлайн",
-    "offline": "Встреча",
+    "offline": "В тренинг центре",
     "option": "На выбор"
 }
