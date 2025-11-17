@@ -1,0 +1,51 @@
+@import '../../styles/mixins';
+
+.previewRoot {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 120px;
+}
+
+.title {
+  margin-bottom: 70px;
+}
+
+.previewImage {
+  width: 100%;
+  border-radius: 40px;
+}
+
+.preview {
+  display: flex;
+  flex-direction: column;
+  font-size: $font-medium;
+  text-align: center;
+  padding: 50px 100px;
+  gap: 40px;
+  width: 100%;
+}
+
+.previewTitle {
+  margin: 0;
+}
+
+.previewText {
+  margin: 0;
+}
+
+.previewInfoDetails {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.previewInfoDetails p {
+  padding: 0;
+  margin: 0;
+}
+
+.previewButton {
+  @include button-secondary;
+  @include button-large;
+}

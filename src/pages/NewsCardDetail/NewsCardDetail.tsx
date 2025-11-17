@@ -10,20 +10,23 @@ interface NewsProps {
 
 function NewsCardDetail({news}: NewsProps) {
     const params = useParams();
-    const newsCard = news.find((newsCard) => newsCard.id === params.id);
+    const newCard = news.find((newsCard) => newsCard.id === params.id);
     // const anotherNews = news.sort((() => Math.random() - 0.5)).slice(0, 3);
 
     useEffect(() => {
         window.scrollTo({top: 0, behavior: "smooth"});
     }, [params.id]);
 
-    if (!newsCard) {
+    if (!newCard) {
         return null;
     }
 
     return (
         <div className={classNames(styles.root)}>
-            <h1 className={classNames(styles.title)}>{newsCard.type} / {newsCard.title}</h1>
+            <h1 className={classNames(styles.title)}>{newCard.type} / {newCard.title}</h1>
+            <div>
+                <img src={newCard.image} alt={newCard.title}/>
+            </div>
             Я детальная инфа о новости
         </div>
     );

@@ -10,6 +10,7 @@ interface ServiceProps {
 
 function Service({service}: ServiceProps) {
     const buttonText = 'date' in service ? 'Записаться' : 'Подробнее';
+    const pageLink = 'date' in service ? `/courses/${service.id}` : `/services/${service.id}`
 
     return (
         <li className={classNames(styles.root)}>
@@ -40,7 +41,7 @@ function Service({service}: ServiceProps) {
                         </div>)
                     }
                 </div>
-                <Link to={`/services/${service.id}`} className={classNames(styles.linkButton)}>{buttonText}</Link>
+                <Link to={pageLink} className={classNames(styles.linkButton)}>{buttonText}</Link>
             </div>
         </li>
     );
