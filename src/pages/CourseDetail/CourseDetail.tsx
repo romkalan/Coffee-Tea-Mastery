@@ -29,7 +29,7 @@ function CourseDetail({courses}: CourseDetailProps){
         <div>
             <div className={classNames(styles.root)}>
                 <DetailCourseInfo course={course}/>
-                <ExpertOfCourse expert={course.expert}/>
+                <ExpertOfCourse expertId={course.expertId}/>
                 <ServiceRequestFrom/>
                 <Services services={anotherCourses}>Другие услуги</Services>
             </div>
