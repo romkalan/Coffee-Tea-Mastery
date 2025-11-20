@@ -1,12 +1,20 @@
-import type {TExpert} from "../../types/expert.ts";
+// import type {TExpert} from "../../types/expert.ts";
 import classNames from "classnames";
 import styles from "./styles.module.scss";
+import {findElementById} from "../../utils/utils.ts";
+import {experts} from "../../mocks/experts.ts";
 
 interface ExpertOfCourseProp {
-    expert: TExpert;
+    expertId: string;
 }
 
-function ExpertOfCourse({expert}: ExpertOfCourseProp) {
+function ExpertOfCourse({expertId}: ExpertOfCourseProp) {
+    const expert = findElementById(experts, expertId);
+
+    if (!expert) {
+        return <h2 className={classNames(styles.title)}>На этот курс еще не назначен эксперт</h2>
+    }
+
     return (
         <div>
             <h2 className={classNames(styles.title)}>Эксперт курса</h2>

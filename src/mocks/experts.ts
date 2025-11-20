@@ -1,9 +1,9 @@
-import {generateUUID} from "../utils/utils.ts";
+// import {generateUUID} from "../utils/utils.ts";
 import type {TExpert} from "../types/expert.ts";
 
 export const experts: TExpert[] = [
     {
-        id: generateUUID(),
+        id: "34543623632fdgasdfgs",
         name: "Ланцов Роман",
         description: `Основатель Bee Barista, менеджер и национальный эксперт компетенции "Мастерство приготовления кофе и чая", Разработчик конкурсной документации чемпионата по компетенции. Опыт работы в кофейной индустрии — 10 лет.`,
         photo: "/images/Ланцов.jpg",
@@ -25,7 +25,7 @@ export const experts: TExpert[] = [
         status: 'Основатель компетенции и проекта Bee Barista',
     },
     {
-        id: generateUUID(),
+        id: "345436gnfdgndf632fdgasdfgs",
         name: "Хромова Ирина",
         description: `Главный эксперт по компетенции по г. Москве, Руководитель группы оценкци межрегионального чемпионата по компетенции "Мастерство приготовления кофе и чая"`,
         position: "Действующий эксперт и преподаватель курсов проекта Bee Barista",
@@ -45,7 +45,7 @@ export const experts: TExpert[] = [
         previewPhoto: '',
         status: 'Главный эксперт по г. Москве',
     },{
-        id: generateUUID(),
+        id: "3454362hjhg8fbd789sdfgs",
         name: "Бродская Ольга",
         description: `Главный эксперт юниорской ветки по компетенции по г. Москве, преподаватель курса "Бариста с 0"`,
         position: "Действующий эксперт и преподаватель курсов проекта Bee Barista",
@@ -64,7 +64,7 @@ export const experts: TExpert[] = [
         previewPhoto: '',
         status: 'Главный эксперт по г. Москве по юниорскому направлению компетенции',
     },{
-        id: generateUUID(),
+        id: "3454hvgjgfdbcrcbsdfgs",
         name: "Кудрявцев Артем",
         description: `Главный эксперт межрегионального этапа чемпионата по компетенции "Мастерство приготовления кофе и чая", обжарщик кофе и преподаватель курса по обжарке и каппингу`,
         position: "Действующий эксперт и преподаватель курсов проекта Bee Barista",

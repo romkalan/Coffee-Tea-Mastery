@@ -1,4 +1,4 @@
-import type {TExpert} from "./expert.ts";
+// import type {TExpert} from "./expert.ts";
 
 export type TCourse = {
     id: string;
@@ -11,7 +11,8 @@ export type TCourse = {
     format: string;
     description: string;
     text: string;
-    expert: TExpert;
+    expertId: string;
+    // expert: TExpert;
     image: string;
     previewImage: string;
     video?: string;
