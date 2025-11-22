@@ -10,7 +10,7 @@ $color-info-text: #666;
 $color-info-text-dark: #333;
 $color-button-text: #F0E6D2;
 
-$color-link-hover: darken($color-accent, 15%);
+$color-link-hover: rgba(210, 105, 30, 0.15);
 $color-button-disabled: rgba(210, 105, 30, 0.5);
 
 $color-input-background: #FFFFFF;
@@ -140,7 +140,7 @@ $padding-large: 16px 32px;
   transition: all 300ms ease;
 
   &:hover {
-    background-color: darken($color-accent, 10%);
+    background-color: $color-accent;
   }
 }
 

@@ -1,3 +1,5 @@
+import useEmblaCarousel from 'embla-carousel-react';
+import {useCallback, useEffect, useState} from "react";
 import classNames from "classnames";
 import styles from "./styles.module.scss";
 import Service from "../Service/Service.tsx";
@@ -11,17 +13,62 @@ interface ServicesProps {
 }
 
 function Services({children, services}: ServicesProps) {
+    const [emblaRef, emblaApi] = useEmblaCarousel({
+        loop: false,
+        align: 'start',
+        slidesToScroll: 1,
+        containScroll: 'trimSnaps'
+    });
+
+    const [selectedIndex, setSelectedIndex] = useState(0);
+    const [, setScrollSnaps] = useState<number[]>([]);
+
+    const scrollPrev = useCallback(() => {
+        if (emblaApi) emblaApi.scrollPrev();
+        console.log('пытаюсь крутить назад');
+    }, [emblaApi]);
+
+    const scrollNext = useCallback(() => {
+        if (emblaApi) emblaApi.scrollNext();
+        console.log('пытаюсь крутить вперед');
+    }, [emblaApi]);
+
+    const onSelect = useCallback(() => {
+        if (!emblaApi) return;
+        setSelectedIndex(emblaApi.selectedScrollSnap());
+    }, [emblaApi]);
+
+    useEffect(() => {
+        if (!emblaApi) return;
+
+        onSelect();
+        setScrollSnaps(emblaApi.scrollSnapList());
+
+        emblaApi.on('select', onSelect);
+
+        return () => {emblaApi.off('select', onSelect);};
+    }, [emblaApi, onSelect]);
+
     return (
         <div className={classNames(styles.root)}>
             <h2 className={classNames(styles.title)}>
                 {children}
             </h2>
-            <ul className={classNames(styles.list)}>
-                {services.map((service) => (
-                    <Service key={service.id} service={service}/>
-                ))}
-            </ul>
-            <SliderButtons />
+            <div className={classNames(styles.slider)} ref={emblaRef}>
+                <ul className={classNames(styles.list)}>
+                    {services.map((service) => (
+                        <div className={classNames(styles.cardSlide)} key={service.id}>
+                            <Service service={service}/>
+                        </div>
+                    ))}
+                </ul>
+            </div>
+            <SliderButtons
+                prevButton={scrollPrev}
+                nextButton={scrollNext}
+                currentSlide={selectedIndex}
+                totalSlides={services.length}
+            />
         </div>
     );
 }
