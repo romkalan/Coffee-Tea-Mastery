@@ -39,6 +39,11 @@
 .content {
   @include flex-center;
   @include card-style;
+  width: 40%;
+  flex-shrink: 0;
+  min-width: 400px;
+  padding: 40px;
+  box-sizing: border-box;
   text-align: center;
   flex-direction: column;
   border-radius: 0;

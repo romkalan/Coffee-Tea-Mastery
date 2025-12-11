@@ -3,6 +3,7 @@ import {useEffect} from "react";
 import classNames from "classnames";
 import styles from "./styles.module.scss";
 import type {TNew} from "../../types/new.ts";
+import DetailNewInfo from "../../components/DetailNewInfo/DetailNewInfo.tsx";
 
 interface NewsProps {
     news: TNew[];
@@ -24,10 +25,11 @@ function NewsCardDetail({news}: NewsProps) {
     return (
         <div className={classNames(styles.root)}>
             <h1 className={classNames(styles.title)}>{newCard.type} / {newCard.title}</h1>
-            <div>
-                <img src={newCard.image} alt={newCard.title}/>
+            <div className={classNames(styles.root)}>
+                <DetailNewInfo newCard={newCard}/>
+                {/*<ServiceRequestFrom/>*/}
+                {/*<Services services={anotherNews}>Другие услуги</Services>*/}
             </div>
-            Я детальная инфа о новости
         </div>
     );
 }

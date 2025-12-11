@@ -5,9 +5,7 @@ import NewsCard from "../../components/NewsCard/NewsCard.tsx";
 import {news} from "../../mocks/news.ts";
 import type {TNew} from "../../types/new.ts";
 import {sortByDate} from "../../utils/utils.ts";
-import SliderButtons from "../../components/SliderButtons/SliderButtons.tsx";
-import useEmblaCarousel from "embla-carousel-react";
-import {useCallback, useEffect, useState} from "react";
+import {useState} from "react";
 
 
 function News() {
@@ -15,43 +13,15 @@ function News() {
         return null;
     }
 
-    const currentNews = sortByDate(news.slice(0,4));
+    const [visibleCount, setVisibleCount] = useState(4);
+    const sortedNews = sortByDate(news);
+    const currentNews = sortedNews.slice(0, visibleCount);
+    const hasMoreNews = visibleCount < sortedNews.length;
 
-    const [, emblaApi] = useEmblaCarousel({
-        loop: false,
-        align: 'start',
-        slidesToScroll: 1,
-        containScroll: 'trimSnaps'
-    });
+    const loadMore = () => {
+        setVisibleCount(prev => prev + 4);
+    };
 
-    const [selectedIndex, setSelectedIndex] = useState(0);
-    const [, setScrollSnaps] = useState<number[]>([]);
-
-    const scrollPrev = useCallback(() => {
-        if (emblaApi) emblaApi.scrollPrev();
-        console.log('пытаюсь крутить назад');
-    }, [emblaApi]);
-
-    const scrollNext = useCallback(() => {
-        if (emblaApi) emblaApi.scrollNext();
-        console.log('пытаюсь крутить вперед');
-    }, [emblaApi]);
-
-    const onSelect = useCallback(() => {
-        if (!emblaApi) return;
-        setSelectedIndex(emblaApi.selectedScrollSnap());
-    }, [emblaApi]);
-
-    useEffect(() => {
-        if (!emblaApi) return;
-
-        onSelect();
-        setScrollSnaps(emblaApi.scrollSnapList());
-
-        emblaApi.on('select', onSelect);
-
-        return () => {emblaApi.off('select', onSelect);};
-    }, [emblaApi, onSelect]);
 
     return (
         <div className={classNames(styles.root)}>
@@ -62,12 +32,16 @@ function News() {
                     <NewsCard key={newInfo.id} newInfo={newInfo} index={index}/>
                 ))}
             </ul>
-            <SliderButtons
-                prevButton={scrollPrev}
-                nextButton={scrollNext}
-                currentSlide={selectedIndex}
-                totalSlides={news.length}
-            />
+            {hasMoreNews && (
+                <div className={classNames(styles.loadMoreContainer)}>
+                    <button
+                        className={classNames(styles.loadMoreButton)}
+                        onClick={loadMore}
+                    >
+                        Показать еще
+                    </button>
+                </div>
+            )}
         </div>
     );
 }
