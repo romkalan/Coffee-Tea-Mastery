@@ -18,3 +18,30 @@
   margin: 0 0 70px;
   padding: 0;
 }
+
+.loadMoreContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.loadMoreButton {
+  @include button-primary; // используйте ваш миксин для кнопок
+  padding: 15px 40px;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  &:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+  }
+}
