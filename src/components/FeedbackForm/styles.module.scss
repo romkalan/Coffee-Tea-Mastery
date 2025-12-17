@@ -1,4 +1,4 @@
-@import '../../styles/mixins';
+@use "../../styles/mixins";
 
 .feedback {
 
@@ -6,9 +6,9 @@
 
 .feedbackTitle {
   text-align: center;
-  font-size: $font-medium;
+  font-size: mixins.$font-medium;
   line-height: 24px;
-  color: $color-primary;
+  color: mixins.$color-primary;
 }
 
 .feedbackAddress {
@@ -17,15 +17,15 @@
 }
 
 .feedbackAddress input {
-  @include input-base;
-  border: 1px solid $color-accent;
+  @include mixins.input-base;
+  border: 1px solid mixins.$color-accent;
   padding: 10px;
   border-bottom-left-radius: 10px;
   border-top-left-radius: 10px;
 }
 
 .feedbackAddress button {
-  @include button-secondary;
+  @include mixins.button-secondary;
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
 

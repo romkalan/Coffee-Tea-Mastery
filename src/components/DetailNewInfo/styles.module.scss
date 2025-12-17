@@ -1,4 +1,4 @@
-@import '../../styles/mixins';
+@use "../../styles/mixins";
 
 .root {
   margin: 0 auto;
@@ -21,7 +21,7 @@
 .imageContainer {
   flex: 0 0 50%;
   position: relative;
-  border-radius: $border-radius-large;
+  border-radius: mixins.$border-radius-large;
   overflow: hidden;
 
   @media (max-width: 1024px) {
@@ -46,16 +46,16 @@
   position: absolute;
   bottom: 20px;
   right: 20px;
-  background: rgba($color-primary, 0.9);
+  background: rgba(mixins.$color-primary, 0.9);
   color: white;
   padding: 12px 24px;
-  border-radius: $border-radius-medium;
+  border-radius: mixins.$border-radius-medium;
   text-decoration: none;
   font-weight: 600;
   transition: all 0.3s ease;
 
   &:hover {
-    background: $color-primary;
+    background: mixins.$color-primary;
     transform: translateY(-2px);
   }
 
@@ -63,7 +63,7 @@
     bottom: 10px;
     right: 10px;
     padding: 8px 16px;
-    font-size: $font-small;
+    font-size: mixins.$font-small;
   }
 }
 
@@ -73,7 +73,7 @@
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  font-size: $font-medium;
+  font-size: mixins.$font-medium;
 }
 
 .meta {
@@ -86,16 +86,16 @@
 }
 
 .date {
-  font-size: $font-standard;
-  color: $color-info-text;
-  background: rgba($color-accent, 0.1);
+  font-size: mixins.$font-standard;
+  color: mixins.$color-info-text;
+  background: rgba(mixins.$color-accent, 0.1);
   padding: 8px 16px;
-  border-radius: $border-radius-medium;
+  border-radius: mixins.$border-radius-medium;
 }
 
 .category {
-  font-size: $font-standard;
-  color: $color-accent;
+  font-size: mixins.$font-standard;
+  color: mixins.$color-accent;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -116,7 +116,7 @@
 }
 
 .excerpt {
-  color: $color-info-text-dark;
+  color: mixins.$color-info-text-dark;
   line-height: 1.6;
 
   @media (max-width: 1024px) {
@@ -140,9 +140,9 @@
 }
 
 .article {
-  font-size: $font-medium;
+  font-size: mixins.$font-medium;
   line-height: 1.8;
-  color: $color-info-text-dark;
+  color: mixins.$color-info-text-dark;
   margin-bottom: 40px;
 }
 
@@ -160,21 +160,21 @@
   gap: 12px;
   margin-bottom: 40px;
   padding: 20px 0;
-  border-top: 1px solid $border-color;
-  border-bottom: 1px solid $border-color;
+  border-top: 1px solid mixins.$border-color;
+  border-bottom: 1px solid mixins.$border-color;
 }
 
 .tag {
-  background: rgba($color-accent, 0.1);
-  color: $color-accent;
+  background: rgba(mixins.$color-accent, 0.1);
+  color: mixins.$color-accent;
   padding: 8px 16px;
-  border-radius: $border-radius-medium;
-  font-size: $font-small;
+  border-radius: mixins.$border-radius-medium;
+  font-size: mixins.$font-small;
   font-weight: 500;
   transition: all 0.3s ease;
 
   &:hover {
-    background: $color-accent;
+    background: mixins.$color-accent;
     color: white;
     cursor: pointer;
   }
@@ -188,16 +188,16 @@
 }
 
 .shareButton, .saveButton {
-  @include button-secondary;
+  @include mixins.button-secondary;
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: $font-standard;
+  font-size: mixins.$font-standard;
 }
 
 .backButton {
-  @include link-primary;
-  font-size: $font-standard;
+  @include mixins.link-primary;
+  font-size: mixins.$font-standard;
   margin-left: auto;
 
   &:hover {
@@ -215,14 +215,14 @@
 }
 
 .authorCard {
-  @include card-style;
+  @include mixins.card-style;
   padding: 24px;
   margin-bottom: 30px;
 }
 
 .authorTitle {
-  font-size: $font-medium;
-  color: $color-primary;
+  font-size: mixins.$font-medium;
+  color: mixins.$color-primary;
   margin: 0 0 20px 0;
   font-weight: 600;
 }
@@ -242,31 +242,31 @@
 
 .authorName {
   font-weight: 600;
-  color: $color-primary;
+  color: mixins.$color-primary;
   margin: 0 0 4px 0;
 }
 
 .authorBio {
-  font-size: $font-small;
-  color: $color-info-text;
+  font-size: mixins.$font-small;
+  color: mixins.$color-info-text;
   margin: 0;
 }
 
 .relatedNews {
-  @include card-style;
+  @include mixins.card-style;
   padding: 24px;
 }
 
 .relatedTitle {
-  font-size: $font-medium;
-  color: $color-primary;
+  font-size: mixins.$font-medium;
+  color: mixins.$color-primary;
   margin: 0 0 20px 0;
   font-weight: 600;
 }
 
 .relatedItem {
   padding: 16px 0;
-  border-bottom: 1px solid $border-color;
+  border-bottom: 1px solid mixins.$border-color;
 
   &:last-child {
     border-bottom: none;
@@ -274,22 +274,22 @@
   }
 
   h4 {
-    font-size: $font-standard;
-    color: $color-primary;
+    font-size: mixins.$font-standard;
+    color: mixins.$color-primary;
     margin: 0 0 8px 0;
     font-weight: 600;
   }
 
   p {
-    font-size: $font-small;
-    color: $color-info-text;
+    font-size: mixins.$font-small;
+    color: mixins.$color-info-text;
     margin: 0;
     line-height: 1.4;
   }
 
   &:hover {
     h4 {
-      color: $color-accent;
+      color: mixins.$color-accent;
     }
   }
 }

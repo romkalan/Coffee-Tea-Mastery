@@ -1,12 +1,12 @@
-@import '../../styles/mixins';
+@use "../../styles/mixins";
 
 .root {
-  font-size: $font-medium;
+  font-size: mixins.$font-medium;
   display: flex;
   flex-direction: column;
   width: 370px;
   padding: 30px;
-  @include card-style;
+  @include mixins.card-style;
   transition: all 400ms ease-in-out;
   position: relative;
   overflow: hidden;
@@ -18,11 +18,11 @@
     left: 0;
     right: 0;
     height: 4px;
-    background: $gradient-pre-card;
+    background: mixins.$gradient-pre-card;
   }
 
   &:hover {
-    @include card-hover;
+    @include mixins.card-hover;
     .photo {
       transform: scale(1.05);
       filter: none;
@@ -32,19 +32,19 @@
 }
 
 .status {
-  font-size: $font-small;
+  font-size: mixins.$font-small;
   min-height: 60px;
   background: rgba(77, 5, 5, 0.05);
-  padding: $padding-small;
-  border-radius: $border-radius-large;
+  padding: mixins.$padding-small;
+  border-radius: mixins.$border-radius-large;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 25px;
   font-weight: 500;
-  color: $color-accent;
+  color: mixins.$color-accent;
   align-self: flex-start;
-  border: 1px solid $border-color;
+  border: 1px solid mixins.$border-color;
 }
 
 .photo {
@@ -66,16 +66,16 @@
 }
 
 .name {
-  font-size: $font-large;
-  color: $color-primary;
+  font-size: mixins.$font-large;
+  color: mixins.$color-primary;
   margin-bottom: 15px;
   font-weight: 700;
   line-height: 1.2;
 }
 
 .description {
-  font-size: $font-standard;
+  font-size: mixins.$font-standard;
   line-height: 1.5;
-  color: $color-info-text;
+  color: mixins.$color-info-text;
   opacity: 0.9;
 }

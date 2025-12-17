@@ -1,4 +1,4 @@
-@import '../../styles/mixins';
+@use "../../styles/mixins";
 
 .root {
   display: flex;
@@ -46,7 +46,7 @@
   position: absolute;
   width: 3px;
   height: 100px;
-  background-color: $color-primary;
+  background-color: mixins.$color-primary;
   transform: translate(-50%);
   left: 50%;
   top: 10%;
@@ -54,7 +54,7 @@
 
 .text {
   width: 700px;
-  font-size: $font-medium;
+  font-size: mixins.$font-medium;
   line-height: 45px;
 }
 

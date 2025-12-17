@@ -1,4 +1,4 @@
-@import 'styles/mixins.scss';
+@use "./styles/mixins.scss" as *;
 
 html {
   -webkit-text-size-adjust: 100%;
@@ -13,28 +13,26 @@ html {
 }
 
 :root {
+
+}
+
+#root {
   font-family: Roboto Slab, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
-  /*color-scheme: light dark;*/
   color: #4D0505;
   background-color: #FAF9F6;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
+  user-select: none;
+  width: 100%;
+  min-height: 100vh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
-  user-select: none;
-}
-
-#root {
-  width: 100%;
-  min-height: 100vh;
   position: relative;
 }
 
@@ -127,7 +125,7 @@ textarea {
 
   body {
     zoom: 1;
-    -webkit-transform: scale(1);
+    /*-webkit-transform: scale(1);*/
     transform: scale(1);
   }
 }

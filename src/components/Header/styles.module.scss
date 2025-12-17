@@ -1,4 +1,4 @@
-@import "../../styles/mixins";
+@use "../../styles/mixins";
 
 .root {
   display: flex;
@@ -11,11 +11,11 @@
 }
 
 .link {
-  @include link-base;
+  @include mixins.link-base;
 }
 
 .linkActive {
-  @include link-active;
+  @include mixins.link-active;
 }
 
 .headerPages {
@@ -34,7 +34,7 @@
 }
 
 .helpers button {
-  @include button-secondary;
+  @include mixins.button-secondary;
 
   &:hover {
     transform: translateY(0);
@@ -47,15 +47,15 @@
 }
 
 .infoForSearch input {
-  @include input-base;
-  border: 1px solid $color-accent;
+  @include mixins.input-base;
+  border: 1px solid mixins.$color-accent;
   padding: 10px;
   border-bottom-left-radius: 10px;
   border-top-left-radius: 10px;
 }
 
 .infoForSearch button {
-  @include button-secondary;
+  @include mixins.button-secondary;
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
 

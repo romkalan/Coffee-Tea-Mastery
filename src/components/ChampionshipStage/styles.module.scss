@@ -1,16 +1,15 @@
-@import "../../styles/mixins";
-
+@use "../../styles/mixins";
 .root {
   display: inline-flex;
   align-items: start;
   background: linear-gradient(135deg, #FDF5E6 100%, #FFFFFF 0%);
   width: auto;
-  border-radius: $border-radius-medium;
+  border-radius: mixins.$border-radius-medium;
   padding: 10px 20px 10px 0;
 }
 
 .icon {
-  fill: $color-primary;
+  fill: mixins.$color-primary;
 }
 
 .info {
@@ -24,9 +23,9 @@
 }
 
 .stage {
-  font-size: $font-large;
+  font-size: mixins.$font-large;
 }
 
 .date {
-  font-size: $font-medium;
+  font-size: mixins.$font-medium;
 }
