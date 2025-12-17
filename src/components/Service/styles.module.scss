@@ -1,11 +1,11 @@
-@import "../../styles/mixins";
+@use "../../styles/mixins";
 
 .root {
   width: 575px;
-  @include card-style;
+  @include mixins.card-style;
 
   &:hover {
-    @include card-hover;
+    @include mixins.card-hover;
   }
 }
 
@@ -24,7 +24,7 @@
   font-size: 28px;
   line-height: 32px;
   margin-bottom: 10px;
-  color: $color-accent;
+  color: mixins.$color-accent;
   min-height: 70px;
 }
 
@@ -42,5 +42,5 @@
 }
 
 .linkButton {
-  @include link-button;
+  @include mixins.link-button;
 }

@@ -1,11 +1,11 @@
-@import '../../styles/mixins';
+@use "../../styles/mixins";
 
 .link {
-  @include link-base;
+  @include mixins.link-base;
 }
 
 .logo {
-  @include flex-center;
+  @include mixins.flex-center;
   gap: 10px;
 }
 
@@ -21,8 +21,8 @@
 
 .logoTitle {
   margin: 0;
-  color: $color-accent;
-  font-size: $font-large;
+  color: mixins.$color-accent;
+  font-size: mixins.$font-large;
   align-self: center;
   position: relative;
 }
@@ -34,11 +34,11 @@
   bottom: 0;
   width: 100%;
   height: 3px;
-  background-color: $color-accent;
+  background-color: mixins.$color-accent;
 }
 
 .logoSubTitle {
   margin: 0;
   font-size: 22px;
-  color: $color-primary;
+  color: mixins.$color-primary;
 }

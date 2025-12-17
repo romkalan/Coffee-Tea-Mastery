@@ -1,7 +1,7 @@
-@import "../../styles/mixins";
+@use "../../styles/mixins";
 
 .root {
-  font-size: $font-medium;
+  font-size: mixins.$font-medium;
   position: relative;
   background-color: rgba(187, 196, 200, 0.1);
   border-radius: 20px;
@@ -9,12 +9,12 @@
 
 .subtitle {
   font-size: 30px;
-  @include flex-center;
+  @include mixins.flex-center;
   flex-direction: column;
   line-height: 0;
   padding: 20px;
   margin-bottom: 10px;
-  color: $color-secondary;
+  color: mixins.$color-secondary;
 }
 
 .options {
@@ -35,7 +35,7 @@
   content: "";
   width: 15px;
   height: 15px;
-  background-color: $color-primary;
+  background-color: mixins.$color-primary;
   left: 10px;
   transform: translate(50%, 75%);
   border-radius: 50%;

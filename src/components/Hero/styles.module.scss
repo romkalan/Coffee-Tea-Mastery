@@ -1,4 +1,4 @@
-@import "../../styles/mixins";
+@use "../../styles/mixins";
 
 .root {
   width: 100%;
@@ -19,7 +19,7 @@
   margin: 0 auto;
   font-size: 90px;
   line-height: 100px;
-  color: $color-secondary;
+  color: mixins.$color-secondary;
 }
 
 .heroSpan {

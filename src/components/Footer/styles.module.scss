@@ -1,7 +1,7 @@
-@import "../../styles/mixins";
+@use "../../styles/mixins";
 
 .root {
-  @include flex-center;
+  @include mixins.flex-center;
   width: 100%;
   max-width: 1920px;
   flex-direction: column;
@@ -27,7 +27,7 @@
   align-items: center;
   gap: 15px;
   line-height: 22px;
-  font-size: $font-standard;
+  font-size: mixins.$font-standard;
 }
 
 .additionalInfo {
@@ -49,9 +49,9 @@
 }
 
 .socialsTitle {
-  font-size: $font-standard;
+  font-size: mixins.$font-standard;
   line-height: 16px;
-  color: $color-primary;
+  color: mixins.$color-primary;
 }
 
 .socialsList {
@@ -65,15 +65,15 @@
 
 .link {
   padding: 5px 5px 5px 3px;
-  border: 1px solid $color-accent;
+  border: 1px solid mixins.$color-accent;
   border-radius: 5px;
   width: 40px;
 }
 
 .rights {
-  font-size: $font-standard;
+  font-size: mixins.$font-standard;
   line-height: 30px;
-  color: $color-primary;
+  color: mixins.$color-primary;
 }
 
 .rights::before {
@@ -81,7 +81,7 @@
   position: absolute;
   transform: translate(-50%);
   height: 2px;
-  background-color: $color-button-text;
+  background-color: mixins.$color-button-text;
   width: 55%;
   bottom: 110px;
   left: 50%;
