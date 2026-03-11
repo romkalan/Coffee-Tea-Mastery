@@ -2,10 +2,21 @@ import classNames from "classnames";
 import styles from "./styles.module.scss";
 import {NavLink} from "react-router";
 import Logo from "../Logo/Logo.tsx";
-import {type ChangeEvent, type FormEvent, useState} from "react";
+import {type ChangeEvent, type FormEvent, useContext, useState} from "react";
+import ModalLogin from "../ModalLogin/ModalLogin.tsx";
+import UserContext from "../../contexts/UserContext/UserContext.tsx";
 
 function Header() {
     const [info, setInfo] = useState("");
+    const context = useContext(UserContext);
+
+    if (!context) {
+        return null;
+    }
+
+    const {user} = context;
+    const [isOpen, setIsOpen] = useState(false);
+    const userName = user === null ? "Войти" : user.name;
 
     const writeRequest = (event: ChangeEvent<HTMLInputElement>) => {
         setInfo(event.target.value);
@@ -15,13 +26,18 @@ function Header() {
         event.preventDefault();
         event.target
         console.log(info + " пытаюсь найти это");
-        console.log("Мы искали мы искали, ничего не нашли");
+        console.log("Мы искали, мы искали и ничего не нашли");
         setInfo('');
     }
 
+    const handleLoginClick = () => {
+        setIsOpen(true);
+        console.log('Пытаюсь открыть модалку...');
+    };
+
     return (
         <div className={classNames(styles.root)}>
-            <Logo />
+            <Logo/>
             <nav className={classNames(styles.headerPages)}>
                 <NavLink to={"/"}
                          className={({isActive}) => classNames(isActive ? styles.linkActive : styles.link)}>Главная</NavLink>
@@ -49,7 +65,12 @@ function Header() {
                 {/*    <button>Почта</button>*/}
                 {/*</li>*/}
                 <li>
-                    <button>Войти</button>
+                    <button onClick={handleLoginClick}>
+                        {userName}
+                    </button>
+                </li>
+                <li>
+                    <ModalLogin isOpen={isOpen} onClose={() => setIsOpen(false)}/>
                 </li>
             </ul>
         </div>
