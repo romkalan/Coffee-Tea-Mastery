@@ -12,10 +12,14 @@ import {services} from "../../mocks/services.ts";
 import {courses} from "../../mocks/courses.ts";
 import {news} from "../../mocks/news.ts";
 import CourseDetail from "../../pages/CourseDetail/CourseDetail.tsx";
+import {useState} from "react";
+import UserContext from "../../contexts/UserContext/UserContext.tsx";
 
 function App() {
+    const [user, setUser] = useState(null);
+
     return (
-        <>
+        <UserContext.Provider value={{user, setUser}}>
             <BrowserRouter>
                 <Routes>
                     <Route path="/" element={<Layout />}>
@@ -31,7 +35,7 @@ function App() {
                     <Route path="*" element={< NotFoundPage />} />
                 </Routes>
             </BrowserRouter>
-        </>
+        </UserContext.Provider>
     )
 }
 

@@ -1,0 +1,52 @@
+@use "../../styles/mixins" as *;
+
+.form {
+    width: 100%;
+}
+
+.formInput {
+    @include input-base;
+    @include input-medium;
+    width: 100%;
+    margin-bottom: 16px;
+
+    &:last-of-type {
+        margin-bottom: 24px;
+    }
+}
+
+.loginButton {
+    @include button-primary;
+    @include button-medium;
+    width: 100%;
+
+    &:disabled {
+        background-color: $color-button-disabled;
+        cursor: not-allowed;
+
+        &:hover {
+            background-color: $color-button-disabled;
+        }
+    }
+}
+
+.logoutButton {
+    @include button-secondary;
+    width: 100%;
+    margin-top: 16px;
+}
+
+.userInfo {
+    text-align: center;
+
+    h3 {
+        color: $color-primary;
+        margin-bottom: 8px;
+        font-size: $font-medium;
+    }
+
+    p {
+        color: $color-info-text;
+        margin-bottom: 16px;
+    }
+}
