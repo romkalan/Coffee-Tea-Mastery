@@ -37,7 +37,7 @@ function Header() {
 
     return (
         <div className={classNames(styles.root)}>
-            <Logo/>
+            <Logo />
             <nav className={classNames(styles.headerPages)}>
                 <NavLink to={"/"}
                          className={({isActive}) => classNames(isActive ? styles.linkActive : styles.link)}>Главная</NavLink>

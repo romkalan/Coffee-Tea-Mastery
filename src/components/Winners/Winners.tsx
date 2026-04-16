@@ -7,6 +7,7 @@ import {useCallback, useEffect, useState} from "react";
 import useEmblaCarousel from "embla-carousel-react";
 
 function Winners() {
+    const lastWinners = winners.slice(0, 3);
     const [, emblaApi] = useEmblaCarousel({
         loop: false,
         align: 'start',
@@ -47,7 +48,7 @@ function Winners() {
         <div className={classNames(style.root)}>
             <h2 className={classNames(style.title)}>Победители чемпионата</h2>
             <ul className={classNames(style.winnersList)}>
-                {winners.map((winner) => (
+                {lastWinners.map((winner) => (
                     <li key={winner.id} className={classNames(style.winner)}>
                         <Winner winner={winner} />
                     </li>

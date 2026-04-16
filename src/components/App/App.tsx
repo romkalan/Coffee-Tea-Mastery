@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "../Layout/Layout.tsx";
+// import MainServerTest from "../../pages/MainServerTest/MainServerTest.tsx";
 import Main from "../../pages/Main/Main.tsx";
 import News from "../../pages/News/News.tsx";
 import Courses from "../../pages/Courses/Courses.tsx";
@@ -14,15 +15,19 @@ import {news} from "../../mocks/news.ts";
 import CourseDetail from "../../pages/CourseDetail/CourseDetail.tsx";
 import {useState} from "react";
 import UserContext from "../../contexts/UserContext/UserContext.tsx";
+import {Provider} from "react-redux";
+import store from "../../redux";
 
 function App() {
     const [user, setUser] = useState(null);
 
     return (
+        <Provider store={store}>
         <UserContext.Provider value={{user, setUser}}>
             <BrowserRouter>
                 <Routes>
                     <Route path="/" element={<Layout />}>
+                        {/*<Route index element={<MainServerTest />} />*/}
                         <Route index element={<Main />} />
                         <Route path={"news"} element={<News />} />
                         <Route path={"news/:id"} element={<NewsCardDetail news={news}/>}/>
@@ -36,6 +41,7 @@ function App() {
                 </Routes>
             </BrowserRouter>
         </UserContext.Provider>
+    </Provider>
     )
 }
 

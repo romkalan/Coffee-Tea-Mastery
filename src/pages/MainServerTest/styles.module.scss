@@ -1,0 +1,99 @@
+@use "../../styles/mixins" as *;
+
+.root {
+  @include flex-center;
+  width: 100%;
+  max-width: 1920px;
+  display: flex;
+  flex-direction: column;
+  gap: 90px;
+}
+
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  gap: 20px;
+
+  .spinner {
+    width: 50px;
+    height: 50px;
+    border: 3px solid rgba($color-accent, 0.3);
+    border-radius: 50%;
+    border-top-color: $color-accent;
+    animation: spin 1s ease-in-out infinite;
+  }
+
+  p {
+    font-size: $font-medium;
+    color: $color-info-text;
+  }
+}
+
+.error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  gap: 20px;
+  text-align: center;
+  padding: 20px;
+
+  p {
+    font-size: $font-medium;
+    color: $color-input-error;
+  }
+
+  .errorDetails {
+    font-size: $font-small;
+    color: $color-info-text;
+    background: rgba(0,0,0,0.05);
+    padding: 10px;
+    border-radius: 4px;
+    max-width: 500px;
+    word-break: break-all;
+  }
+
+  .retryButton {
+    @include button-primary;
+    @include button-medium;
+  }
+}
+
+.success {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 14px;
+  z-index: 9999;
+  animation: slideIn 0.3s ease;
+}
+
+.noData {
+  text-align: center;
+  padding: 50px;
+  color: $color-info-text;
+  font-size: $font-medium;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
