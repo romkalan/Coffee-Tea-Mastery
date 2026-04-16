@@ -9,3 +9,9 @@ export const FormatsForDetailInfo = {
     "offline": "В тренинг центре",
     "option": "На выбор"
 }
+
+export const RoleForUser = {
+    "student": "Студент",
+    "expert": "Эксперт",
+    "administrator": "Администратор",
+}

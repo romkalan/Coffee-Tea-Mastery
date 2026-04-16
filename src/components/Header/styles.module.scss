@@ -44,6 +44,11 @@
 .infoForSearch {
   display: grid;
   grid-template-columns: 0.8fr auto;
+
+  // Блок поиска в шапке
+  visibility: hidden; // стили для невидимости
+  opacity: 0; // стили для невидимости
+  position: absolute; // стили для невидимости
 }
 
 .infoForSearch input {
