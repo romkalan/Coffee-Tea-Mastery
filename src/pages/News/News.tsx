@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import styles from "./styles.module.scss";
-// import FilterMenu from "../../components/FilterMenu/FilterMenu.tsx";
+import FilterMenu from "../../components/FilterMenu/FilterMenu.tsx";
 import NewsCard from "../../components/NewsCard/NewsCard.tsx";
 import {news} from "../../mocks/news.ts";
 import type {TNew} from "../../types/new.ts";
