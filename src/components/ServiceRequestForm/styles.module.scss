@@ -8,7 +8,7 @@
 }
 
 .subtitle {
-  font-size: 50px;
+  font-size: clamp(2.5rem, 4vw, 3.125rem); /* 40px - 50px */
   @include flex-center;
   flex-direction: column;
   line-height: 0;
@@ -56,5 +56,5 @@
 .form button {
   @include button-primary;
   padding: 15px;
-  font-size: 20px;
+  font-size: clamp(1.125rem, 2vw, 1.25rem); /* 18px - 20px */
 }

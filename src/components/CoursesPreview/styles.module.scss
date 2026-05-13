@@ -46,5 +46,22 @@
 }
 
 .button {
+  @include button-primary;
   width: 230px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 1.2;
+
+  &:hover {
+    text-decoration: none;
+    color: $color-button-text;
+  }
+
+  &:focus {
+    color: $color-button-text;
+  }
+
+  &:active {
+    color: $color-button-text;
+  }
 }

@@ -27,7 +27,7 @@
 
 .infoYears {
   position: absolute;
-  font-size: 180px;
+  font-size: clamp(7.5rem, 12.5vw, 11.25rem); /* 120px - 180px, было 180px */
   line-height: 0;
   margin: 100px;
 }

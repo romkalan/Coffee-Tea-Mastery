@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Layout from "../Layout/Layout.tsx";
 // import MainServerTest from "../../pages/MainServerTest/MainServerTest.tsx";
 import Main from "../../pages/Main/Main.tsx";
@@ -13,10 +13,20 @@ import {services} from "../../mocks/services.ts";
 import {courses} from "../../mocks/courses.ts";
 import {news} from "../../mocks/news.ts";
 import CourseDetail from "../../pages/CourseDetail/CourseDetail.tsx";
-import {useState} from "react";
+import {useState, useEffect} from "react";
 import UserContext from "../../contexts/UserContext/UserContext.tsx";
 import {Provider} from "react-redux";
 import store from "../../redux";
+
+function ScrollToTop() {
+    const {pathname} = useLocation();
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [pathname]);
+
+    return null;
+}
 
 function App() {
     const [user, setUser] = useState(null);
@@ -25,6 +35,7 @@ function App() {
         <Provider store={store}>
         <UserContext.Provider value={{user, setUser}}>
             <BrowserRouter>
+                <ScrollToTop />
                 <Routes>
                     <Route path="/" element={<Layout />}>
                         {/*<Route index element={<MainServerTest />} />*/}

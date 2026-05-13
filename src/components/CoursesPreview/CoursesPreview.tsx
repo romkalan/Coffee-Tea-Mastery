@@ -1,5 +1,6 @@
 import classNames from "classnames";
 import styles from "./styles.module.scss";
+import {NavLink} from "react-router";
 
 function CoursesPreview() {
     return (
@@ -15,7 +16,7 @@ function CoursesPreview() {
                         С нами ты приобретешь все необходимые навыки <br/>
                         для успешной работы в индустрии кофе и чая
                     </p>
-                    <button className={classNames(styles.button)}>Подобрать курс</button>
+                    <NavLink to="/courses?section=training-center" className={classNames(styles.button)}>Подобрать курс</NavLink>
                 </div>
                 <div className={classNames(styles.imageContainer)}>
                     <img className={classNames(styles.image)} src={"/images/trainingCenter.jpg"}

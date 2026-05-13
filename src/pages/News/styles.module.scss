@@ -11,6 +11,13 @@
 
 }
 
+.noResults {
+  text-align: center;
+  font-size: $font-medium;
+  color: $color-info-text;
+  margin-top: 40px;
+}
+
 .newsList {
   display: flex;
   flex-direction: column;
@@ -28,7 +35,7 @@
 .loadMoreButton {
   @include button-primary; // используйте ваш миксин для кнопок
   padding: 15px 40px;
-  font-size: 18px;
+  font-size: clamp(1rem, 2vw, 1.125rem); /* 16px - 18px */
   border: none;
   cursor: pointer;
   transition: all 0.3s ease;

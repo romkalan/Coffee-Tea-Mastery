@@ -8,7 +8,7 @@
 }
 
 .subtitle {
-  font-size: 30px;
+  font-size: clamp(1.5rem, 2.5vw, 1.875rem); /* 24px - 30px */
   @include mixins.flex-center;
   flex-direction: column;
   line-height: 0;

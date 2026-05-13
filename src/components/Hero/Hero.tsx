@@ -1,5 +1,6 @@
 import style from "./styles.module.scss";
 import classNames from "classnames";
+import {NavLink} from "react-router";
 
 function Hero() {
     return (
@@ -7,7 +8,7 @@ function Hero() {
             <div className={classNames(style.heroText)}>
                 <h3 className={classNames(style.heroTitle)}>Мастерство приготовления кофе и чая</h3>
                 <p className={classNames(style.heroSpan)}>Где каждый глоток - новое знание!</p>
-                <button className={classNames(style.heroButton)}>Подобрать курс</button>
+                <NavLink to="/courses?section=training-center" className={classNames(style.heroButton)}>Подобрать курс</NavLink>
             </div>
             <img className={classNames(style.heroImage)} src={"/images/coffeeBeans.png"} alt="Кофейные зерна"/>
         </div>

@@ -60,10 +60,10 @@
 .previewTitle {
   margin: 0;
   line-height: 1.2;
-  font-size: 36px;
+  font-size: clamp(1.75rem, 3vw, 2.25rem); /* 28px - 36px */
 
   @media (max-width: 768px) {
-    font-size: 28px;
+    font-size: 1.75rem; /* 28px */
   }
 }
 

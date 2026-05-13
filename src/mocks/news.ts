@@ -13,6 +13,7 @@ export const news: TNew[] = [
         image: "/images/serviceImage.jpg",
         previewImage: "/images/serviceImage.jpg",
         video: "#",
+        tag: "coffee",
     },
     {
         id: generateUUID(),
@@ -24,6 +25,7 @@ export const news: TNew[] = [
         image: "/images/serviceImage.jpg",
         previewImage: "/images/serviceImage.jpg",
         video: "#",
+        tag: "coffee",
     },
     {
         id: generateUUID(),
@@ -39,17 +41,19 @@ export const news: TNew[] = [
         image: "/images/serviceImage.jpg",
         previewImage: "/images/serviceImage.jpg",
         video: "#",
+        tag: "coffee",
     },
     {
         id: generateUUID(),
         title: "Чайная церемония",
         date: new Date(2024, 12, 7),
         type: DetailInfoTypes.news,
-        description: "Чайная церемоняи - это культурное наследие и ритуал, отражающий национальную идентичность и мровозрение.",
-        text: "Чайная церемоняи - это культурное наследие и ритуал, отражающий национальную идентичность и мровозрение.",
+        description: "Чайная церемоняи - это культурное наследие и ритуал, отражающий национальную идентичность и мровоззрение.",
+        text: "Чайная церемоняи - это культурное наследие и ритуал, отражающий национальную идентичность и мровоззрение.",
         image: "/images/serviceImage.jpg",
         previewImage: "/images/serviceImage.jpg",
         video: "#",
+        tag: "tea",
     },
     {
         id: generateUUID(),
@@ -110,6 +114,7 @@ export const news: TNew[] = [
         image: "/images/serviceImage.jpg",
         previewImage: "/images/serviceImage.jpg",
         video: "#",
+        tag: "tea",
     },
     {
         id: generateUUID(),
@@ -121,5 +126,6 @@ export const news: TNew[] = [
         image: "/images/serviceImage.jpg",
         previewImage: "/images/serviceImage.jpg",
         video: "#",
+        tag: "coffee",
     },
 ]
