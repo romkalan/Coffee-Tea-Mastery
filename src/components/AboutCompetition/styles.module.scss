@@ -28,6 +28,10 @@
   text-align: right;
 }
 
+.disk {
+  padding: 30px;
+}
+
 .root::after {
   content: "";
   position: absolute;

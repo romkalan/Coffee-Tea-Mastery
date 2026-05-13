@@ -5,20 +5,15 @@ import classNames from "classnames";
 import styles from "./styles.module.scss";
 import {useEffect} from "react";
 
-function ScrollToTop() {
+function Layout() {
     const {pathname} = useLocation();
 
     useEffect(() => {
         window.scrollTo(0, 0);
     }, [pathname]);
 
-    return null;
-}
-
-function Layout() {
     return (
         <>
-            <ScrollToTop />
             <div className={classNames(styles.root)}>
                 <Header/>
                 <Outlet/>

@@ -52,7 +52,12 @@ function News() {
     return (
         <div className={classNames(styles.root)}>
             <h1 className={classNames(styles.title)}>Новости</h1>
-            {/*<FilterMenu/>*/}
+            <FilterMenu
+                searchQuery={searchQuery}
+                onSearchChange={setSearchQuery}
+                selectedTag={selectedTag}
+                onTagChange={setSelectedTag}
+            />
             <ul className={classNames(styles.newsList)}>
                 {currentNews.map((newInfo: TNew, index) => (
                     <NewsCard key={newInfo.id} newInfo={newInfo} index={index}/>
