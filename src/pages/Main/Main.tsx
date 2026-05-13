@@ -8,7 +8,6 @@ import Advantages from "../../components/Advantages/Advantages.tsx";
 import Services from "../../components/Services/Services.tsx";
 import {services} from "../../mocks/services.ts";
 
-
 function Main() {
     const allServices = services;
 
@@ -25,3 +24,4 @@ function Main() {
 }
 
 export default Main;
+

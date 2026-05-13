@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import styles from "./styles.module.scss";
-import FilterMenu from "../../components/FilterMenu/FilterMenu.tsx";
+// import FilterMenu from "../../components/FilterMenu/FilterMenu.tsx";
 import NewsCard from "../../components/NewsCard/NewsCard.tsx";
 import {news} from "../../mocks/news.ts";
 import type {TNew} from "../../types/new.ts";
@@ -52,12 +52,7 @@ function News() {
     return (
         <div className={classNames(styles.root)}>
             <h1 className={classNames(styles.title)}>Новости</h1>
-            <FilterMenu
-                searchQuery={searchQuery}
-                onSearchChange={setSearchQuery}
-                selectedTag={selectedTag}
-                onTagChange={setSelectedTag}
-            />
+            {/*<FilterMenu/>*/}
             <ul className={classNames(styles.newsList)}>
                 {currentNews.map((newInfo: TNew, index) => (
                     <NewsCard key={newInfo.id} newInfo={newInfo} index={index}/>

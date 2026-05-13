@@ -1,7 +1,7 @@
-@use "../../styles/mixins";
+@use "../../styles/mixins" as *;
 
 .root {
-  @include mixins.flex-center;
+  @include flex-center;
   width: 100%;
   max-width: 1920px;
   display: flex;
