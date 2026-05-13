@@ -46,6 +46,24 @@
   bottom: 0;
   right: 0;
   color: $color-button-text;
-  font-size: clamp(15rem, 27vw, 26.875rem); /* 240px - 430px, было 430px */
+  font-size: clamp(15rem, 27vw, 26.875rem);
   z-index: -1;
+}
+
+.animate li {
+  opacity: 0;
+  transform: translateX(100px);
+  animation: slideIn 1s ease-out forwards;
+}
+
+.animate li:nth-child(1) { animation-delay: 0s; }
+.animate li:nth-child(2) { animation-delay: 0.25s; }
+.animate li:nth-child(3) { animation-delay: 0.5s; }
+.animate li:nth-child(4) { animation-delay: 0.75s; }
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }

@@ -3,10 +3,11 @@ import styles from "./styles.module.scss";
 import {NavLink} from "react-router";
 import Logo from "../Logo/Logo.tsx";
 import FeedbackForm from "../FeedbackForm/FeedbackForm.tsx";
+import Tooltip from "../Tooltip/Tooltip.tsx";
 import {useState} from "react";
 
 function Footer() {
-    const [showTooltip, setShowTooltip] = useState(false);
+    const [isTooltipOpen, setIsTooltipOpen] = useState(false);
 
     return (
         <div className={classNames(styles.root)}>
@@ -62,14 +63,16 @@ function Footer() {
                     <div className={classNames(styles.tooltipContainer)}>
                         <span
                             className={classNames(styles.linkButton)}
-                            onClick={() => setShowTooltip(!showTooltip)}
+                            onClick={() => setIsTooltipOpen(true)}
                         >
                             Как стать экспертом?
                         </span>
-                        {showTooltip && (
-                            <div className={classNames(styles.tooltip)}>Чтобы стать экспертом, необходимо иметь глубокие знания в области кофе и чая, пройти обучение и получить соответствующую сертификацию. Свяжитесь с нами по телефону или электронной почте для получения подробной информации.
-                            </div>
-                        )}
+                        <Tooltip
+                            isOpen={isTooltipOpen}
+                            onClose={() => setIsTooltipOpen(false)}
+                            title="Как стать экспертом"
+                            content="Чтобы стать экспертом, необходимо иметь глубокие знания в области кофе и чая, пройти обучение и получить соответствующую сертификацию. Свяжитесь с нами по телефону или электронной почте для получения подробной информации."
+                        />
                     </div>
                     <NavLink to={"/championships"}>Как принять участвовать в чемпионате?</NavLink>
                 </nav>

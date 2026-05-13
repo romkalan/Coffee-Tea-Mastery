@@ -1,11 +1,29 @@
 import styles from "./styles.module.scss";
 import classNames from "classnames";
+import {useState, useEffect, useRef} from "react";
 
 function Advantages() {
+    const [isAnimated, setIsAnimated] = useState(false);
+    const ref = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setIsAnimated(true);
+                    observer.disconnect();
+                }
+            },
+            {threshold: 0.1}
+        );
+        if (ref.current) observer.observe(ref.current);
+        return () => observer.disconnect();
+    }, []);
+
     return (
-        <div className={classNames(styles.root)}>
+        <div ref={ref} className={classNames(styles.root)}>
             <h2>Образование у нас</h2>
-            <ul className={classNames(styles.advantagesList)}>
+            <ul className={classNames(styles.advantagesList, isAnimated && styles.animate)}>
                 <li>
                     <svg width="89" height="81" viewBox="0 0 89 81" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect y="0.253418" width="88.1057" height="80" rx="5" fill="#4D0505"/>

@@ -12,7 +12,7 @@ function AboutCompetition() {
                     профессиональному мастерству», <br/>
                     который проходит в рамках реализации национального проекта «Молодежь
                     и дети».</p>
-                <Disk/>
+                <div className={classNames(styles.disk)}><Disk/></div>
             </div>
             <a className={classNames(styles.link)} href={"https://pro.firpo.ru/"} target={"_blank"}>Подробнее про чемпионатное движение</a>
         </div>
