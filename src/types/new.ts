@@ -8,4 +8,5 @@ export type TNew = {
     image: string;
     previewImage: string;
     video?: string;
+    tag?: "coffee" | "tea";
 };

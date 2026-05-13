@@ -6,7 +6,7 @@
 }
 
 .title {
-  font-size: $font-giant;
+  font-size: clamp(2.5rem, 4vw, 3.75rem); /* 40px - 60px, было 60px */
   @include flex-center;
   flex-direction: column;
   line-height: 0;

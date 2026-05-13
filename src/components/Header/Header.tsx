@@ -2,12 +2,12 @@ import classNames from "classnames";
 import styles from "./styles.module.scss";
 import {NavLink} from "react-router";
 import Logo from "../Logo/Logo.tsx";
-import {type ChangeEvent, type FormEvent, useContext, useState} from "react";
+import {useContext, useState} from "react";
 import ModalLogin from "../ModalLogin/ModalLogin.tsx";
 import UserContext from "../../contexts/UserContext/UserContext.tsx";
 
 function Header() {
-    const [info, setInfo] = useState("");
+    // const [info, setInfo] = useState("");
     const context = useContext(UserContext);
 
     if (!context) {
@@ -18,17 +18,17 @@ function Header() {
     const [isOpen, setIsOpen] = useState(false);
     const userName = user === null ? "Войти" : user.name;
 
-    const writeRequest = (event: ChangeEvent<HTMLInputElement>) => {
-        setInfo(event.target.value);
-    }
+    // const writeRequest = (event: ChangeEvent<HTMLInputElement>) => {
+    //     setInfo(event.target.value);
+    // }
 
-    const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
-        event.preventDefault();
-        event.target
-        console.log(info + " пытаюсь найти это");
-        console.log("Мы искали, мы искали и ничего не нашли");
-        setInfo('');
-    }
+    // const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    //     event.preventDefault();
+    //     event.target
+    //     console.log(info + " пытаюсь найти это");
+    //     console.log("Мы искали, мы искали и ничего не нашли");
+    //     setInfo('');
+    // }
 
     const handleLoginClick = () => {
         setIsOpen(true);
@@ -54,13 +54,13 @@ function Header() {
                 {/*<li>*/}
                 {/*    <button>Сменить тему</button>*/}
                 {/*</li>*/}
-                <li>
-                    <form className={classNames(styles.infoForSearch)} onSubmit={handleSubmit}>
-                        <input type="text" value={info} onChange={writeRequest} placeholder="Что ищем?"
-                               required/>
-                        <button type="submit">Поиск</button>
-                    </form>
-                </li>
+                {/*<li>*/}
+                {/*    <form className={classNames(styles.infoForSearch)} onSubmit={handleSubmit}>*/}
+                {/*        <input type="text" value={info} onChange={writeRequest} placeholder="Что ищем?"*/}
+                {/*               required/>*/}
+                {/*        <button type="submit">Поиск</button>*/}
+                {/*    </form>*/}
+                {/*</li>*/}
                 {/*<li>*/}
                 {/*    <button>Почта</button>*/}
                 {/*</li>*/}

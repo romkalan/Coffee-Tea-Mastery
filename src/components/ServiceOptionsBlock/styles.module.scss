@@ -5,7 +5,7 @@
 }
 
 .subtitle {
-  font-size: 50px;
+  font-size: clamp(2.5rem, 4vw, 3.125rem); /* 40px - 50px */
   @include flex-center;
   flex-direction: column;
   line-height: 0;

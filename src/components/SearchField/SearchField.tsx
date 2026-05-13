@@ -1,11 +1,21 @@
 import styles from "./styles.module.scss";
 import classNames from "classnames";
 
-function SearchField() {
+interface SearchFieldProps {
+    searchQuery: string;
+    onSearchChange: (query: string) => void;
+}
+
+function SearchField({searchQuery, onSearchChange}: SearchFieldProps) {
     return (
         <div className={classNames(styles.root)}>
-            <input className={classNames(styles.searchField)} type="text" placeholder="Что ищем?"/>
-            <button className={classNames(styles.button)}>Найти</button>
+            <input
+                className={classNames(styles.searchField)}
+                type="text"
+                placeholder="Что ищем?"
+                value={searchQuery}
+                onChange={(e) => onSearchChange(e.target.value)}
+            />
         </div>
     );
 }

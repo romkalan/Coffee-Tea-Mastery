@@ -3,8 +3,10 @@ import styles from "./styles.module.scss";
 import {NavLink} from "react-router";
 import Logo from "../Logo/Logo.tsx";
 import FeedbackForm from "../FeedbackForm/FeedbackForm.tsx";
+import {useState} from "react";
 
 function Footer() {
+    const [showTooltip, setShowTooltip] = useState(false);
 
     return (
         <div className={classNames(styles.root)}>
@@ -51,14 +53,25 @@ function Footer() {
                     <NavLink to={"/"}>Главная</NavLink>
                     <NavLink to={"/news"}>Новости</NavLink>
                     <NavLink to={"/courses"}>Курсы</NavLink>
+                    <NavLink to={"/services"}>Услуги</NavLink>
                     <NavLink to={"/championships"}>Чемпионаты</NavLink>
                 </nav>
                 <nav className={classNames(styles.footerPages)}>
                     <h4 className={classNames(styles.socialsTitle)}>Помощь</h4>
                     <NavLink to={"/courses"}>Как записаться на курсы?</NavLink>
-                    <NavLink to={"#"}>Как стать экспертом?</NavLink>
+                    <div className={classNames(styles.tooltipContainer)}>
+                        <span
+                            className={classNames(styles.linkButton)}
+                            onClick={() => setShowTooltip(!showTooltip)}
+                        >
+                            Как стать экспертом?
+                        </span>
+                        {showTooltip && (
+                            <div className={classNames(styles.tooltip)}>Чтобы стать экспертом, необходимо иметь глубокие знания в области кофе и чая, пройти обучение и получить соответствующую сертификацию. Свяжитесь с нами по телефону или электронной почте для получения подробной информации.
+                            </div>
+                        )}
+                    </div>
                     <NavLink to={"/championships"}>Как принять участвовать в чемпионате?</NavLink>
-                    <NavLink to={"#"}></NavLink>
                 </nav>
                 <div className={classNames(styles.socials)}>
                 <h4 className={classNames(styles.socialsTitle)}>Мы в социальных сетях</h4>

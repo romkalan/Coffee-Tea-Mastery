@@ -9,12 +9,38 @@ import {useState} from "react";
 
 
 function News() {
-    if (news.length === 0) {
-        return null;
+    const [searchQuery, setSearchQuery] = useState("");
+    const [selectedTag, setSelectedTag] = useState<"coffee" | "tea" | null>(null);
+    const [visibleCount, setVisibleCount] = useState(4);
+
+    const filteredNews = news.filter((item) => {
+        const matchesSearch = searchQuery
+            ? item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+              item.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+              item.text.toLowerCase().includes(searchQuery.toLowerCase())
+            : true;
+
+        const matchesTag = selectedTag ? item.tag === selectedTag : true;
+
+        return matchesSearch && matchesTag;
+    });
+
+    if (filteredNews.length === 0) {
+        return (
+            <div className={classNames(styles.root)}>
+                <h1 className={classNames(styles.title)}>Новости</h1>
+                <FilterMenu
+                    searchQuery={searchQuery}
+                    onSearchChange={setSearchQuery}
+                    selectedTag={selectedTag}
+                    onTagChange={setSelectedTag}
+                />
+                <p className={classNames(styles.noResults)}>Ничего не найдено</p>
+            </div>
+        );
     }
 
-    const [visibleCount, setVisibleCount] = useState(4);
-    const sortedNews = sortByDate(news);
+    const sortedNews = sortByDate(filteredNews);
     const currentNews = sortedNews.slice(0, visibleCount);
     const hasMoreNews = visibleCount < sortedNews.length;
 
@@ -26,7 +52,12 @@ function News() {
     return (
         <div className={classNames(styles.root)}>
             <h1 className={classNames(styles.title)}>Новости</h1>
-            <FilterMenu/>
+            <FilterMenu
+                searchQuery={searchQuery}
+                onSearchChange={setSearchQuery}
+                selectedTag={selectedTag}
+                onTagChange={setSelectedTag}
+            />
             <ul className={classNames(styles.newsList)}>
                 {currentNews.map((newInfo: TNew, index) => (
                     <NewsCard key={newInfo.id} newInfo={newInfo} index={index}/>

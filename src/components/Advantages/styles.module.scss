@@ -31,7 +31,7 @@
 }
 
 .advantagesList li h3 {
-  font-size: 34px;
+  font-size: clamp(1.875rem, 2.5vw, 2.125rem); /* 30px - 34px */
   line-height: 38px;
 }
 
@@ -46,6 +46,6 @@
   bottom: 0;
   right: 0;
   color: $color-button-text;
-  font-size: 430px;
+  font-size: clamp(15rem, 27vw, 26.875rem); /* 240px - 430px, было 430px */
   z-index: -1;
 }

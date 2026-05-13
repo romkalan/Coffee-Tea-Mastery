@@ -4,8 +4,42 @@
   display: flex;
   gap: 30px;
   margin-bottom: 70px;
+  align-items: center;
 }
 
 .button {
+  @include button-secondary;
   min-width: 100px;
+  padding: 10px 20px;
+}
+
+.buttonActive {
+  background-color: $color-accent;
+  color: $color-button-text;
+  border-color: $color-accent;
+}
+
+.resetButton {
+  @include button-ghost;
+  padding: 10px 20px;
+  color: $color-primary;
+
+  &:hover {
+    color: $color-primary;
+  }
+
+  &:active {
+    color: $color-primary;
+  }
+}
+
+.resetButtonDisabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+
+  &:hover {
+    background-color: transparent;
+    border-color: $border-color;
+    color: $color-primary;
+  }
 }

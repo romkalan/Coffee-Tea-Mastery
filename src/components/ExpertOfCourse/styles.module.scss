@@ -8,7 +8,7 @@
 
 .title {
   @include flex-center;
-  font-size: 50px;
+  font-size: clamp(2.5rem, 4vw, 3.125rem); /* 40px - 50px */
   flex-direction: column;
   line-height: 0;
   margin-bottom: 100px;
@@ -42,7 +42,7 @@
 }
 
 .name {
-  font-size: 36px;
+  font-size: clamp(1.875rem, 3vw, 2.25rem); /* 30px - 36px */
   margin: 0;
   color: $color-primary;
   font-weight: 700;
