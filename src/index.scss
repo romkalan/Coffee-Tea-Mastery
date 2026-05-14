@@ -25,14 +25,10 @@ html {
   font-family: Roboto Slab, system-ui, Avenir, Helvetica, Arial, sans-serif;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
-  user-select: none;
   width: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   position: relative;
 }
 
@@ -100,9 +96,9 @@ button {
   }
 }
 
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+:focus-visible {
+  outline: 2px solid #D2691E;
+  outline-offset: 2px;
 }
 
 input {
@@ -137,7 +133,5 @@ textarea {
 @supports (-webkit-touch-callout: none) {
   body {
     -webkit-text-size-adjust: none;
-    -webkit-user-select: none;
-    -webkit-touch-callout: none;
   }
 }

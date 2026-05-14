@@ -37,8 +37,6 @@ function ModalLogin({isOpen, onClose}: ModalLoginProps) {
 
     if (!isOpen || !modalContainerRef.current) return null;
 
-    console.log("Модалка открыта");
-
     return createPortal(
         <div className={classNames(styles.overlay)} onClick={onClose}>
             <div className={classNames(styles.modal)} onClick={(e) => e.stopPropagation()}>

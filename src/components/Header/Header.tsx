@@ -32,7 +32,6 @@ function Header() {
 
     const handleLoginClick = () => {
         setIsOpen(true);
-        console.log('Пытаюсь открыть модалку...');
     };
 
     return (

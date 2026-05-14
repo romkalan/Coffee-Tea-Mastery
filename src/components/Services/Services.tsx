@@ -25,12 +25,10 @@ function Services({children, services}: ServicesProps) {
 
     const scrollPrev = useCallback(() => {
         if (emblaApi) emblaApi.scrollPrev();
-        console.log('пытаюсь крутить назад');
     }, [emblaApi]);
 
     const scrollNext = useCallback(() => {
         if (emblaApi) emblaApi.scrollNext();
-        console.log('пытаюсь крутить вперед');
     }, [emblaApi]);
 
     const onSelect = useCallback(() => {
@@ -50,7 +48,7 @@ function Services({children, services}: ServicesProps) {
     }, [emblaApi, onSelect]);
 
     return (
-        <div className={classNames(styles.root)}>
+        <div className={classNames(styles.root)} role="region" aria-roledescription="carousel" aria-label={children}>
             <h2 className={classNames(styles.title)}>
                 {children}
             </h2>
