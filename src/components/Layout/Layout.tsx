@@ -14,9 +14,12 @@ function Layout() {
 
     return (
         <>
+            <a href="#main-content" className={classNames(styles.skipLink)}>Перейти к содержанию</a>
             <div className={classNames(styles.root)}>
                 <Header/>
-                <Outlet/>
+                <div id="main-content">
+                    <Outlet/>
+                </div>
                 <Footer/>
             </div>
             <div id={"modal-container"}/>

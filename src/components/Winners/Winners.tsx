@@ -20,12 +20,10 @@ function Winners() {
 
     const scrollPrev = useCallback(() => {
         if (emblaApi) emblaApi.scrollPrev();
-        console.log('пытаюсь крутить назад');
     }, [emblaApi]);
 
     const scrollNext = useCallback(() => {
         if (emblaApi) emblaApi.scrollNext();
-        console.log('пытаюсь крутить вперед');
     }, [emblaApi]);
 
     const onSelect = useCallback(() => {

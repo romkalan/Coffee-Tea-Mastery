@@ -47,10 +47,10 @@
 
 .button {
   @include button-primary;
-  width: 230px;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 24px;
   line-height: 1.2;
+  width: fit-content;
 
   &:hover {
     text-decoration: none;

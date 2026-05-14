@@ -31,9 +31,6 @@ function ServiceRequestFrom() {
 
     const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        event.target
-        console.log("Данные формы: ", formData);
-        console.log("Спасибо за ваше обращение. Мы скоро с Вами свяжемся");
         clearForm();
     }
 

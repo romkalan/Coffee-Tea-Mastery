@@ -66,11 +66,17 @@ function DetailNewInfo({ newCard }: DetailNewInfoProps) {
                     </div>
 
                     <div className={classNames(styles.actions)}>
-                        <button className={classNames(styles.shareButton)}>
-                            📤 Поделиться
+                        <button className={classNames(styles.shareButton)} aria-label="Поделиться">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                                <path d="M15 7a2.5 2.5 0 1 0-2.4-3.2L7.2 6.8a2.5 2.5 0 1 0 0 3.4l5.4 3a2.5 2.5 0 1 0 .8-1.4l-5.4-3a2.5 2.5 0 0 0 0-.8l5.4-3A2.5 2.5 0 0 0 15 7Z" fill="currentColor"/>
+                            </svg>
+                            Поделиться
                         </button>
-                        <button className={classNames(styles.saveButton)}>
-                            💾 Сохранить
+                        <button className={classNames(styles.saveButton)} aria-label="Сохранить">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                                <path d="M5 2a1 1 0 0 0-1 1v14l6-3 6 3V3a1 1 0 0 0-1-1H5Z" fill="currentColor"/>
+                            </svg>
+                            Сохранить
                         </button>
                         <Link
                             to="/news"

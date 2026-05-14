@@ -8,3 +8,21 @@
   height: 100dvh;
   margin: 0 auto;
 }
+
+.skipLink {
+  position: absolute;
+  top: -100px;
+  left: 16px;
+  background: #D2691E;
+  color: #4D0505;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  z-index: 10000;
+  text-decoration: none;
+  transition: top 0.2s;
+
+  &:focus {
+    top: 16px;
+  }
+}

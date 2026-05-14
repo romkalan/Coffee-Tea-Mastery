@@ -11,9 +11,6 @@ function FeedbackForm() {
 
     const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        event.target
-        console.log(phone + " Успешно отправлен");
-        console.log("Спасибо за ваше обращение. Мы скоро с Вами свяжемся");
         setPhone('');
     }
 
