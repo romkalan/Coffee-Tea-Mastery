@@ -6,6 +6,7 @@
 
 .searchField {
   @include input-base;
+  @include input-small;
 }
 
 .button {
