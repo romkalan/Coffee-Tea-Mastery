@@ -19,7 +19,7 @@ function FeedbackForm() {
             <h4 className={classNames(styles.feedbackTitle)}>Остались вопросы?</h4>
             <form className={classNames(styles.feedbackAddress)} onSubmit={handleSubmit}>
                 <input type="tel" value={phone} onChange={writePhone} placeholder="+7 (9**) ***-**-**" required/>
-                <button type="submit">Связаться по телефону</button>
+                <button type="submit">Позвонить</button>
             </form>
             <p className={classNames(styles.feedbackText)}>
                 Оставьте свой номер телефона, и мы обязательно свяжемся с Вами!
