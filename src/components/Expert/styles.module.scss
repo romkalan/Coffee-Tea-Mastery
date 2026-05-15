@@ -4,8 +4,8 @@
   font-size: mixins.$font-standard;
   display: flex;
   flex-direction: column;
-  width: clamp(280px, 25vw, 340px);
-  padding: clamp(16px, 2vw, 24px);
+  width: clamp(240px, 20vw, 280px);
+  padding: clamp(12px, 1.5vw, 20px);
   @include mixins.card-style;
   transition: all 400ms ease-in-out;
   position: relative;
