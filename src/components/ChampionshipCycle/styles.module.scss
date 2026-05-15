@@ -7,7 +7,7 @@
 }
 
 .title {
-  margin-bottom: 70px;
+  margin-bottom: 40px;
 }
 
 .timeline {
@@ -28,7 +28,7 @@
   display: flex;
   flex-direction: column;
   text-align: start;
-  gap: 80px;
+  gap: 40px;
 }
 
 .stageItem {
@@ -57,19 +57,19 @@
 
   &.left {
     justify-content: flex-end;
-    margin-right: calc(50% + 100px);
+    margin-right: calc(50% + 60px);
 
     &::after {
-      left: calc(50% + 100px + 50%);
+      left: calc(50% + 60px + 50%);
     }
   }
 
   &.right {
     justify-content: flex-start;
-    margin-left: calc(50% + 48px);
+    margin-left: calc(50% + 28px);
 
     &::after {
-      left: calc(50% - 48px - 50%);
+      left: calc(50% - 28px - 50%);
     }
   }
 }
