@@ -9,13 +9,13 @@
 }
 
 .title {
-  width: 1000px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-content: center;
-  font-size: clamp(1.5rem, 2.5vw, 2.5rem); /* 24px - 40px, было 40px */
-  line-height: 0;
-  margin-bottom: 25px;
+  font-size: clamp(2.5rem, 4vw, 3.75rem); /* 40px - 60px */
+  line-height: 1.2;
+  margin-bottom: 20px;
 }
 
 .firstTitle {
@@ -27,35 +27,40 @@
 }
 
 .blockAboutText {
-  width: 900px;
+  width: 100%;
   justify-content: space-between;
   display: flex;
   align-self: center;
-  gap: 150px;
+  gap: 60px;
 }
 
 .aboutUsTitle {
-  width: 150px;
-  font-size: clamp(1.5rem, 2.5vw, 2.5rem); /* 24px - 40px */
-  line-height: 20px;
+  width: 120px;
+  font-size: clamp(1.25rem, 1.8vw, 1.5rem); /* 20px - 24px */
+  line-height: 1.4;
   position: relative;
 }
 
 .aboutUsTitle::after {
   content: "";
   position: absolute;
-  width: 3px;
-  height: 100px;
+  width: 2px;
+  height: 80px;
   background-color: mixins.$color-primary;
-  transform: translate(-50%);
+  transform: translateX(-50%);
   left: 50%;
   top: 10%;
 }
 
 .text {
-  width: 700px;
-  font-size: mixins.$font-medium;
-  line-height: 45px;
+  width: 100%;
+  max-width: 700px;
+  font-size: clamp(0.875rem, 1.2vw, 1rem); /* 14px - 16px */
+  line-height: 1.6;
+}
+
+.text p {
+  margin: 0 0 12px;
 }
 
 .disk {
@@ -64,7 +69,7 @@
 }
 
 .linkToCompetition {
-  font-size: clamp(1.5rem, 2.5vw, 1.75rem); /* 24px - 28px */
+  font-size: clamp(1rem, 1.5vw, 1.25rem); /* 16px - 20px */
   align-self: flex-end;
   padding-right: 15%;
 }
