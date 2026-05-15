@@ -10,14 +10,11 @@ import {selectUser} from "../../redux/entities/auth";
 function Header() {
     const user = useAppSelector(selectUser);
     const [isOpen, setIsOpen] = useState(false);
-    const [showMenu, setShowMenu] = useState(false);
     const navigate = useNavigate();
-
-    const userName = user === null ? "Войти" : user.name;
 
     const handleLoginClick = () => {
         if (user) {
-            setShowMenu(!showMenu);
+            navigate("/profile");
         } else {
             setIsOpen(true);
         }
@@ -41,15 +38,8 @@ function Header() {
             <ul className={classNames(styles.helpers)}>
                 <li>
                     <button onClick={handleLoginClick}>
-                        {userName}
+                        {user === null ? "Войти" : user.name}
                     </button>
-                    {showMenu && user && (
-                        <div className={classNames(styles.userMenu)}>
-                            <button onClick={() => { navigate("/profile"); setShowMenu(false); }}>
-                                Личный кабинет
-                            </button>
-                        </div>
-                    )}
                 </li>
                 <li>
                     <ModalLogin isOpen={isOpen} onClose={() => setIsOpen(false)}/>
