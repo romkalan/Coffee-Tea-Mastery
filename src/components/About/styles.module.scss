@@ -55,7 +55,7 @@
 .text {
   width: 100%;
   max-width: 700px;
-  font-size: clamp(0.875rem, 1.2vw, 1rem); /* 14px - 16px */
+  font-size: clamp(1rem, 1.5vw, 1.125rem); /* 16px - 18px */
   line-height: 1.6;
 }
 
