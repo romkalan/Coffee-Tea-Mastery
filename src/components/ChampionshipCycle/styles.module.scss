@@ -18,7 +18,7 @@
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  width: 8px;
+  width: 6px;
   height: 100%;
   background: $gradient-line;
   border-radius: 20px;
@@ -40,11 +40,11 @@
   &::after {
     content: "";
     position: absolute;
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
     background-color: white;
-    border: 5px solid #8B4513;
+    border: 3px solid #8B4513;
     animation: pulse 2s infinite;
     transform: translateX(-50%);
   }
