@@ -27,7 +27,7 @@
 }
 
 .blockAboutText {
-  width: 100%;
+  width: 70%;
   display: flex;
   align-self: center;
   gap: 40px;
@@ -48,8 +48,8 @@
   width: 2px;
   height: 50px;
   background-color: mixins.$color-primary;
-  left: 0;
-  top: calc(100% + 8px);
+  left: calc(50%);
+  top: calc(15%);
 }
 
 .text {
