@@ -1,6 +1,5 @@
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Layout from "../Layout/Layout.tsx";
-// import MainServerTest from "../../pages/MainServerTest/MainServerTest.tsx";
 import Main from "../../pages/Main/Main.tsx";
 import News from "../../pages/News/News.tsx";
 import Courses from "../../pages/Courses/Courses.tsx";
@@ -13,8 +12,8 @@ import {services} from "../../mocks/services.ts";
 import {courses} from "../../mocks/courses.ts";
 import {news} from "../../mocks/news.ts";
 import CourseDetail from "../../pages/CourseDetail/CourseDetail.tsx";
-import {useState, useEffect} from "react";
-import UserContext from "../../contexts/UserContext/UserContext.tsx";
+import Profile from "../../pages/Profile/Profile.tsx";
+import {useEffect} from "react";
 import {Provider} from "react-redux";
 import store from "../../redux";
 
@@ -29,16 +28,12 @@ function ScrollToTop() {
 }
 
 function App() {
-    const [user, setUser] = useState(null);
-
     return (
         <Provider store={store}>
-        <UserContext.Provider value={{user, setUser}}>
             <BrowserRouter>
                 <ScrollToTop />
                 <Routes>
                     <Route path="/" element={<Layout />}>
-                        {/*<Route index element={<MainServerTest />} />*/}
                         <Route index element={<Main />} />
                         <Route path={"news"} element={<News />} />
                         <Route path={"news/:id"} element={<NewsCardDetail news={news}/>}/>
@@ -47,12 +42,12 @@ function App() {
                         <Route path={"services"} element={<ServicesPage/>} />
                         <Route path={"services/:id"} element={<ServiceDetail services={services}/>}/>
                         <Route path={"courses/:id"} element={<CourseDetail courses={courses}/>}/>
+                        <Route path={"profile"} element={<Profile />} />
                     </Route>
                     <Route path="*" element={< NotFoundPage />} />
                 </Routes>
             </BrowserRouter>
-        </UserContext.Provider>
-    </Provider>
+        </Provider>
     )
 }
 
