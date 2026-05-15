@@ -51,4 +51,6 @@
 
 .linkButton {
   @include mixins.link-button;
+  font-size: clamp(0.875rem, 1.2vw, 1rem); /* 14px - 16px */
+  padding: 6px 20px;
 }
