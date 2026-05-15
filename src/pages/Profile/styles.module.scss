@@ -30,10 +30,12 @@
     display: flex;
     gap: 40px;
     align-items: flex-start;
+    width: 100%;
 }
 
 .sidebar {
-    flex: 0 0 280px;
+    flex: 0 0 20%;
+    min-width: 200px;
     display: flex;
     flex-direction: column;
     gap: 20px;
