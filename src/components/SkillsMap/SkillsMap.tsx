@@ -30,8 +30,8 @@ function SkillsMap({ enrollments }: SkillsMapProps) {
 
     return (
         <div className={classNames(styles.root)}>
-            <svg viewBox="0 0 600 400" className={classNames(styles.map)}>
-                <rect width="600" height="400" fill="#FDF5E6" rx="16" />
+            <svg viewBox="0 0 800 500" className={classNames(styles.map)}>
+                <rect width="800" height="500" fill="#FDF5E6" rx="16" />
 
                 {skillAreas.map((area) => (
                     <g key={area.id}>
@@ -45,10 +45,10 @@ function SkillsMap({ enrollments }: SkillsMapProps) {
                         />
                         <text
                             x={getCx(area.id)}
-                            y={getCy(area.id) + 5}
+                            y={getCy(area.id) + 6}
                             textAnchor="middle"
                             fill={isCompleted(area) ? "white" : "#C4A882"}
-                            fontSize="14"
+                            fontSize="18"
                             fontWeight="600"
                         >
                             {area.label}
@@ -56,33 +56,33 @@ function SkillsMap({ enrollments }: SkillsMapProps) {
                     </g>
                 ))}
 
-                <text x="40" y="60" fontSize="24" fill="#D2691E" fill-opacity="0.15">~</text>
-                <text x="520" y="370" fontSize="24" fill="#D2691E" fill-opacity="0.15">~</text>
-                <text x="500" y="50" fontSize="20" fill="#D2691E" fill-opacity="0.15">~</text>
-                <text x="80" y="370" fontSize="20" fill="#D2691E" fill-opacity="0.15">~</text>
+                <text x="60" y="70" fontSize="28" fill="#D2691E" fill-opacity="0.15">~</text>
+                <text x="700" y="460" fontSize="28" fill="#D2691E" fill-opacity="0.15">~</text>
+                <text x="680" y="60" fontSize="24" fill="#D2691E" fill-opacity="0.15">~</text>
+                <text x="120" y="460" fontSize="24" fill="#D2691E" fill-opacity="0.15">~</text>
             </svg>
         </div>
     );
 }
 
 function getCx(id: string): number {
-    const map: Record<string, number> = { basics: 150, "latte-art": 350, cupping: 450, tea: 200, management: 350 };
-    return map[id] ?? 300;
+    const map: Record<string, number> = { basics: 200, "latte-art": 470, cupping: 600, tea: 270, management: 470 };
+    return map[id] ?? 400;
 }
 
 function getCy(id: string): number {
-    const map: Record<string, number> = { basics: 120, "latte-art": 100, cupping: 220, tea: 280, management: 320 };
-    return map[id] ?? 200;
+    const map: Record<string, number> = { basics: 150, "latte-art": 125, cupping: 275, tea: 350, management: 400 };
+    return map[id] ?? 250;
 }
 
 function getRx(id: string): number {
-    const map: Record<string, number> = { basics: 80, "latte-art": 70, cupping: 75, tea: 80, management: 90 };
-    return map[id] ?? 70;
+    const map: Record<string, number> = { basics: 110, "latte-art": 95, cupping: 100, tea: 110, management: 120 };
+    return map[id] ?? 90;
 }
 
 function getRy(id: string): number {
-    const map: Record<string, number> = { basics: 50, "latte-art": 45, cupping: 45, tea: 50, management: 45 };
-    return map[id] ?? 45;
+    const map: Record<string, number> = { basics: 65, "latte-art": 55, cupping: 55, tea: 65, management: 55 };
+    return map[id] ?? 55;
 }
 
 export default SkillsMap;
