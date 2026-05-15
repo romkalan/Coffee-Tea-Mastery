@@ -1,12 +1,16 @@
 import type {TCourse} from "../../types/course.ts";
 import styles from "./styles.module.scss";
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
 import {useParams} from "react-router";
 import classNames from "classnames";
 import ServiceRequestFrom from "../../components/ServiceRequestForm/ServiceRequestForm.tsx";
 import Services from "../../components/Services/Services.tsx";
 import DetailCourseInfo from "../../components/DetailCourseInfo/DetailCourseInfo.tsx";
 import ExpertOfCourse from "../../components/ExpertOfCourse/ExpertOfCourse.tsx";
+import {useAppSelector} from "../../redux/hooks/hooks.ts";
+import {selectUser} from "../../redux/entities/auth";
+import {useGetEnrollmentsQuery, useCreateEnrollmentMutation} from "../../redux/entities/profile";
+import ModalLogin from "../../components/ModalLogin/ModalLogin.tsx";
 
 interface CourseDetailProps {
     courses: TCourse[];
@@ -16,6 +20,33 @@ function CourseDetail({courses}: CourseDetailProps){
     const params = useParams();
     const course = courses.find((course) => course.id === params.id);
     const anotherCourses = courses.sort((() => Math.random() - 0.5)).slice(0, 3);
+    const user = useAppSelector(selectUser);
+    const [showLogin, setShowLogin] = useState(false);
+
+    const { data: enrollments = [] } = useGetEnrollmentsQuery(user?.id ?? "", {
+        skip: !user,
+    });
+
+    const [createEnrollment] = useCreateEnrollmentMutation();
+
+    const myEnrollment = course
+        ? enrollments.find((e: any) => e.courseId === course.id)
+        : null;
+
+    const handleEnroll = () => {
+        if (!user) {
+            setShowLogin(true);
+            return;
+        }
+        if (course) {
+            createEnrollment({
+                userId: user.id,
+                courseId: course.id,
+                status: "enrolled",
+                enrolledAt: new Date().toISOString(),
+            });
+        }
+    };
 
     useEffect(() => {
         window.scrollTo({top: 0, behavior: "smooth"});
@@ -30,9 +61,28 @@ function CourseDetail({courses}: CourseDetailProps){
             <div className={classNames(styles.root)}>
                 <DetailCourseInfo course={course}/>
                 <ExpertOfCourse expertId={course.expertId}/>
+
+                <div className={classNames(styles.enrollSection)}>
+                    {myEnrollment ? (
+                        <p className={classNames(styles.enrolledText)}>
+                            {myEnrollment.status === "completed"
+                                ? "Курс пройден"
+                                : "Вы записаны на этот курс"}
+                        </p>
+                    ) : (
+                        <button
+                            className={classNames(styles.enrollButton)}
+                            onClick={handleEnroll}
+                        >
+                            {user ? "Записаться на курс" : "Войдите, чтобы записаться"}
+                        </button>
+                    )}
+                </div>
+
                 <ServiceRequestFrom/>
                 <Services services={anotherCourses}>Другие услуги</Services>
             </div>
+            <ModalLogin isOpen={showLogin} onClose={() => setShowLogin(false)} />
         </div>
     )
 }
