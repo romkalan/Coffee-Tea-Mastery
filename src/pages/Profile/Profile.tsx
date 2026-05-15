@@ -1,6 +1,7 @@
 import {useAppSelector, useAppDispatch} from "../../redux/hooks/hooks.ts";
 import {selectUser, logout} from "../../redux/entities/auth";
 import {useGetEnrollmentsQuery, useCompleteEnrollmentMutation} from "../../redux/entities/profile";
+import type {TEnrollment} from "../../types/enrollment.ts";
 import {courses} from "../../mocks/courses.ts";
 import {useNavigate} from "react-router";
 import classNames from "classnames";
@@ -45,7 +46,7 @@ function Profile() {
                 <h2>Мои курсы</h2>
                 {enrollments.length === 0 && <p>Вы ещё не записались ни на один курс</p>}
                 <ul className={classNames(styles.courseList)}>
-                    {enrollments.map((enrollment: any) => (
+                    {enrollments.map((enrollment: TEnrollment) => (
                         <li key={enrollment.id} className={classNames(styles.courseItem)}>
                             <div>
                                 <strong>{getCourseTitle(enrollment.courseId)}</strong>

@@ -1,4 +1,5 @@
 import type {TCourse} from "../../types/course.ts";
+import type {TEnrollment} from "../../types/enrollment.ts";
 import styles from "./styles.module.scss";
 import {useEffect, useState} from "react";
 import {useParams} from "react-router";
@@ -30,7 +31,7 @@ function CourseDetail({courses}: CourseDetailProps){
     const [createEnrollment] = useCreateEnrollmentMutation();
 
     const myEnrollment = course
-        ? enrollments.find((e: any) => e.courseId === course.id)
+        ? enrollments.find((e: TEnrollment) => e.courseId === course.id)
         : null;
 
     const handleEnroll = () => {
