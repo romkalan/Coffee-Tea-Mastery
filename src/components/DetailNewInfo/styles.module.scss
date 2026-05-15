@@ -73,7 +73,7 @@
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  font-size: mixins.$font-medium;
+  font-size: mixins.$font-standard;
 }
 
 .meta {
@@ -102,17 +102,10 @@
 }
 
 .title {
-  margin: 0 0 20px 0;
+  margin: 0 0 16px 0;
   line-height: 1.2;
   font-weight: 700;
-
-  @media (max-width: 768px) {
-    font-size: 36px;
-  }
-
-  @media (max-width: 480px) {
-    font-size: 28px;
-  }
+  font-size: clamp(1.5rem, 2.5vw, 2rem); /* 24px - 32px */
 }
 
 .excerpt {
@@ -140,10 +133,10 @@
 }
 
 .article {
-  font-size: mixins.$font-medium;
-  line-height: 1.8;
+  font-size: mixins.$font-standard;
+  line-height: 1.6;
   color: mixins.$color-info-text-dark;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 
 .paragraph {
