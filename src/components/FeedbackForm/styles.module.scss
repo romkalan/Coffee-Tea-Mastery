@@ -19,6 +19,7 @@
 .feedbackAddress input {
   @include mixins.input-base;
   border: 2px solid mixins.$color-accent;
+  border-right: none;
   padding: 8px 16px;
   border-bottom-left-radius: 10px;
   border-top-left-radius: 10px;
