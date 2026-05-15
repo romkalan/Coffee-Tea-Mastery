@@ -45,6 +45,17 @@
   gap: 12px;
 }
 
+.navColumns {
+  display: flex;
+  gap: 24px;
+}
+
+.navColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
 .linkButton {
   @include mixins.link-secondary;
   cursor: pointer;
