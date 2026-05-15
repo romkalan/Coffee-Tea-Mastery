@@ -31,7 +31,7 @@ function SkillsMap({ enrollments }: SkillsMapProps) {
     return (
         <div className={classNames(styles.root)}>
             <svg viewBox="0 0 600 400" className={classNames(styles.map)}>
-                <rect width="600" height="400" fill="#e3f2fd" rx="16" />
+                <rect width="600" height="400" fill="#FDF5E6" rx="16" />
 
                 {skillAreas.map((area) => (
                     <g key={area.id}>
@@ -40,14 +40,14 @@ function SkillsMap({ enrollments }: SkillsMapProps) {
                             cy={getCy(area.id)}
                             rx={getRx(area.id)}
                             ry={getRy(area.id)}
-                            fill={isCompleted(area) ? area.color : "#e0e0e0"}
+                            fill={isCompleted(area) ? area.color : "#E8D5C4"}
                             className={classNames(styles.island)}
                         />
                         <text
                             x={getCx(area.id)}
                             y={getCy(area.id) + 5}
                             textAnchor="middle"
-                            fill={isCompleted(area) ? "white" : "#999"}
+                            fill={isCompleted(area) ? "white" : "#C4A882"}
                             fontSize="14"
                             fontWeight="600"
                         >
@@ -56,10 +56,10 @@ function SkillsMap({ enrollments }: SkillsMapProps) {
                     </g>
                 ))}
 
-                <text x="40" y="60" fontSize="24" fill="#bbdefb">~</text>
-                <text x="520" y="370" fontSize="24" fill="#bbdefb">~</text>
-                <text x="500" y="50" fontSize="20" fill="#bbdefb">~</text>
-                <text x="80" y="370" fontSize="20" fill="#bbdefb">~</text>
+                <text x="40" y="60" fontSize="24" fill="#D2691E" fill-opacity="0.15">~</text>
+                <text x="520" y="370" fontSize="24" fill="#D2691E" fill-opacity="0.15">~</text>
+                <text x="500" y="50" fontSize="20" fill="#D2691E" fill-opacity="0.15">~</text>
+                <text x="80" y="370" fontSize="20" fill="#D2691E" fill-opacity="0.15">~</text>
             </svg>
         </div>
     );

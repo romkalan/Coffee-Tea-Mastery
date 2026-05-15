@@ -38,13 +38,16 @@ function Profile() {
             </div>
 
             <section className={classNames(styles.section)}>
-                <h2>{user.name}</h2>
-                <p>{user.email}</p>
+                <h2>Информация</h2>
+                <div className={classNames(styles.userInfo)}>
+                    <p><strong>{user.name}</strong></p>
+                    <p>{user.email}</p>
+                </div>
             </section>
 
             <section className={classNames(styles.section)}>
                 <h2>Мои курсы</h2>
-                {enrollments.length === 0 && <p>Вы ещё не записались ни на один курс</p>}
+                {enrollments.length === 0 && <p className={classNames(styles.emptyText)}>Вы ещё не записались ни на один курс</p>}
                 <ul className={classNames(styles.courseList)}>
                     {enrollments.map((enrollment: TEnrollment) => (
                         <li key={enrollment.id} className={classNames(styles.courseItem)}>
