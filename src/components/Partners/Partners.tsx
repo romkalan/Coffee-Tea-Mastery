@@ -8,7 +8,7 @@ function Partners() {
     const currentYear = useRef(new Date().getFullYear().toString());
 
     return (
-        <div className={classNames(style.title)}>
+        <div className={classNames(style.root)}>
             <h2 className={classNames(style.title)}>Партнеры чемпионата {currentYear.current}</h2>
             <ul className={classNames(style.partnersList)}>
                 {partners.map((partner: TPartner) => (
