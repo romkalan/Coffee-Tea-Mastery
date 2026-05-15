@@ -9,11 +9,11 @@
 }
 
 .title {
-  width: 400px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-content: center;
-  font-size: clamp(2.5rem, 4vw, 3.75rem); /* 40px - 60px */
+  font-size: clamp(3.75rem, 6vw, 5.625rem); /* 60px - 90px */
   line-height: 1.2;
   margin-bottom: 20px;
 }
