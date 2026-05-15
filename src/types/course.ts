@@ -16,4 +16,5 @@ export type TCourse = {
     image: string;
     previewImage: string;
     video?: string;
+    skillArea?: string;
 };
