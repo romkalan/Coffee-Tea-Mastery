@@ -31,9 +31,12 @@
   @include mixins.button-secondary;
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
   font-size: mixins.$font-small;
   white-space: nowrap;
   flex: 1;
+  min-width: 0;
 
   &:hover {
     transform: translateY(0);
