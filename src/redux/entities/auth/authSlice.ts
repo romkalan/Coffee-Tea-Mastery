@@ -1,0 +1,115 @@
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import type { TUser } from "../../../types/user.ts";
+import type { State } from "../../index.ts";
+
+type AuthState = {
+    user: TUser | null;
+    isLoggedIn: boolean;
+    loading: boolean;
+    error: string | null;
+};
+
+const stored = localStorage.getItem("coffee_user");
+const initialUser: TUser | null = stored ? JSON.parse(stored) : null;
+
+const initialState: AuthState = {
+    user: initialUser,
+    isLoggedIn: !!initialUser,
+    loading: false,
+    error: null,
+};
+
+export const loginUser = createAsyncThunk<
+    TUser,
+    { email: string; password: string },
+    { state: State }
+>("auth/login", async (credentials) => {
+    const res = await fetch(
+        `http://localhost:3000/users?email=${encodeURIComponent(credentials.email)}&password=${encodeURIComponent(credentials.password)}`
+    );
+    const users: TUser[] = await res.json();
+    if (users.length === 0) {
+        throw new Error("Неверный email или пароль");
+    }
+    localStorage.setItem("coffee_user", JSON.stringify(users[0]));
+    return users[0];
+});
+
+export const registerUser = createAsyncThunk<
+    TUser,
+    { name: string; email: string; password: string },
+    { state: State }
+>("auth/register", async (data) => {
+    const check = await fetch(
+        `http://localhost:3000/users?email=${encodeURIComponent(data.email)}`
+    );
+    const existing: TUser[] = await check.json();
+    if (existing.length > 0) {
+        throw new Error("Email уже зарегистрирован");
+    }
+    const res = await fetch("http://localhost:3000/users", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            name: data.name,
+            email: data.email,
+            password: data.password,
+            role: "student",
+        }),
+    });
+    const user: TUser = await res.json();
+    localStorage.setItem("coffee_user", JSON.stringify(user));
+    return user;
+});
+
+const authSlice = createSlice({
+    name: "auth",
+    initialState,
+    reducers: {
+        logout(state) {
+            state.user = null;
+            state.isLoggedIn = false;
+            localStorage.removeItem("coffee_user");
+        },
+        clearError(state) {
+            state.error = null;
+        },
+    },
+    extraReducers: (builder) => {
+        builder
+            .addCase(loginUser.pending, (state) => {
+                state.loading = true;
+                state.error = null;
+            })
+            .addCase(loginUser.fulfilled, (state, action) => {
+                state.loading = false;
+                state.user = action.payload;
+                state.isLoggedIn = true;
+            })
+            .addCase(loginUser.rejected, (state, action) => {
+                state.loading = false;
+                state.error = action.error.message || "Ошибка входа";
+            })
+            .addCase(registerUser.pending, (state) => {
+                state.loading = true;
+                state.error = null;
+            })
+            .addCase(registerUser.fulfilled, (state, action) => {
+                state.loading = false;
+                state.user = action.payload;
+                state.isLoggedIn = true;
+            })
+            .addCase(registerUser.rejected, (state, action) => {
+                state.loading = false;
+                state.error = action.error.message || "Ошибка регистрации";
+            });
+    },
+});
+
+export const { logout, clearError } = authSlice.actions;
+export const selectUser = (state: State) => state.auth.user;
+export const selectIsLoggedIn = (state: State) => state.auth.isLoggedIn;
+export const selectAuthLoading = (state: State) => state.auth.loading;
+export const selectAuthError = (state: State) => state.auth.error;
+
+export default authSlice.reducer;
