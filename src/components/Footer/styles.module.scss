@@ -6,8 +6,8 @@
   max-width: var(--content-width);
   flex-direction: column;
   justify-content: space-between;
-  padding-bottom: 50px;
-  gap: 50px;
+  padding-bottom: 40px;
+  gap: 30px;
   position: relative;
 }
 
@@ -25,9 +25,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 15px;
-  line-height: 22px;
-  font-size: mixins.$font-standard;
+  gap: 10px;
+  line-height: 20px;
+  font-size: mixins.$font-small;
 }
 
 .additionalInfo {
@@ -86,8 +86,9 @@
 }
 
 .socialsTitle {
-  font-size: mixins.$font-standard;
-  line-height: 16px;
+  font-size: mixins.$font-small;
+  line-height: 1.4;
+  margin-bottom: 8px;
   color: mixins.$color-primary;
 }
 
@@ -108,8 +109,8 @@
 }
 
 .rights {
-  font-size: mixins.$font-standard;
-  line-height: 30px;
+  font-size: mixins.$font-small;
+  line-height: 1.4;
   color: mixins.$color-primary;
 }
 

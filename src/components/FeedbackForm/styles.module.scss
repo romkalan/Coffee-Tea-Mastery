@@ -6,28 +6,32 @@
 
 .feedbackTitle {
   text-align: center;
-  font-size: mixins.$font-medium;
-  line-height: 24px;
+  font-size: mixins.$font-standard;
+  line-height: 1.4;
+  margin-bottom: 8px;
   color: mixins.$color-primary;
 }
 
 .feedbackAddress {
-  display: grid;
-  grid-template-columns: 0.8fr auto;
+  display: flex;
 }
 
 .feedbackAddress input {
   @include mixins.input-base;
   border: 1px solid mixins.$color-accent;
-  padding: 10px;
+  padding: 8px 12px;
   border-bottom-left-radius: 10px;
   border-top-left-radius: 10px;
+  font-size: mixins.$font-small;
+  width: 100%;
 }
 
 .feedbackAddress button {
   @include mixins.button-secondary;
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
+  font-size: mixins.$font-small;
+  white-space: nowrap;
 
   &:hover {
     transform: translateY(0);
@@ -36,4 +40,6 @@
 
 .feedbackText {
   text-align: center;
+  font-size: mixins.$font-small;
+  margin: 8px 0 0;
 }
