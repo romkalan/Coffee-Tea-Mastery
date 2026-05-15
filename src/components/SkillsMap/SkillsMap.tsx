@@ -56,10 +56,10 @@ function SkillsMap({ enrollments }: SkillsMapProps) {
                     </g>
                 ))}
 
-                <text x="60" y="70" fontSize="28" fill="#D2691E" fill-opacity="0.15">~</text>
-                <text x="700" y="460" fontSize="28" fill="#D2691E" fill-opacity="0.15">~</text>
-                <text x="680" y="60" fontSize="24" fill="#D2691E" fill-opacity="0.15">~</text>
-                <text x="120" y="460" fontSize="24" fill="#D2691E" fill-opacity="0.15">~</text>
+                <text x="60" y="70" fontSize="28" fill="#D2691E" fillOpacity="0.15">~</text>
+                <text x="700" y="460" fontSize="28" fill="#D2691E" fillOpacity="0.15">~</text>
+                <text x="680" y="60" fontSize="24" fill="#D2691E" fillOpacity="0.15">~</text>
+                <text x="120" y="460" fontSize="24" fill="#D2691E" fillOpacity="0.15">~</text>
             </svg>
         </div>
     );
