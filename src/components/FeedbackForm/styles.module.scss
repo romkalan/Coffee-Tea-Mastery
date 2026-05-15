@@ -23,7 +23,8 @@
   border-bottom-left-radius: 10px;
   border-top-left-radius: 10px;
   font-size: mixins.$font-small;
-  width: 100%;
+  flex: 1;
+  min-width: 0;
 }
 
 .feedbackAddress button {
@@ -32,6 +33,7 @@
   border-top-left-radius: 0;
   font-size: mixins.$font-small;
   white-space: nowrap;
+  flex: 1;
 
   &:hover {
     transform: translateY(0);
