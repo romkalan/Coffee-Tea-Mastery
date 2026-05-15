@@ -33,10 +33,10 @@
 }
 
 .sidebar {
-    flex: 0 0 340px;
+    flex: 0 0 280px;
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 20px;
     position: sticky;
     top: 32px;
 }
@@ -147,7 +147,7 @@
 
 .mapSection {
     @include card-style;
-    padding: 32px;
+    padding: 24px;
 
     h2 {
         color: $color-secondary;
