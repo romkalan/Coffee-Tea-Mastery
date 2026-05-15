@@ -2,9 +2,9 @@
 
 .root {
     width: 100%;
-    max-width: 1920px;
+    //max-width: var(--content-width);
     margin: 0 auto;
-    padding: 0 100px 120px;
+    padding: 0 clamp(16px, 4vw, 100px) 120px;
     display: flex;
     flex-direction: column;
     gap: 70px;

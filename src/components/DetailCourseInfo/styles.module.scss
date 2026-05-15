@@ -21,7 +21,7 @@
   flex-direction: column;
   font-size: $font-medium;
   text-align: center;
-  padding: 50px 100px;
+  padding: 50px clamp(24px, 4vw, 100px);
   gap: 40px;
   width: 100%;
 }

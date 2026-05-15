@@ -17,7 +17,7 @@
   ],
   "users": [
     { "id": "u1", "name": "Роман", "email": "romkalan@mail.ru", "password": "123", "role": "student" },
-    { "id": "u2", "name": "Юлия", "email": "yulia@mail.ru", "password": "123", "role": "student" },
+    { "id": "u2", "name": "Юлия", "email": "juliajkov@gmail.com", "password": "123", "role": "student" },
     { "id": "u3", "name": "Денис", "email": "denis@mail.ru", "password": "123", "role": "student" }
   ],
   "enrollments": [
