@@ -37,43 +37,49 @@ function Profile() {
                 </button>
             </div>
 
-            <section className={classNames(styles.infoSection)}>
-                <h2>{user.name}</h2>
-                <p>{user.email}</p>
-            </section>
+            <div className={classNames(styles.layout)}>
+                <aside className={classNames(styles.sidebar)}>
+                    <section className={classNames(styles.infoCard)}>
+                        <h2>{user.name}</h2>
+                        <p>{user.email}</p>
+                    </section>
 
-            <section className={classNames(styles.coursesSection)}>
-                <h2>Мои курсы</h2>
-                {enrollments.length === 0 && <p className={classNames(styles.emptyText)}>Вы ещё не записались ни на один курс</p>}
-                <ul className={classNames(styles.courseList)}>
-                    {enrollments.map((enrollment: TEnrollment) => (
-                        <li key={enrollment.id} className={classNames(styles.courseItem)}>
-                            <div className={classNames(styles.courseInfo)}>
-                                <strong>{getCourseTitle(enrollment.courseId)}</strong>
-                                <span className={classNames(styles.badge, enrollment.status === "completed" ? styles.completed : styles.enrolled)}>
-                                    {enrollment.status === "completed" ? "Пройден" : "Записан"}
-                                </span>
-                            </div>
-                            {enrollment.status === "enrolled" && (
-                                <button
-                                    className={classNames(styles.completeBtn)}
-                                    onClick={() => completeEnrollment({
-                                        id: enrollment.id,
-                                        completedAt: new Date().toISOString()
-                                    })}
-                                >
-                                    Отметить пройденным
-                                </button>
-                            )}
-                        </li>
-                    ))}
-                </ul>
-            </section>
+                    <section className={classNames(styles.coursesCard)}>
+                        <h2>Мои курсы</h2>
+                        {enrollments.length === 0 && <p className={classNames(styles.emptyText)}>Вы ещё не записались ни на один курс</p>}
+                        <ul className={classNames(styles.courseList)}>
+                            {enrollments.map((enrollment: TEnrollment) => (
+                                <li key={enrollment.id} className={classNames(styles.courseItem)}>
+                                    <div className={classNames(styles.courseInfo)}>
+                                        <strong>{getCourseTitle(enrollment.courseId)}</strong>
+                                        <span className={classNames(styles.badge, enrollment.status === "completed" ? styles.completed : styles.enrolled)}>
+                                            {enrollment.status === "completed" ? "Пройден" : "Записан"}
+                                        </span>
+                                    </div>
+                                    {enrollment.status === "enrolled" && (
+                                        <button
+                                            className={classNames(styles.completeBtn)}
+                                            onClick={() => completeEnrollment({
+                                                id: enrollment.id,
+                                                completedAt: new Date().toISOString()
+                                            })}
+                                        >
+                                            Отметить пройденным
+                                        </button>
+                                    )}
+                                </li>
+                            ))}
+                        </ul>
+                    </section>
+                </aside>
 
-            <section className={classNames(styles.mapSection)}>
-                <h2>Карта навыков</h2>
-                <SkillsMap enrollments={enrollments} />
-            </section>
+                <main className={classNames(styles.main)}>
+                    <section className={classNames(styles.mapSection)}>
+                        <h2>Карта навыков</h2>
+                        <SkillsMap enrollments={enrollments} />
+                    </section>
+                </main>
+            </div>
         </div>
     );
 }
