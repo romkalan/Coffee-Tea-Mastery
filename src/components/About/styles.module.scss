@@ -46,11 +46,11 @@
   content: "";
   position: absolute;
   width: 2px;
-  height: 80px;
+  height: 60px;
   background-color: mixins.$color-primary;
   transform: translateX(-50%);
   left: 50%;
-  top: 10%;
+  top: calc(100% + 12px);
 }
 
 .text {
