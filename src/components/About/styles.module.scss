@@ -28,17 +28,17 @@
 
 .blockAboutText {
   width: 100%;
-  justify-content: space-between;
   display: flex;
   align-self: center;
-  gap: 60px;
+  gap: 40px;
 }
 
 .aboutUsTitle {
-  width: 120px;
-  font-size: clamp(1.25rem, 1.8vw, 1.5rem); /* 20px - 24px */
+  width: auto;
+  font-size: clamp(1.5rem, 2vw, 2rem); /* 24px - 32px */
   line-height: 1.4;
   position: relative;
+  white-space: nowrap;
 }
 
 .aboutUsTitle::after {
