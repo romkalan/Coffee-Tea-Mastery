@@ -4,8 +4,9 @@
   position: relative;
   display: flex;
   flex-direction: column;
+  align-items: center;
   color: $color-secondary;
-  gap: 20px;
+  gap: 12px;
 
   &:hover .image {
     transform: scale(1.05);
@@ -13,13 +14,13 @@
 }
 
 .year {
-  font-size: $font-giant;
+  font-size: clamp(1.5rem, 2vw, 2rem); /* 24px - 32px */
   margin: 0;
 }
 
 .image {
-  width: 300px;
-  height: 300px;
+  width: clamp(160px, 16vw, 200px);
+  height: clamp(160px, 16vw, 200px);
   object-fit: cover;
   border-radius: 50%;
   transition: all 400ms ease-in-out;
@@ -28,11 +29,11 @@
 .info {
   display: flex;
   flex-direction: column;
-  text-align: left;
-  font-size: $font-large;
+  text-align: center;
+  font-size: clamp(0.875rem, 1.2vw, 1rem); /* 14px - 16px */
 }
 
 .name {
-  font-size: $font-large;
+  font-size: clamp(1rem, 1.5vw, 1.25rem); /* 16px - 20px */
 }
 
