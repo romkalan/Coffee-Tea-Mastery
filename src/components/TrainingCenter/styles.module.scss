@@ -8,14 +8,14 @@
 .title {
   @include flex-center;
   flex-direction: column;
-  font-size: clamp(2.5rem, 4vw, 3.75rem); /* 40px - 60px, было 60px */
-  line-height: 0;
-  margin-bottom: 100px;
+  font-size: clamp(1.75rem, 3vw, 2.25rem); /* 28px - 36px */
+  line-height: 1.2;
+  margin-bottom: 60px;
 }
 
 .imageContainer {
   position: relative;
-  margin-bottom: 160px;
+  margin-bottom: 100px;
 }
 
 .imageContainer::after {
@@ -23,8 +23,8 @@
   position: absolute;
   transform: translate(-50%);
   width: 55%;
-  height: 5px;
-  bottom: -90px;
+  height: 3px;
+  bottom: -60px;
   left: 50%;
   background-color: $color-button-text;
 }
@@ -46,5 +46,5 @@
   margin: 0 auto 0;
   text-align: center;
   width: 55%;
-  font-size: $font-medium;
+  font-size: $font-standard;
 }
