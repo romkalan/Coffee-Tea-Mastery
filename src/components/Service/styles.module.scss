@@ -1,7 +1,8 @@
 @use "../../styles/mixins";
 
 .root {
-  width: 575px;
+  width: 100%;
+  min-width: 0;
   @include mixins.card-style;
 
   &:hover {
@@ -16,16 +17,16 @@
 }
 
 .description {
-  padding: 0 25px 72px;
+  padding: 0 20px 48px;
   text-align: left;
 }
 
 .descriptionTitle {
-  font-size: clamp(1.5rem, 2.5vw, 1.75rem); /* 24px - 28px */
-  line-height: 32px;
-  margin-bottom: 10px;
+  font-size: clamp(1.125rem, 1.8vw, 1.375rem); /* 18px - 22px */
+  line-height: 28px;
+  margin-bottom: 8px;
   color: mixins.$color-accent;
-  min-height: 70px;
+  min-height: 60px;
 }
 
 .descriptionInfo {
@@ -37,8 +38,8 @@
 .descriptionText {
   display: flex;
   flex-direction: column;
-  font-size: clamp(1.125rem, 2vw, 1.25rem); /* 18px - 20px */
-  line-height: 30px;
+  font-size: clamp(0.875rem, 1.2vw, 1rem); /* 14px - 16px */
+  line-height: 24px;
 }
 
 .linkButton {

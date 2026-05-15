@@ -9,10 +9,10 @@
 }
 
 .root h2 {
-  font-size: $font-giant;
+  font-size: clamp(2rem, 3vw, 2.5rem); /* 32px - 40px */
   align-self: flex-end;
-  line-height: 0;
-  margin-bottom: 70px;
+  line-height: 1.2;
+  margin-bottom: 40px;
 }
 
 .advantagesList {
@@ -31,12 +31,12 @@
 }
 
 .advantagesList li h3 {
-  font-size: clamp(1.875rem, 2.5vw, 2.125rem); /* 30px - 34px */
-  line-height: 38px;
+  font-size: clamp(1.25rem, 1.8vw, 1.5rem); /* 20px - 24px */
+  line-height: 1.3;
 }
 
 .advantagesList li p {
-  font-size: $font-medium;
+  font-size: clamp(1rem, 1.4vw, 1.125rem); /* 16px - 18px */
 }
 
 .advantagesList li::after {
