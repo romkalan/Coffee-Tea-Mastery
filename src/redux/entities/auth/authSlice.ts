@@ -25,14 +25,18 @@ export const loginUser = createAsyncThunk<
     { state: State }
 >("auth/login", async (credentials) => {
     const res = await fetch(
-        `http://localhost:3000/users?email=${encodeURIComponent(credentials.email)}&password=${encodeURIComponent(credentials.password)}`
+        `http://localhost:3000/users?email=${encodeURIComponent(credentials.email)}`
     );
     const users: TUser[] = await res.json();
     if (users.length === 0) {
         throw new Error("Неверный email или пароль");
     }
-    localStorage.setItem("coffee_user", JSON.stringify(users[0]));
-    return users[0];
+    const user = users[0];
+    if (user.password !== credentials.password) {
+        throw new Error("Неверный email или пароль");
+    }
+    localStorage.setItem("coffee_user", JSON.stringify(user));
+    return user;
 });
 
 export const registerUser = createAsyncThunk<

@@ -9,7 +9,7 @@
     "lint": "eslint src/",
     "preview": "vite preview",
     "deploy": "gh-pages -d build",
-    "mock-server": "json-server --watch db.json --port 3000",
+    "mock-server": "json-server db.json --port 3000",
     "dev:all": "concurrently \"npm run mock-server\" \"npm run dev\""
   },
   "dependencies": {
