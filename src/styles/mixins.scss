@@ -35,8 +35,8 @@ $shadow-card-hover: 0 20px 40px rgba(0, 0, 0, 0.12),
 $font-small: 16px;
 $font-standard: 18px;
 $font-medium: 24px;
-$font-large: 32px;
-$font-giant: 60px;
+$font-large: clamp(1.5rem, 2vw, 2rem); /* 24px - 32px */
+$font-giant: clamp(2rem, 3vw, 2.5rem); /* 32px - 40px */
 
 $border-radius-small: 8px;
 $border-radius-medium: 12px;
