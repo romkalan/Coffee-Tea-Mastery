@@ -4,10 +4,10 @@
     width: 100%;
     max-width: 1920px;
     margin: 0 auto;
-    padding: 0 16px 120px;
+    padding: 0 100px 120px;
     display: flex;
     flex-direction: column;
-    gap: 32px;
+    gap: 70px;
 }
 
 .header {
@@ -26,34 +26,17 @@
     @include button-ghost;
 }
 
-.layout {
-    display: flex;
-    gap: 40px;
-    align-items: flex-start;
-}
-
-.sidebar {
-    flex: 0 0 340px;
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-    position: sticky;
-    top: 32px;
-}
-
-.main {
-    flex: 1;
-    min-width: 0;
-}
-
-.infoCard {
+.infoSection {
     @include card-style;
-    padding: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 28px 40px;
 
     h2 {
         color: $color-accent;
         font-size: $font-medium;
-        margin: 0 0 8px;
+        margin: 0;
         font-weight: 600;
     }
 
@@ -64,14 +47,14 @@
     }
 }
 
-.coursesCard {
+.coursesSection {
     @include card-style;
-    padding: 24px;
+    padding: 40px;
 
     h2 {
         color: $color-secondary;
-        font-size: 20px;
-        margin: 0 0 20px;
+        font-size: $font-medium;
+        margin: 0 0 30px;
         font-weight: 600;
     }
 }
@@ -87,14 +70,14 @@
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 16px;
 }
 
 .courseItem {
     display: flex;
-    flex-direction: column;
-    gap: 8px;
-    padding: 14px 16px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
     background: $gradient-card;
     border: 1px solid rgba(210, 105, 30, 0.1);
     border-radius: 12px;
@@ -104,20 +87,25 @@
         background: $gradient-card-hover;
         border-color: rgba(210, 105, 30, 0.25);
     }
+}
+
+.courseInfo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
 
     strong {
         color: $color-accent;
-        font-size: 15px;
+        font-size: $font-standard;
         font-weight: 600;
     }
 }
 
 .badge {
     display: inline-block;
-    margin-left: 8px;
-    padding: 2px 10px;
+    padding: 4px 12px;
     border-radius: $border-radius-small;
-    font-size: 13px;
+    font-size: $font-small;
     font-weight: 500;
     white-space: nowrap;
 }
@@ -135,38 +123,45 @@
 .completeBtn {
     @include button-primary;
     @include button-small;
-    width: 100%;
-    font-size: 14px;
 }
 
 .mapSection {
     @include card-style;
-    padding: 32px;
+    padding: 40px;
 
     h2 {
         color: $color-secondary;
         font-size: $font-large;
-        margin: 0 0 24px;
+        margin: 0 0 32px;
         font-weight: 600;
         text-align: center;
     }
 }
 
 @media (max-width: 768px) {
-    .layout {
+    .root {
+        padding: 0 16px 80px;
+        gap: 40px;
+    }
+
+    .infoSection {
         flex-direction: column;
-        gap: 24px;
+        gap: 12px;
+        text-align: center;
+        padding: 24px;
     }
 
-    .sidebar {
-        flex: none;
+    .courseItem {
+        flex-direction: column;
+        gap: 12px;
+        align-items: flex-start;
+    }
+
+    .completeBtn {
         width: 100%;
-        position: static;
     }
 
-    .header {
-        h1 {
-            font-size: clamp(1.75rem, 5vw, 2.5rem);
-        }
+    .header h1 {
+        font-size: clamp(1.75rem, 5vw, 2.5rem);
     }
 }
