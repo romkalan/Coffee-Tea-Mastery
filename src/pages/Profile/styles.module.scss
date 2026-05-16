@@ -8,22 +8,3 @@
     gap: 32px;
     padding-bottom: 120px;
 }
-
-.layout {
-    display: flex;
-    gap: 40px;
-    align-items: flex-start;
-    width: 100%;
-}
-
-.mapArea {
-    flex: 1;
-    min-width: 0;
-}
-
-@media (max-width: 768px) {
-    .layout {
-        flex-direction: column;
-        gap: 24px;
-    }
-}
