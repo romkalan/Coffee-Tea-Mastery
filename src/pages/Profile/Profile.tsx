@@ -73,13 +73,13 @@ function Profile() {
                                 className={classNames(styles.toggleBtn, filter === "enrolled" && styles.toggleActive)}
                                 onClick={() => setFilter("enrolled")}
                             >
-                                Записан
+                                Текущие
                             </button>
                             <button
                                 className={classNames(styles.toggleBtn, filter === "completed" && styles.toggleActive)}
                                 onClick={() => setFilter("completed")}
                             >
-                                Пройден
+                                Пройденные
                             </button>
                         </div>
                         {enrollments.length === 0 && filter === "enrolled" && (
