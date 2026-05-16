@@ -93,7 +93,7 @@ function Profile() {
                         )}
                         {enrollments.length > 0 && filteredEnrollments.length === 0 && filter === "enrolled" && !hasAnyEnrolled && (
                             <div className={classNames(styles.emptyBlock)}>
-                                <p className={classNames(styles.emptyText)}>Все курсы пройдены! Запишитесь на новый, чтобы продолжить развитие.</p>
+                                <p className={classNames(styles.emptyText)}>Вы сейчас не проходите ни один из курсов. Запишитесь на новый, чтобы продолжить развитие.</p>
                                 <button className={classNames(styles.toCoursesBtn)} onClick={() => navigate("/courses")}>
                                     Выбрать курс
                                 </button>
