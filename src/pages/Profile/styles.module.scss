@@ -22,7 +22,11 @@
 }
 
 .logoutBtn {
-    @include button-ghost;
+    @include button-secondary;
+    @include button-small;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
 }
 
 .layout {
