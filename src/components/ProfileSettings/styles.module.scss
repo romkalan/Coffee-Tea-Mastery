@@ -1,0 +1,102 @@
+@use "../../styles/mixins" as *;
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal {
+    background: $color-background;
+    border-radius: 20px;
+    padding: 32px;
+    width: 100%;
+    max-width: 460px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+
+    h2 {
+        margin: 0;
+        color: $color-secondary;
+        font-size: $font-medium;
+        font-weight: 600;
+    }
+}
+
+.closeBtn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: $color-primary;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    transition: background 0.2s;
+
+    &:hover {
+        background: rgba($color-primary, 0.05);
+    }
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.label {
+    font-size: $font-small;
+    font-weight: 500;
+    color: $color-primary;
+    margin-top: 12px;
+
+    &:first-child {
+        margin-top: 0;
+    }
+}
+
+.input {
+    @include input-base;
+    @include input-medium;
+    width: 100%;
+}
+
+.inputError {
+    @include input-error;
+}
+
+.fieldError {
+    @include error-text;
+}
+
+.error {
+    color: $color-input-error;
+    font-size: $font-small;
+    margin: 8px 0 0;
+}
+
+.success {
+    color: $color-input-success;
+    font-size: $font-small;
+    margin: 8px 0 0;
+    font-weight: 500;
+}
+
+.saveBtn {
+    @include button-primary;
+    @include button-medium;
+    width: 100%;
+    margin-top: 20px;
+}

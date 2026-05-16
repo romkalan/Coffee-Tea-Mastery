@@ -69,6 +69,17 @@
     }
 }
 
+.settingsBtn {
+    @include button-ghost;
+    @include button-small;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 12px;
+    width: 100%;
+    justify-content: center;
+}
+
 .coursesCard {
     @include card-style;
     padding: 24px;
