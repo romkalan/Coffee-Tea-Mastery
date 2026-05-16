@@ -3,6 +3,7 @@ export {
     loginUser,
     registerUser,
     updateUser,
+    completeCourse,
     logout,
     clearError,
     selectUser,

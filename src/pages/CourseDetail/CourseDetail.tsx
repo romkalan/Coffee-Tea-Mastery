@@ -1,5 +1,4 @@
 import type {TCourse} from "../../types/course.ts";
-import type {TEnrollment} from "../../types/enrollment.ts";
 import styles from "./styles.module.scss";
 import {useEffect, useState} from "react";
 import {Navigate, useParams} from "react-router";
@@ -10,7 +9,6 @@ import DetailCourseInfo from "../../components/DetailCourseInfo/DetailCourseInfo
 import ExpertOfCourse from "../../components/ExpertOfCourse/ExpertOfCourse.tsx";
 import {useAppSelector} from "../../redux/hooks/hooks.ts";
 import {selectUser} from "../../redux/entities/auth";
-import {useGetEnrollmentsQuery, useCreateEnrollmentMutation} from "../../redux/entities/profile";
 import ModalLogin from "../../components/ModalLogin/ModalLogin.tsx";
 
 interface CourseDetailProps {
@@ -24,28 +22,14 @@ function CourseDetail({courses}: CourseDetailProps){
     const user = useAppSelector(selectUser);
     const [showLogin, setShowLogin] = useState(false);
 
-    const { data: enrollments = [] } = useGetEnrollmentsQuery(user?.id ?? "", {
-        skip: !user,
-    });
-
-    const [createEnrollment] = useCreateEnrollmentMutation();
-
-    const myEnrollment = course
-        ? enrollments.find((e: TEnrollment) => e.courseId === course.id)
+    const myEnrollment = user && course
+        ? user.courses.find(c => c.courseId === course.id)
         : null;
 
     const handleEnroll = () => {
         if (!user) {
             setShowLogin(true);
             return;
-        }
-        if (course) {
-            createEnrollment({
-                userId: user.id,
-                courseId: course.id,
-                status: "enrolled",
-                enrolledAt: new Date().toISOString(),
-            });
         }
     };
 

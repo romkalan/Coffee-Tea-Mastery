@@ -1,6 +1,6 @@
 export type TNew = {
     id: string;
-    date: Date;
+    date: string;
     title: string;
     type: string;
     description: string;

@@ -59,6 +59,7 @@ export const registerUser = createAsyncThunk<
             email: data.email,
             password: data.password,
             role: "student",
+            courses: [],
         }),
     });
     const user: TUser = await res.json();
@@ -79,6 +80,31 @@ export const updateUser = createAsyncThunk<
             email: data.email,
             password: data.password,
         }),
+    });
+    const user: TUser = await res.json();
+    localStorage.setItem("coffee_user", JSON.stringify(user));
+    return user;
+});
+
+export const completeCourse = createAsyncThunk<
+    TUser,
+    { courseId: string; completedAt: string },
+    { state: State }
+>("auth/completeCourse", async (data, { getState }) => {
+    const state = getState() as State;
+    const currentUser = state.auth.user;
+    if (!currentUser) throw new Error("Пользователь не авторизован");
+
+    const updatedCourses = currentUser.courses.map(c =>
+        c.courseId === data.courseId
+            ? { ...c, status: "completed" as const, completedAt: data.completedAt }
+            : c
+    );
+
+    const res = await fetch(`http://localhost:3000/users/${currentUser.id}`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ courses: updatedCourses }),
     });
     const user: TUser = await res.json();
     localStorage.setItem("coffee_user", JSON.stringify(user));
@@ -140,6 +166,18 @@ const authSlice = createSlice({
             .addCase(updateUser.rejected, (state, action) => {
                 state.loading = false;
                 state.error = action.error.message || "Ошибка обновления";
+            })
+            .addCase(completeCourse.pending, (state) => {
+                state.loading = true;
+                state.error = null;
+            })
+            .addCase(completeCourse.fulfilled, (state, action) => {
+                state.loading = false;
+                state.user = action.payload;
+            })
+            .addCase(completeCourse.rejected, (state, action) => {
+                state.loading = false;
+                state.error = action.error.message || "Ошибка обновления курса";
             });
     },
 });

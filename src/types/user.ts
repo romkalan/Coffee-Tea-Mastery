@@ -5,4 +5,5 @@ export type TUser = {
     password: string;
     role: "student" | "expert" | "administrator";
     photo?: string;
+    courses: { courseId: string; status: "enrolled" | "completed"; enrolledAt: string; completedAt?: string }[];
 };

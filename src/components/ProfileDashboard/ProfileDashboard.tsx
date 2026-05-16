@@ -1,28 +1,42 @@
+import {useState, useEffect} from "react";
 import classNames from "classnames";
 import styles from "./styles.module.scss";
 import ProfileSidebar from "../ProfileSidebar/ProfileSidebar.tsx";
 import SkillsMap from "../SkillsMap/SkillsMap.tsx";
 import type { TUser } from "../../types/user.ts";
-import type { TEnrollment } from "../../types/enrollment.ts";
+
+interface TSkillArea {
+    id: string;
+    label: string;
+    color: string;
+    courseIds: string[];
+}
 
 interface ProfileDashboardProps {
     user: TUser;
-    enrollments: TEnrollment[];
     onSettingsOpen: () => void;
-    onComplete: (id: string, completedAt: string) => void;
+    onComplete: (courseId: string, completedAt: string) => void;
 }
 
-function ProfileDashboard({ user, enrollments, onSettingsOpen, onComplete }: ProfileDashboardProps) {
+function ProfileDashboard({ user, onSettingsOpen, onComplete }: ProfileDashboardProps) {
+    const [skillAreas, setSkillAreas] = useState<TSkillArea[]>([]);
+
+    useEffect(() => {
+        fetch("http://localhost:3000/skillAreas")
+            .then(r => r.json())
+            .then(setSkillAreas)
+            .catch(() => {});
+    }, []);
+
     return (
         <div className={classNames(styles.layout)}>
             <ProfileSidebar
                 user={user}
-                enrollments={enrollments}
                 onSettingsOpen={onSettingsOpen}
                 onComplete={onComplete}
             />
             <div className={classNames(styles.mapArea)}>
-                <SkillsMap enrollments={enrollments} />
+                <SkillsMap skillAreas={skillAreas} userCourses={user.courses} />
             </div>
         </div>
     );

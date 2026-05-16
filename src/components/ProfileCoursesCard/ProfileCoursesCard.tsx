@@ -2,24 +2,30 @@ import {useState} from "react";
 import {useNavigate} from "react-router";
 import classNames from "classnames";
 import styles from "./styles.module.scss";
-import type {TEnrollment} from "../../types/enrollment.ts";
-import {courses} from "../../mocks/courses.ts";
+import {courses as allCourses} from "../../mocks/courses.ts";
 
-interface ProfileCoursesCardProps {
-    enrollments: TEnrollment[];
-    onComplete: (id: string, completedAt: string) => void;
+interface TUserCourse {
+    courseId: string;
+    status: "enrolled" | "completed";
+    enrolledAt: string;
+    completedAt?: string;
 }
 
-function ProfileCoursesCard({ enrollments, onComplete }: ProfileCoursesCardProps) {
+interface ProfileCoursesCardProps {
+    courses: TUserCourse[];
+    onComplete: (courseId: string, completedAt: string) => void;
+}
+
+function ProfileCoursesCard({ courses, onComplete }: ProfileCoursesCardProps) {
     const navigate = useNavigate();
     const [filter, setFilter] = useState<"enrolled" | "completed">("enrolled");
 
-    const filteredEnrollments = enrollments.filter(
-        (e: TEnrollment) => e.status === filter
+    const filteredEnrollments = courses.filter(
+        (e: TUserCourse) => e.status === filter
     );
 
     const getCourseTitle = (courseId: string) => {
-        return courses.find(c => c.id === courseId)?.title ?? courseId;
+        return allCourses.find(c => c.id === courseId)?.title ?? courseId;
     };
 
     return (
@@ -55,8 +61,8 @@ function ProfileCoursesCard({ enrollments, onComplete }: ProfileCoursesCardProps
 
             {filteredEnrollments.length > 0 && (
                 <ul className={classNames(styles.courseList)}>
-                    {filteredEnrollments.map((enrollment: TEnrollment) => (
-                        <li key={enrollment.id} className={classNames(styles.courseItem)}>
+                    {filteredEnrollments.map((enrollment: TUserCourse) => (
+                        <li key={enrollment.courseId} className={classNames(styles.courseItem)}>
                             <div className={classNames(styles.courseInfo)}>
                                 <strong>{getCourseTitle(enrollment.courseId)}</strong>
                                 <span className={classNames(styles.badge, enrollment.status === "completed" ? styles.completed : styles.enrolled)}>
@@ -66,7 +72,7 @@ function ProfileCoursesCard({ enrollments, onComplete }: ProfileCoursesCardProps
                             {enrollment.status === "enrolled" && (
                                 <button
                                     className={classNames(styles.completeBtn)}
-                                    onClick={() => onComplete(enrollment.id, new Date().toISOString())}
+                                    onClick={() => onComplete(enrollment.courseId, new Date().toISOString())}
                                 >
                                     Отметить пройденным
                                 </button>
