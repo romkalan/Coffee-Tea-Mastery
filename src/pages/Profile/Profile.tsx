@@ -3,7 +3,7 @@ import {selectUser, logout} from "../../redux/entities/auth";
 import {useGetEnrollmentsQuery, useCompleteEnrollmentMutation} from "../../redux/entities/profile";
 import type {TEnrollment} from "../../types/enrollment.ts";
 import {courses} from "../../mocks/courses.ts";
-import {useNavigate} from "react-router";
+import {Navigate, useNavigate} from "react-router";
 import classNames from "classnames";
 import styles from "./styles.module.scss";
 import SkillsMap from "../../components/SkillsMap/SkillsMap.tsx";
@@ -20,8 +20,7 @@ function Profile() {
     const [completeEnrollment] = useCompleteEnrollmentMutation();
 
     if (!user) {
-        navigate("/");
-        return null;
+        return <Navigate to="/" replace />;
     }
 
     const getCourseTitle = (courseId: string) => {
