@@ -52,6 +52,21 @@
   }
 }
 
+.helpersActive {
+  color: mixins.$color-accent;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: mixins.$color-primary;
+  }
+}
+
 .infoForSearch {
   display: grid;
   grid-template-columns: 0.8fr auto;
