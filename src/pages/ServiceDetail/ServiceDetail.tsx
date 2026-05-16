@@ -1,9 +1,9 @@
 import classNames from "classnames";
 import styles from "./styles.module.scss";
 import type {TService} from "../../types/service.ts";
-import {useParams} from "react-router";
+import {Navigate, useParams} from "react-router";
 import {useEffect} from "react";
-import ServiceRequestFrom from "../../components/ServiceRequestForm/ServiceRequestForm.tsx";
+import ServiceRequestForm from "../../components/ServiceRequestForm/ServiceRequestForm.tsx";
 import ServiceOptionsBlock from "../../components/ServiceOptionsBlock/ServiceOptionsBlock.tsx";
 import Services from "../../components/Services/Services.tsx";
 import DetailServiceInfo from "../../components/DetailServiceInfo/DetailServiceInfo.tsx";
@@ -22,14 +22,14 @@ function ServiceDetail({services}: ServiceProps) {
     }, [params.id]);
 
     if (!service) {
-        return null;
+        return <Navigate to="/not-found" replace />;
     }
 
     return (
         <div className={classNames(styles.root)}>
             <DetailServiceInfo service={service}/>
             <ServiceOptionsBlock actions={service.actions} results={service.results}/>
-            <ServiceRequestFrom/>
+            <ServiceRequestForm/>
             <Services services={anotherServices}>Другие услуги</Services>
         </div>
     );

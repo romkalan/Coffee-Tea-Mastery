@@ -3,8 +3,7 @@
 .root {
   font-size: mixins.$font-standard;
   position: relative;
-  background-color: rgba(187, 196, 200, 0.1);
-  border-radius: 20px;
+  @include mixins.card-style;
 }
 
 .subtitle {

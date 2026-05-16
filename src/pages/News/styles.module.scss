@@ -46,7 +46,7 @@
   }
 
   &:disabled {
-    background-color: #ccc;
+    background-color: $color-button-disabled;
     cursor: not-allowed;
     transform: none;
     box-shadow: none;

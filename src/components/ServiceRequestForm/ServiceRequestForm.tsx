@@ -9,7 +9,7 @@ interface FormState {
     message: string;
 }
 
-function ServiceRequestFrom() {
+function ServiceRequestForm() {
     const [formData, setFormData] = useState<FormState>({
         name: "",
         phone: "",
@@ -60,4 +60,4 @@ function ServiceRequestFrom() {
     );
 }
 
-export default ServiceRequestFrom;
+export default ServiceRequestForm;

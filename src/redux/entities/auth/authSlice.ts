@@ -66,6 +66,25 @@ export const registerUser = createAsyncThunk<
     return user;
 });
 
+export const updateUser = createAsyncThunk<
+    TUser,
+    { id: string; name: string; email: string; password: string },
+    { state: State }
+>("auth/update", async (data) => {
+    const res = await fetch(`http://localhost:3000/users/${data.id}`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            name: data.name,
+            email: data.email,
+            password: data.password,
+        }),
+    });
+    const user: TUser = await res.json();
+    localStorage.setItem("coffee_user", JSON.stringify(user));
+    return user;
+});
+
 const authSlice = createSlice({
     name: "auth",
     initialState,
@@ -77,6 +96,9 @@ const authSlice = createSlice({
         },
         clearError(state) {
             state.error = null;
+        },
+        updateUserState(state, action) {
+            state.user = action.payload;
         },
     },
     extraReducers: (builder) => {
@@ -106,6 +128,18 @@ const authSlice = createSlice({
             .addCase(registerUser.rejected, (state, action) => {
                 state.loading = false;
                 state.error = action.error.message || "Ошибка регистрации";
+            })
+            .addCase(updateUser.pending, (state) => {
+                state.loading = true;
+                state.error = null;
+            })
+            .addCase(updateUser.fulfilled, (state, action) => {
+                state.loading = false;
+                state.user = action.payload;
+            })
+            .addCase(updateUser.rejected, (state, action) => {
+                state.loading = false;
+                state.error = action.error.message || "Ошибка обновления";
             });
     },
 });

@@ -1,13 +1,13 @@
 import classNames from "classnames";
-import style from "./styles.module.scss";
+import styles from "./styles.module.scss";
 
 function Experience() {
     return (
-        <div className={classNames(style.root)}>
-            <img className={classNames(style.image)} src={"/images/expertsImage.jpg"} alt="Эксперты фото" />
-            <div className={classNames(style.info)}>
-                <h3 className={classNames(style.infoYears)}>5</h3>
-                <p className={classNames(style.infoAddText)}>Лет опыта работы</p>
+        <div className={classNames(styles.root)}>
+            <img className={classNames(styles.image)} src={"/images/expertsImage.jpg"} alt="Эксперты фото" />
+            <div className={classNames(styles.info)}>
+                <h3 className={classNames(styles.infoYears)}>5</h3>
+                <p className={classNames(styles.infoAddText)}>Лет опыта работы</p>
             </div>
         </div>
     );

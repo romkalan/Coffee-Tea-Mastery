@@ -34,11 +34,26 @@
 }
 
 .helpers button {
-  @include mixins.button-secondary;
+  @include mixins.link-base;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: inherit;
+  line-height: inherit;
+  border-radius: 0;
 
   &:hover {
+    color: mixins.$color-accent;
     transform: translateY(0);
   }
+}
+
+.helpers button.helpersActive {
+  color: mixins.$color-accent;
 }
 
 .infoForSearch {

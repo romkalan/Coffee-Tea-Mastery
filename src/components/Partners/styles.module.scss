@@ -23,6 +23,13 @@
   margin: 0;
 }
 
+.partnersList li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
 .imageContainer {
   width: 120px;
   height: 120px;
@@ -31,6 +38,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
 .imageContainer img {
@@ -38,4 +46,23 @@
   height: 60%;
   object-fit: contain;
   display: block;
+}
+
+.avatar {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  font-weight: 700;
+  color: $color-button-text;
+  user-select: none;
+}
+
+.partnerName {
+  font-size: $font-small;
+  color: $color-primary;
+  text-align: center;
+  font-weight: 500;
 }

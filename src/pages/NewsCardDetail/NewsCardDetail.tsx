@@ -1,4 +1,4 @@
-import {useParams} from "react-router";
+import {Navigate, useParams} from "react-router";
 import {useEffect} from "react";
 import classNames from "classnames";
 import styles from "./styles.module.scss";
@@ -19,7 +19,7 @@ function NewsCardDetail({news}: NewsProps) {
     }, [params.id]);
 
     if (!newCard) {
-        return null;
+        return <Navigate to="/not-found" replace />;
     }
 
     return (

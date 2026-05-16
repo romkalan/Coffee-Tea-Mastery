@@ -12,6 +12,7 @@ function CompetitiveTask() {
                             className={classNames(styles.image)}
                             src={"/images/barista.png"}
                             alt="Бариста"
+                            loading="lazy"
                         />
                         <div className={classNames(styles.imageCaption)}>Бариста</div>
                     </div>
@@ -20,6 +21,7 @@ function CompetitiveTask() {
                             className={classNames(styles.image)}
                             src={"/images/teaMaster.jpg"}
                             alt="Чайный мастер"
+                            loading="lazy"
                         />
                         <div className={classNames(styles.imageCaption)}>Чайный мастер</div>
                     </div>
@@ -28,12 +30,13 @@ function CompetitiveTask() {
                             className={classNames(styles.image)}
                             src={"/images/roaster.jpg"}
                             alt="Обжарщик кофе"
+                            loading="lazy"
                         />
                         <div className={classNames(styles.imageCaption)}>Обжарщик кофе</div>
                     </div>
                 </div>
                 <img className={classNames(styles.imageOverlay)} src={"/images/dividerOverlay.svg"}
-                     alt="Рамка для учебного центра"/>
+                     alt=""/>
             </div>
         </div>
     );

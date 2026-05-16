@@ -10,7 +10,7 @@ function AboutCompetition() {
                 <p>«Мастерство приготовления кофе и чая» — компетенция «Всероссийского чемпионатного движения по профессиональному мастерству», которая проходит в рамках реализации национального проекта «Молодежь и дети».</p>
                 <div className={classNames(styles.disk)}><Disk/></div>
             </div>
-            <a className={classNames(styles.link)} href={"https://pro.firpo.ru/"} target={"_blank"}>Подробнее про чемпионатное движение</a>
+            <a className={classNames(styles.link)} href={"https://pro.firpo.ru/"} target={"_blank"} rel="noopener noreferrer">Подробнее про чемпионатное движение</a>
         </div>
     );
 }
