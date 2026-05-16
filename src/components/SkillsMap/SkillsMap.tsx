@@ -16,6 +16,14 @@ const skillAreas: SkillArea[] = [
     { id: "management", label: "Управление", color: "#1565C0", courses: ["course-4", "course-6"] },
 ];
 
+const islandLayout = {
+    basics: { cx: "20%", cy: "30%", rx: "14%", ry: "14%" },
+    "latte-art": { cx: "50%", cy: "22%", rx: "12%", ry: "12%" },
+    cupping: { cx: "78%", cy: "55%", rx: "13%", ry: "13%" },
+    tea: { cx: "30%", cy: "72%", rx: "14%", ry: "14%" },
+    management: { cx: "58%", cy: "80%", rx: "15%", ry: "12%" },
+};
+
 interface SkillsMapProps {
     enrollments: { courseId: string; status: string }[];
 }
@@ -31,58 +39,42 @@ function SkillsMap({ enrollments }: SkillsMapProps) {
     return (
         <div className={classNames(styles.root)}>
             <svg viewBox="0 0 1000 600" className={classNames(styles.map)}>
-                <rect width="1000" height="600" fill="#FDF5E6" rx="16" />
+                <rect width="100%" height="100%" fill="#FDF5E6" rx="16" />
 
-                {skillAreas.map((area) => (
-                    <g key={area.id}>
-                        <ellipse
-                            cx={getCx(area.id)}
-                            cy={getCy(area.id)}
-                            rx={getRx(area.id)}
-                            ry={getRy(area.id)}
-                            fill={isCompleted(area) ? area.color : "#E8D5C4"}
-                            className={classNames(styles.island)}
-                        />
-                        <text
-                            x={getCx(area.id)}
-                            y={getCy(area.id) + 8}
-                            textAnchor="middle"
-                            fill={isCompleted(area) ? "white" : "#C4A882"}
-                            fontSize="22"
-                            fontWeight="600"
-                        >
-                            {area.label}
-                        </text>
-                    </g>
-                ))}
+                {skillAreas.map((area) => {
+                    const layout = islandLayout[area.id as keyof typeof islandLayout];
+                    return (
+                        <g key={area.id}>
+                            <ellipse
+                                cx={layout.cx}
+                                cy={layout.cy}
+                                rx={layout.rx}
+                                ry={layout.ry}
+                                fill={isCompleted(area) ? area.color : "#E8D5C4"}
+                                className={classNames(styles.island)}
+                            />
+                            <text
+                                x={layout.cx}
+                                y={layout.cy}
+                                textAnchor="middle"
+                                dominantBaseline="central"
+                                fill={isCompleted(area) ? "white" : "#C4A882"}
+                                fontSize="22"
+                                fontWeight="600"
+                            >
+                                {area.label}
+                            </text>
+                        </g>
+                    );
+                })}
 
-                <text x="80" y="85" fontSize="32" fill="#D2691E" fillOpacity="0.15">~</text>
-                <text x="880" y="560" fontSize="32" fill="#D2691E" fillOpacity="0.15">~</text>
-                <text x="850" y="75" fontSize="28" fill="#D2691E" fillOpacity="0.15">~</text>
-                <text x="150" y="560" fontSize="28" fill="#D2691E" fillOpacity="0.15">~</text>
+                <text x="8%" y="12%" fontSize="32" fill="#D2691E" fillOpacity="0.15">~</text>
+                <text x="88%" y="92%" fontSize="32" fill="#D2691E" fillOpacity="0.15">~</text>
+                <text x="85%" y="10%" fontSize="28" fill="#D2691E" fillOpacity="0.15">~</text>
+                <text x="15%" y="92%" fontSize="28" fill="#D2691E" fillOpacity="0.15">~</text>
             </svg>
         </div>
     );
-}
-
-function getCx(id: string): number {
-    const map: Record<string, number> = { basics: 250, "latte-art": 590, cupping: 750, tea: 340, management: 590 };
-    return map[id] ?? 500;
-}
-
-function getCy(id: string): number {
-    const map: Record<string, number> = { basics: 180, "latte-art": 150, cupping: 330, tea: 420, management: 480 };
-    return map[id] ?? 300;
-}
-
-function getRx(id: string): number {
-    const map: Record<string, number> = { basics: 140, "latte-art": 120, cupping: 125, tea: 140, management: 150 };
-    return map[id] ?? 110;
-}
-
-function getRy(id: string): number {
-    const map: Record<string, number> = { basics: 80, "latte-art": 65, cupping: 65, tea: 80, management: 65 };
-    return map[id] ?? 65;
 }
 
 export default SkillsMap;
