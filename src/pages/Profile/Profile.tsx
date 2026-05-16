@@ -75,7 +75,7 @@ function Profile() {
 
                 <main className={classNames(styles.main)}>
                     <section className={classNames(styles.mapSection)}>
-                        <h2>Карта навыков</h2>
+                        <h2>Моя карта навыков</h2>
                         <SkillsMap enrollments={enrollments} />
                     </section>
                 </main>
