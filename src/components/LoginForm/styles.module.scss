@@ -53,25 +53,25 @@
 
 .tabs {
     display: flex;
-    gap: 0;
+    gap: 8px;
     margin-bottom: 16px;
-    border-radius: 8px;
-    overflow: hidden;
-    border: 1px solid $border-color;
 }
 
 .tab {
     flex: 1;
     padding: 8px 16px;
-    border: none;
+    border: 1px solid $color-accent;
+    border-radius: 8px;
     background: transparent;
+    color: $color-accent;
     cursor: pointer;
     font-size: 14px;
-    transition: background 0.2s;
+    font-weight: 500;
+    transition: all 300ms ease;
 }
 
 .tabActive {
-    background: $color-primary;
+    background: $color-accent;
     color: $color-button-text;
 }
 
