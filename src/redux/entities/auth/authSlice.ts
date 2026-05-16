@@ -10,11 +10,14 @@ type AuthState = {
 };
 
 const stored = localStorage.getItem("coffee_user");
-const initialUser: TUser | null = stored ? JSON.parse(stored) : null;
+const parsedStored: TUser | null = stored ? JSON.parse(stored) : null;
+if (parsedStored && !Array.isArray(parsedStored.courses)) {
+    parsedStored.courses = [];
+}
 
 const initialState: AuthState = {
-    user: initialUser,
-    isLoggedIn: !!initialUser,
+    user: parsedStored,
+    isLoggedIn: !!parsedStored,
     loading: false,
     error: null,
 };

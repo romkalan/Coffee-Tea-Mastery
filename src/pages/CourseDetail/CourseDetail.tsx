@@ -23,7 +23,7 @@ function CourseDetail({courses}: CourseDetailProps){
     const [showLogin, setShowLogin] = useState(false);
 
     const myEnrollment = user && course
-        ? user.courses.find(c => c.courseId === course.id)
+        ? (user.courses || []).find(c => c.courseId === course.id)
         : null;
 
     const handleEnroll = () => {
