@@ -114,6 +114,32 @@ export const completeCourse = createAsyncThunk<
     return user;
 });
 
+export const enrollCourse = createAsyncThunk<
+    TUser,
+    { courseId: string },
+    { state: State }
+>("auth/enrollCourse", async (data, { getState }) => {
+    const state = getState() as State;
+    const currentUser = state.auth.user;
+    if (!currentUser) throw new Error("Пользователь не авторизован");
+
+    const newCourse = {
+        courseId: data.courseId,
+        status: "enrolled" as const,
+        enrolledAt: new Date().toISOString(),
+    };
+    const updatedCourses = [...(currentUser.courses || []), newCourse];
+
+    const res = await fetch(`http://localhost:3000/users/${currentUser.id}`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ courses: updatedCourses }),
+    });
+    const user: TUser = await res.json();
+    localStorage.setItem("coffee_user", JSON.stringify(user));
+    return user;
+});
+
 const authSlice = createSlice({
     name: "auth",
     initialState,
@@ -181,6 +207,18 @@ const authSlice = createSlice({
             .addCase(completeCourse.rejected, (state, action) => {
                 state.loading = false;
                 state.error = action.error.message || "Ошибка обновления курса";
+            })
+            .addCase(enrollCourse.pending, (state) => {
+                state.loading = true;
+                state.error = null;
+            })
+            .addCase(enrollCourse.fulfilled, (state, action) => {
+                state.loading = false;
+                state.user = action.payload;
+            })
+            .addCase(enrollCourse.rejected, (state, action) => {
+                state.loading = false;
+                state.error = action.error.message || "Ошибка записи на курс";
             });
     },
 });

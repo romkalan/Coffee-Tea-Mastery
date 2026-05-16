@@ -4,6 +4,7 @@ export {
     registerUser,
     updateUser,
     completeCourse,
+    enrollCourse,
     logout,
     clearError,
     selectUser,

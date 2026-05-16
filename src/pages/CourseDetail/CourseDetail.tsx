@@ -7,8 +7,8 @@ import ServiceRequestForm from "../../components/ServiceRequestForm/ServiceReque
 import Services from "../../components/Services/Services.tsx";
 import DetailCourseInfo from "../../components/DetailCourseInfo/DetailCourseInfo.tsx";
 import ExpertOfCourse from "../../components/ExpertOfCourse/ExpertOfCourse.tsx";
-import {useAppSelector} from "../../redux/hooks/hooks.ts";
-import {selectUser} from "../../redux/entities/auth";
+import {useAppSelector, useAppDispatch} from "../../redux/hooks/hooks.ts";
+import {selectUser, enrollCourse} from "../../redux/entities/auth";
 import ModalLogin from "../../components/ModalLogin/ModalLogin.tsx";
 
 interface CourseDetailProps {
@@ -20,6 +20,7 @@ function CourseDetail({courses}: CourseDetailProps){
     const course = courses.find((course) => course.id === params.id);
     const anotherCourses = courses.sort((() => Math.random() - 0.5)).slice(0, 3);
     const user = useAppSelector(selectUser);
+    const dispatch = useAppDispatch();
     const [showLogin, setShowLogin] = useState(false);
 
     const myEnrollment = user && course
@@ -30,6 +31,9 @@ function CourseDetail({courses}: CourseDetailProps){
         if (!user) {
             setShowLogin(true);
             return;
+        }
+        if (course) {
+            dispatch(enrollCourse({ courseId: course.id }));
         }
     };
 
