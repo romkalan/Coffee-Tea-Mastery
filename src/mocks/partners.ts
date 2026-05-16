@@ -5,51 +5,26 @@ export const partners: TPartner[] = [
     {
         id: generateUUID(),
         name: "Submarine",
-        image: '',
+        image: "",
     },
     {
         id: generateUUID(),
         name: "Cafe Store",
-        image: '',
+        image: "",
     },
     {
         id: generateUUID(),
         name: "Mahlkoning",
-        image: '',
+        image: "",
     },
     {
         id: generateUUID(),
         name: "Hi WATER",
-        image: '',
+        image: "",
     },
     {
         id: generateUUID(),
         name: "Tasty Coffee",
-        image: '',
-    },
-    {
-        id: generateUUID(),
-        name: "Submarine",
-        image: '',
-    },
-    {
-        id: generateUUID(),
-        name: "Cafe Store",
-        image: '',
-    },
-    {
-        id: generateUUID(),
-        name: "Mahlkoning",
-        image: '',
-    },
-    {
-        id: generateUUID(),
-        name: "Hi WATER",
-        image: '',
-    },
-    {
-        id: generateUUID(),
-        name: "Tasty Coffee",
-        image: '',
+        image: "",
     },
 ]
