@@ -1,0 +1,16 @@
+@use "../../styles/mixins" as *;
+
+.root {
+    flex: 0 0 20%;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+@media (max-width: 768px) {
+    .root {
+        flex: none;
+        width: 100%;
+    }
+}
