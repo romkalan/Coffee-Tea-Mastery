@@ -34,7 +34,14 @@
 }
 
 .helpers button {
-  @include mixins.button-secondary;
+  @include mixins.link-base;
+  padding: 8px 16px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: inherit;
+  line-height: inherit;
+  border-radius: 0;
 
   &:hover {
     transform: translateY(0);
