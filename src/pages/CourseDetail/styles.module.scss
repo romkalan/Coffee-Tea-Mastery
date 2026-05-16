@@ -13,8 +13,8 @@
 
 .enrollButton {
     padding: 12px 24px;
-    background: #4D0505;
-    color: white;
+    background: $color-accent;
+    color: $color-button-text;
     border: none;
     border-radius: 8px;
     font-size: 16px;
@@ -27,7 +27,7 @@
 }
 
 .enrolledText {
-    color: #2e7d32;
+    color: $color-input-success;
     font-weight: 600;
     font-size: 16px;
 }

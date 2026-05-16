@@ -38,7 +38,7 @@ function SkillsMap({ enrollments }: SkillsMapProps) {
 
     return (
         <div className={classNames(styles.root)}>
-            <svg viewBox="0 0 1000 600" className={classNames(styles.map)}>
+            <svg viewBox="0 0 1000 600" className={classNames(styles.map)} role="img" aria-label="Карта навыков: острова навыков бариста">
                 <rect width="100%" height="100%" fill="#FDF5E6" rx="16" />
 
                 {skillAreas.map((area) => {

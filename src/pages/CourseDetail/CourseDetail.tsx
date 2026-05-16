@@ -2,9 +2,9 @@ import type {TCourse} from "../../types/course.ts";
 import type {TEnrollment} from "../../types/enrollment.ts";
 import styles from "./styles.module.scss";
 import {useEffect, useState} from "react";
-import {useParams} from "react-router";
+import {Navigate, useParams} from "react-router";
 import classNames from "classnames";
-import ServiceRequestFrom from "../../components/ServiceRequestForm/ServiceRequestForm.tsx";
+import ServiceRequestForm from "../../components/ServiceRequestForm/ServiceRequestForm.tsx";
 import Services from "../../components/Services/Services.tsx";
 import DetailCourseInfo from "../../components/DetailCourseInfo/DetailCourseInfo.tsx";
 import ExpertOfCourse from "../../components/ExpertOfCourse/ExpertOfCourse.tsx";
@@ -54,7 +54,7 @@ function CourseDetail({courses}: CourseDetailProps){
     }, [params.id]);
 
     if (!course) {
-        return null;
+        return <Navigate to="/not-found" replace />;
     }
 
     return (
@@ -80,7 +80,7 @@ function CourseDetail({courses}: CourseDetailProps){
                     )}
                 </div>
 
-                <ServiceRequestFrom/>
+                <ServiceRequestForm/>
                 <Services services={anotherCourses}>Другие услуги</Services>
             </div>
             <ModalLogin isOpen={showLogin} onClose={() => setShowLogin(false)} />

@@ -11,7 +11,7 @@ function TrainingCenter() {
                 <img className={classNames(styles.image)} src={"/images/trainingCenter.jpg"}
                      alt="Фото учебного центра"/>
                 <img className={classNames(styles.imageOverlay)} src={"/images/dividerOverlay.svg"}
-                     alt="Рамка для учебного центра"/>
+                     alt=""/>
             </div>
             <div className={classNames(styles.text)}>
                 <p>

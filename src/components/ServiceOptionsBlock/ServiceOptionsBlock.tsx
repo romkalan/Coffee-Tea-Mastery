@@ -1,6 +1,6 @@
 import ServiceOption from "../ServiceOption/ServiceOption.tsx";
 import classNames from "classnames";
-import styles from "../ServiceOptionsBlock/styles.module.scss";
+import styles from "./styles.module.scss";
 
 interface ServiceOptionsBlockProps {
     actions: string[];
