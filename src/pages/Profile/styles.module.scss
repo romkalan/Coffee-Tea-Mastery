@@ -112,8 +112,8 @@
     line-height: 1.2;
 
     &:hover {
-        background: rgba($color-accent, 0.1);
-        border-color: $color-accent;
+        background: $color-accent;
+        color: $color-button-text;
     }
 }
 
@@ -123,7 +123,6 @@
 
     &:hover {
         background: #b85910;
-        border-color: #b85910;
     }
 }
 
