@@ -35,6 +35,9 @@
 
 .helpers button {
   @include mixins.link-base;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   padding: 8px 16px;
   border: none;
   background: none;
