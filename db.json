@@ -17,8 +17,8 @@
   ],
   "users": [
     { "id": "u1", "name": "Роман", "email": "romkalan@mail.ru", "password": "123", "role": "student" },
-    { "id": "u2", "name": "Юлия", "email": "juliajkov@gmail.com", "password": "123", "role": "student" },
-    { "id": "u3", "name": "Денис", "email": "denis@mail.ru", "password": "123", "role": "student" }
+    { "id": "u2", "name": "Юлия", "email": "julia.jkov@gmail.com", "password": "123", "role": "student" },
+    { "id": "u3", "name": "Денис", "email": "melifaro@yandex.ru", "password": "123", "role": "student" }
   ],
   "enrollments": [
     { "id": "e1", "userId": "u1", "courseId": "course-1", "status": "completed", "enrolledAt": "2026-01-15", "completedAt": "2026-01-17" },

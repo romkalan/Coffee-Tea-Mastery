@@ -35,9 +35,6 @@ function Profile() {
         (e: TEnrollment) => e.status === filter
     );
 
-    const hasAnyEnrolled = enrollments.some((e: TEnrollment) => e.status === "enrolled");
-    const hasAnyCompleted = enrollments.some((e: TEnrollment) => e.status === "completed");
-
     return (
         <div className={classNames(styles.root)}>
             <div className={classNames(styles.header)}>
@@ -82,22 +79,16 @@ function Profile() {
                                 Пройденные
                             </button>
                         </div>
-                        {enrollments.length === 0 && filter === "enrolled" && (
-                            <p className={classNames(styles.emptyText)}>Вы ещё не записались ни на один курс</p>
-                        )}
-                        {enrollments.length === 0 && filter === "completed" && (
-                            <p className={classNames(styles.emptyText)}>Вы ещё не прошли ни одного курса</p>
-                        )}
-                        {enrollments.length > 0 && filteredEnrollments.length === 0 && filter === "completed" && !hasAnyCompleted && (
-                            <p className={classNames(styles.emptyText)}>Нет пройденных курсов. Продолжайте обучение!</p>
-                        )}
-                        {enrollments.length > 0 && filteredEnrollments.length === 0 && filter === "enrolled" && !hasAnyEnrolled && (
+                        {filteredEnrollments.length === 0 && filter === "enrolled" && (
                             <div className={classNames(styles.emptyBlock)}>
-                                <p className={classNames(styles.emptyText)}>Вы сейчас не проходите ни один из курсов. Запишитесь на новый, чтобы продолжить развитие.</p>
+                                <p className={classNames(styles.emptyText)}>Вы не проходите ни один курс</p>
                                 <button className={classNames(styles.toCoursesBtn)} onClick={() => navigate("/courses")}>
                                     Выбрать курс
                                 </button>
                             </div>
+                        )}
+                        {filteredEnrollments.length === 0 && filter === "completed" && (
+                            <p className={classNames(styles.emptyText)}>Нет пройденных курсов</p>
                         )}
                         {filteredEnrollments.length > 0 && (
                             <ul className={classNames(styles.courseList)}>
