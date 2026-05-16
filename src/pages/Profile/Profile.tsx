@@ -15,6 +15,7 @@ function Profile() {
     const dispatch = useAppDispatch();
     const navigate = useNavigate();
     const [settingsOpen, setSettingsOpen] = useState(false);
+    const [filter, setFilter] = useState<"enrolled" | "completed">("enrolled");
 
     const { data: enrollments = [] } = useGetEnrollmentsQuery(user?.id ?? "", {
         skip: !user,
@@ -29,6 +30,13 @@ function Profile() {
     const getCourseTitle = (courseId: string) => {
         return courses.find(c => c.id === courseId)?.title ?? courseId;
     };
+
+    const filteredEnrollments = enrollments.filter(
+        (e: TEnrollment) => e.status === filter
+    );
+
+    const hasAnyEnrolled = enrollments.some((e: TEnrollment) => e.status === "enrolled");
+    const hasAnyCompleted = enrollments.some((e: TEnrollment) => e.status === "completed");
 
     return (
         <div className={classNames(styles.root)}>
@@ -60,30 +68,59 @@ function Profile() {
 
                     <section className={classNames(styles.coursesCard)}>
                         <h2>Мои курсы</h2>
-                        {enrollments.length === 0 && <p className={classNames(styles.emptyText)}>Вы ещё не записались ни на один курс</p>}
-                        <ul className={classNames(styles.courseList)}>
-                            {enrollments.map((enrollment: TEnrollment) => (
-                                <li key={enrollment.id} className={classNames(styles.courseItem)}>
-                                    <div className={classNames(styles.courseInfo)}>
-                                        <strong>{getCourseTitle(enrollment.courseId)}</strong>
-                                        <span className={classNames(styles.badge, enrollment.status === "completed" ? styles.completed : styles.enrolled)}>
-                                            {enrollment.status === "completed" ? "Пройден" : "Записан"}
-                                        </span>
-                                    </div>
-                                    {enrollment.status === "enrolled" && (
-                                        <button
-                                            className={classNames(styles.completeBtn)}
-                                            onClick={() => completeEnrollment({
-                                                id: enrollment.id,
-                                                completedAt: new Date().toISOString()
-                                            })}
-                                        >
-                                            Отметить пройденным
-                                        </button>
-                                    )}
-                                </li>
-                            ))}
-                        </ul>
+                        <div className={classNames(styles.toggle)}>
+                            <button
+                                className={classNames(styles.toggleBtn, filter === "enrolled" && styles.toggleActive)}
+                                onClick={() => setFilter("enrolled")}
+                            >
+                                Записан
+                            </button>
+                            <button
+                                className={classNames(styles.toggleBtn, filter === "completed" && styles.toggleActive)}
+                                onClick={() => setFilter("completed")}
+                            >
+                                Пройден
+                            </button>
+                        </div>
+                        {enrollments.length === 0 && filter === "enrolled" && (
+                            <p className={classNames(styles.emptyText)}>Вы ещё не записались ни на один курс</p>
+                        )}
+                        {enrollments.length === 0 && filter === "completed" && (
+                            <p className={classNames(styles.emptyText)}>Вы ещё не прошли ни одного курса</p>
+                        )}
+                        {enrollments.length > 0 && filteredEnrollments.length === 0 && filter === "completed" && !hasAnyCompleted && (
+                            <p className={classNames(styles.emptyText)}>Нет пройденных курсов. Продолжайте обучение!</p>
+                        )}
+                        {enrollments.length > 0 && filteredEnrollments.length === 0 && filter === "enrolled" && !hasAnyEnrolled && (
+                            <p className={classNames(styles.emptyText)}>Нет активных записей. Все курсы пройдены!</p>
+                        )}
+                        {filteredEnrollments.length > 0 && (
+                            <ul className={classNames(styles.courseList)}>
+                                {filteredEnrollments.map((enrollment: TEnrollment) => (
+                                    <li key={enrollment.id} className={classNames(styles.courseItem)}>
+                                        <div className={classNames(styles.courseInfo)}>
+                                            <strong>{getCourseTitle(enrollment.courseId)}</strong>
+                                            <span className={classNames(styles.badge, enrollment.status === "completed" ? styles.completed : styles.enrolled)}>
+                                                {enrollment.status === "completed" ? "Пройден" : "Записан"}
+                                            </span>
+                                        </div>
+                                        {enrollment.status === "enrolled" && (
+                                            <button
+                                                className={classNames(styles.completeBtn)}
+                                                onClick={() => {
+                                                    completeEnrollment({
+                                                        id: enrollment.id,
+                                                        completedAt: new Date().toISOString()
+                                                    });
+                                                }}
+                                            >
+                                                Отметить пройденным
+                                            </button>
+                                        )}
+                                    </li>
+                                ))}
+                            </ul>
+                        )}
                     </section>
                 </aside>
 
