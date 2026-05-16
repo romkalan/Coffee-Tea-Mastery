@@ -4,25 +4,25 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  margin-bottom: 120px;
+  margin-bottom: 80px;
 }
 
 .title {
-  margin-bottom: 70px;
+  margin-bottom: 40px;
 }
 
 .previewImage {
   width: 100%;
-  border-radius: 40px;
+  border-radius: 24px;
 }
 
 .preview {
   display: flex;
   flex-direction: column;
-  font-size: $font-medium;
+  font-size: $font-standard;
   text-align: center;
-  padding: 50px 100px;
-  gap: 40px;
+  padding: 30px clamp(16px, 3vw, 60px);
+  gap: 24px;
   width: 100%;
 }
 
@@ -47,5 +47,5 @@
 
 .previewButton {
   @include button-secondary;
-  @include button-large;
+  @include button-small;
 }

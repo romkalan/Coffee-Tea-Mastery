@@ -2,7 +2,7 @@
 
 .root {
   width: 100%;
-  max-width: 1920px;
+  max-width: var(--content-width);
   align-content: center;
   margin-bottom: 70px;
 }

@@ -1,114 +1,29 @@
 {
   "services": [
-    {
-      "id": "serv-1",
-      "title": "Обслуживание кофейного оборудования",
-      "type": "services",
-      "price": 10000,
-      "time": "1 день",
-      "format": "offline",
-      "description": "Ваша кофемашина или кофемолка вышла из строя? Мы проведем диагностику и все починим!",
-      "actions": ["Проведем калибровку", "Выявим проблему", "Все починим"],
-      "results": ["Качественный продукт", "Надежных партнеров", "Гарантию на 1 год"],
-      "image": "/images/serviceImage.jpg",
-      "previewImage": "#",
-      "reviews": ["Отличный сервис!", "Все быстро и качественно"],
-      "video": "#"
-    },
-    {
-      "id": "serv-2",
-      "title": "Каппинг-сессия",
-      "type": "services",
-      "price": 15000,
-      "time": "4 часа",
-      "format": "offline",
-      "description": "Профессиональная дегустация и оценка качества кофе. Научим ваших сотрудников разбираться в кофе!",
-      "actions": ["Поставим каппинг", "Опишем каждый образец", "Научим сотрудников"],
-      "results": ["Понимание вкуса", "Выявление лучших сортов", "Повышение квалификации"],
-      "image": "/images/serviceImage.jpg",
-      "previewImage": "#",
-      "reviews": ["Очень познавательно!", "Теперь мы знаем о кофе все"],
-      "video": "#"
-    },
-    {
-      "id": "serv-3",
-      "title": "Разработка меню кофейни",
-      "type": "services",
-      "price": 20000,
-      "time": "3 дня",
-      "format": "offline",
-      "description": "Создадим уникальное меню, которое увеличит продажи и порадует ваших гостей!",
-      "actions": ["Анализ заведения", "Разработка концепции", "Создание меню"],
-      "results": ["Уникальное меню", "Рост продаж", "Довольные гости"],
-      "image": "/images/serviceImage.jpg",
-      "previewImage": "#",
-      "reviews": ["Меню стало лучше", "Продажи выросли на 30%"],
-      "video": "#"
-    },
-    {
-      "id": "serv-4",
-      "title": "Тренинг-сессия для вашей команды",
-      "type": "services",
-      "price": 15000,
-      "time": "2 дня",
-      "format": "offline",
-      "description": "Профедем диагностику слабых мест ваших работников и доведем до профессионального уровня их навыки",
-      "actions": ["Диагностика бариста", "Тренировка настройки помола", "Каппинг-сессия"],
-      "results": ["Рост продаж", "Довольные гости"],
-      "image": "/images/serviceImage.jpg",
-      "previewImage": "#",
-      "reviews": ["Меню стало лучше", "Продажи выросли на 40%"],
-      "video": "#"
-    }
+    { "id": "serv-1", "title": "Обслуживание кофейного оборудования", "type": "services", "price": 10000, "time": "1 день", "format": "offline", "description": "Ваша кофемашина или кофемолка вышла из строя? Мы проведем диагностику и все починим!", "actions": ["Проведем калибровку", "Выявим проблему", "Все починим"], "results": ["Качественный продукт", "Надежных партнеров", "Гарантию на 1 год"], "image": "/images/serviceImage.jpg", "previewImage": "#", "reviews": ["Отличный сервис!", "Все быстро и качественно"], "video": "#" },
+    { "id": "serv-2", "title": "Каппинг-сессия", "type": "services", "price": 15000, "time": "4 часа", "format": "offline", "description": "Профессиональная дегустация и оценка качества кофе. Научим ваших сотрудников разбираться в кофе!", "actions": ["Поставим каппинг", "Опишем каждый образец", "Научим сотрудников"], "results": ["Понимание вкуса", "Выявление лучших сортов", "Повышение квалификации"], "image": "/images/serviceImage.jpg", "previewImage": "#", "reviews": ["Очень познавательно!", "Теперь мы знаем о кофе все"], "video": "#" },
+    { "id": "serv-3", "title": "Разработка меню кофейни", "type": "services", "price": 20000, "time": "3 дня", "format": "offline", "description": "Создадим уникальное меню, которое увеличит продажи и порадует ваших гостей!", "actions": ["Анализ заведения", "Разработка концепции", "Создание меню"], "results": ["Уникальное меню", "Рост продаж", "Довольные гости"], "image": "/images/serviceImage.jpg", "previewImage": "#", "reviews": ["Меню стало лучше", "Продажи выросли на 30%"], "video": "#" },
+    { "id": "serv-4", "title": "Тренинг-сессия для вашей команды", "type": "services", "price": 15000, "time": "2 дня", "format": "offline", "description": "Профедем диагностику слабых мест ваших работников и доведем до профессионального уровня их навыки", "actions": ["Диагностика бариста", "Тренировка настройки помола", "Каппинг-сессия"], "results": ["Рост продаж", "Довольные гости"], "image": "/images/serviceImage.jpg", "previewImage": "#", "reviews": ["Меню стало лучше", "Продажи выросли на 40%"], "video": "#" }
   ],
   "courses": [
-    {
-      "id": "course-1",
-      "title": "Базовый курс бариста",
-      "type": "courses",
-      "price": 25000,
-      "time": "3 дня",
-      "date": "2024-04-15",
-      "seats": 8,
-      "format": "offline",
-      "description": "Научитесь готовить идеальный эспрессо и молочные напитки с нуля",
-      "text": "Полный курс для начинающих бариста...",
-      "expertId": "exp-1",
-      "image": "/images/courseImage.jpg",
-      "previewImage": "#",
-      "video": "#"
-    },
-    {
-      "id": "course-2",
-      "title": "Продвинутый курс: Латте-арт",
-      "type": "courses",
-      "price": 18000,
-      "time": "2 дня",
-      "date": "2024-04-20",
-      "seats": 6,
-      "format": "offline",
-      "description": "Освойте искусство рисования на кофе",
-      "text": "Научитесь создавать сложные рисунки...",
-      "expertId": "exp-2",
-      "image": "/images/courseImage.jpg",
-      "previewImage": "#",
-      "video": "#"
-    },
-    {
-      "id": "course-3",
-      "title": "Обжарка кофе для альтернативы>",
-      "type": "courses",
-      "price": 24000,
-      "time": "3 дня",
-      "date": "2025-07-13",
-      "seats": 3,
-      "format": "offline",
-      "description": "Освойте технику обжарки кофе на ростере",
-      "text": "Научитесь подбирать профиль обжарки для кофе...",
-      "expertId": "exp-3",
-      "image": "/images/courseImage.jpg",
-      "previewImage": "#",
-      "video": "#"
-    }
+    { "id": "course-1", "title": "Сенсорика кофе", "type": "courses", "price": 15000, "time": "2 дня", "format": "offline", "description": "Вы когда-нибудь задумывались, почему кофе описывается как \"с нотками черники и шоколада\"?", "seats": 30, "expertId": "exp-1", "image": "/images/courseImage.png", "previewImage": "#", "video": "#" },
+    { "id": "course-2", "title": "Чайный мастер", "type": "courses", "price": 20000, "time": "3 дня", "format": "offline", "description": "Полное погружение в чайную культуру", "seats": 30, "expertId": "exp-2", "image": "/images/courseImage.png", "previewImage": "#", "video": "#" },
+    { "id": "course-3", "title": "Классика приготовления кофе", "type": "courses", "price": 15000, "time": "2 дня", "format": "offline", "description": "Освойте классические методы приготовления кофе", "seats": 30, "expertId": "exp-1", "image": "/images/courseImage.png", "previewImage": "#", "video": "#" },
+    { "id": "course-4", "title": "Создание концепции кофейни", "type": "courses", "price": 10000, "time": "2 дня", "format": "online", "description": "Как открыть и развивать кофейню", "seats": 30, "expertId": "exp-3", "image": "/images/courseImage.png", "previewImage": "#", "video": "#" },
+    { "id": "course-5", "title": "Создание чайной карты", "type": "courses", "price": 10000, "time": "2 дня", "format": "online", "description": "Разработка чайного меню для заведения", "seats": 30, "expertId": "exp-2", "image": "/images/courseImage.png", "previewImage": "#", "video": "#" },
+    { "id": "course-6", "title": "Просвещение в кофейной и чайной культуре гостей", "type": "courses", "price": 10000, "time": "2 дня", "format": "online", "description": "Как обучать и вовлекать гостей", "seats": 30, "expertId": "exp-1", "image": "/images/courseImage.png", "previewImage": "#", "video": "#" },
+    { "id": "course-7", "title": "Мастерство приготовления кофе и чая", "type": "courses", "price": 50000, "time": "7 дней", "format": "offline", "description": "Полный курс от бариста до титестера", "seats": 30, "expertId": "exp-1", "image": "/images/courseImage.png", "previewImage": "#", "video": "#" },
+    { "id": "course-8", "title": "Латте-арт (базовый)", "type": "courses", "price": 15000, "time": "2 дня", "format": "offline", "description": "Научитесь рисовать на кофе", "seats": 30, "expertId": "exp-3", "image": "/images/courseImage.png", "previewImage": "#", "video": "#" }
+  ],
+  "users": [
+    { "id": "u1", "name": "Роман", "email": "romkalan@mail.ru", "password": "123", "role": "student" },
+    { "id": "u2", "name": "Юлия", "email": "juliajkov@gmail.com", "password": "123", "role": "student" },
+    { "id": "u3", "name": "Денис", "email": "denis@mail.ru", "password": "123", "role": "student" }
+  ],
+  "enrollments": [
+    { "id": "e1", "userId": "u1", "courseId": "course-1", "status": "completed", "enrolledAt": "2026-01-15", "completedAt": "2026-01-17" },
+    { "id": "e2", "userId": "u1", "courseId": "course-3", "status": "completed", "enrolledAt": "2026-02-01", "completedAt": "2026-02-03" },
+    { "id": "e3", "userId": "u1", "courseId": "course-8", "status": "completed", "enrolledAt": "2026-03-10", "completedAt": "2026-03-12" },
+    { "id": "e4", "userId": "u2", "courseId": "course-2", "status": "completed", "enrolledAt": "2026-02-20", "completedAt": "2026-02-23" }
   ]
 }

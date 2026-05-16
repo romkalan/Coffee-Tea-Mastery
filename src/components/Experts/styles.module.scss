@@ -2,22 +2,23 @@
 
 .root {
   width: 100%;
-  max-width: 1920px;
+  max-width: var(--content-width);
 }
 
 .title {
-  font-size: $font-giant;
+  font-size: clamp(2rem, 3vw, 2.5rem); /* 32px - 40px */
   display: flex;
   flex-direction: column;
   align-items: center;
   align-content: center;
-  line-height: 0;
-  margin-bottom: 100px;
+  line-height: 1.2;
+  margin-bottom: 60px;
   color: $color-secondary;
 }
 
 .expertsList {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 40px;
   list-style-type: none;
 }

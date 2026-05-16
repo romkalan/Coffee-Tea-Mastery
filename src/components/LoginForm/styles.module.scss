@@ -50,3 +50,33 @@
         margin-bottom: 16px;
     }
 }
+
+.tabs {
+    display: flex;
+    gap: 0;
+    margin-bottom: 16px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #ccc;
+}
+
+.tab {
+    flex: 1;
+    padding: 8px 16px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.2s;
+}
+
+.tabActive {
+    background: #4D0505;
+    color: white;
+}
+
+.error {
+    color: #d32f2f;
+    font-size: 13px;
+    margin: 8px 0;
+}

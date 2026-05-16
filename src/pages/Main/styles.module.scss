@@ -3,7 +3,7 @@
 .root {
   @include flex-center;
   width: 100%;
-  max-width: 1920px;
+  max-width: var(--content-width);
   display: flex;
   flex-direction: column;
   gap: 90px;

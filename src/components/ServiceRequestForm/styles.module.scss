@@ -3,41 +3,41 @@
 .root {
   display: flex;
   justify-content: center;
-  gap: 70px;
-  margin-bottom: 120px;
+  gap: clamp(24px, 3vw, 40px);
+  margin-bottom: 80px;
 }
 
 .subtitle {
-  font-size: clamp(2.5rem, 4vw, 3.125rem); /* 40px - 50px */
+  font-size: clamp(2rem, 3vw, 2.5rem); /* 32px - 40px */
   @include flex-center;
   flex-direction: column;
-  line-height: 0;
-  margin-bottom: 100px;
+  line-height: 1.2;
+  margin-bottom: 60px;
   color: $color-secondary;
 }
 
 .card {
-  width: 700px;
+  width: clamp(300px, 40vw, 480px);
 }
 
 .cardTitle {
-  font-size: $font-medium;
-  line-height: 38px;
-  padding: 20px;
+  font-size: clamp(1rem, 1.4vw, 1.125rem); /* 16px - 18px */
+  line-height: 1.5;
+  padding: 16px;
   text-align: center;
 }
 
 .cardText {
-  font-size: $font-medium;
-  padding: 20px;
+  font-size: clamp(0.875rem, 1.2vw, 1rem); /* 14px - 16px */
+  padding: 16px;
   text-align: center;
 }
 
 .form {
   display: flex;
   flex-direction: column;
-  gap: 30px;
-  width: 700px;
+  gap: 20px;
+  width: clamp(300px, 40vw, 480px);
 }
 
 .form input {
@@ -49,12 +49,12 @@
 .form textarea {
   @include textarea;
   background-color: transparent;
-  height: 100px;
+  height: 80px;
   padding: 10px;
 }
 
 .form button {
   @include button-primary;
-  padding: 15px;
-  font-size: clamp(1.125rem, 2vw, 1.25rem); /* 18px - 20px */
+  padding: 12px;
+  font-size: clamp(1rem, 1.4vw, 1.125rem); /* 16px - 18px */
 }

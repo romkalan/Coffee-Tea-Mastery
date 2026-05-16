@@ -51,11 +51,17 @@ function Footer() {
             <div className={classNames(styles.additionalInfo)}>
                 <nav className={classNames(styles.footerPages)}>
                     <h4 className={classNames(styles.socialsTitle)}>Навигация по сайту</h4>
-                    <NavLink to={"/"}>Главная</NavLink>
-                    <NavLink to={"/news"}>Новости</NavLink>
-                    <NavLink to={"/courses"}>Курсы</NavLink>
-                    <NavLink to={"/services"}>Услуги</NavLink>
-                    <NavLink to={"/championships"}>Чемпионаты</NavLink>
+                    <div className={classNames(styles.navColumns)}>
+                        <div className={classNames(styles.navColumn)}>
+                            <NavLink to={"/"}>Главная</NavLink>
+                            <NavLink to={"/news"}>Новости</NavLink>
+                            <NavLink to={"/courses"}>Курсы</NavLink>
+                        </div>
+                        <div className={classNames(styles.navColumn)}>
+                            <NavLink to={"/services"}>Услуги</NavLink>
+                            <NavLink to={"/championships"}>Чемпионаты</NavLink>
+                        </div>
+                    </div>
                 </nav>
                 <nav className={classNames(styles.footerPages)}>
                     <h4 className={classNames(styles.socialsTitle)}>Помощь</h4>

@@ -1,11 +1,11 @@
 @use "../../styles/mixins" as *;
 
 .root {
-  @include flex-between;
+  display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 1920px;
-  height: 100dvh;
+  max-width: var(--content-width);
+  min-height: 100dvh;
   margin: 0 auto;
 }
 

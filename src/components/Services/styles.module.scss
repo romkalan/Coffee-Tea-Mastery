@@ -2,15 +2,15 @@
 
 .root {
   width: 100%;
-  max-width: 1920px;
+  max-width: var(--content-width);
 }
 
 .title {
-  font-size: clamp(2.5rem, 4vw, 3.75rem); /* 40px - 60px, было 60px */
+  font-size: clamp(2rem, 3vw, 2.5rem); /* 32px - 40px */
   @include flex-center;
   flex-direction: column;
-  line-height: 0;
-  margin-bottom: 100px;
+  line-height: 1.2;
+  margin-bottom: 60px;
   color: $color-secondary;
 }
 

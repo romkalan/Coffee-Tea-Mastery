@@ -1,42 +1,42 @@
 @use "../../styles/mixins";
 
 .root {
-  font-size: mixins.$font-medium;
+  font-size: mixins.$font-standard;
   position: relative;
   background-color: rgba(187, 196, 200, 0.1);
   border-radius: 20px;
 }
 
 .subtitle {
-  font-size: clamp(1.5rem, 2.5vw, 1.875rem); /* 24px - 30px */
+  font-size: clamp(1.125rem, 1.5vw, 1.375rem); /* 18px - 22px */
   @include mixins.flex-center;
   flex-direction: column;
-  line-height: 0;
-  padding: 20px;
-  margin-bottom: 10px;
+  line-height: 1.2;
+  padding: 16px;
+  margin-bottom: 8px;
   color: mixins.$color-secondary;
 }
 
 .options {
-  width: 660px;
+  width: clamp(300px, 45vw, 480px);
   margin: 0;
-  padding: 20px;
+  padding: 16px;
   border-radius: 20px;
 }
 
 .options li {
   list-style: none;
   position: relative;
-  padding-left: 50px;
+  padding-left: 32px;
 }
 
 .options li::before {
   position: absolute;
   content: "";
-  width: 15px;
-  height: 15px;
+  width: 12px;
+  height: 12px;
   background-color: mixins.$color-primary;
-  left: 10px;
-  transform: translate(50%, 75%);
+  left: 8px;
+  transform: translateY(75%);
   border-radius: 50%;
 }

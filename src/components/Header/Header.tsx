@@ -1,37 +1,23 @@
 import classNames from "classnames";
 import styles from "./styles.module.scss";
-import {NavLink} from "react-router";
+import {NavLink, useNavigate} from "react-router";
 import Logo from "../Logo/Logo.tsx";
-import {useContext, useState} from "react";
+import {useState} from "react";
 import ModalLogin from "../ModalLogin/ModalLogin.tsx";
-import UserContext from "../../contexts/UserContext/UserContext.tsx";
+import {useAppSelector} from "../../redux/hooks/hooks.ts";
+import {selectUser} from "../../redux/entities/auth";
 
 function Header() {
-    // const [info, setInfo] = useState("");
-    const context = useContext(UserContext);
-
-    if (!context) {
-        return null;
-    }
-
-    const {user} = context;
+    const user = useAppSelector(selectUser);
     const [isOpen, setIsOpen] = useState(false);
-    const userName = user === null ? "Войти" : user.name;
-
-    // const writeRequest = (event: ChangeEvent<HTMLInputElement>) => {
-    //     setInfo(event.target.value);
-    // }
-
-    // const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
-    //     event.preventDefault();
-    //     event.target
-    //     console.log(info + " пытаюсь найти это");
-    //     console.log("Мы искали, мы искали и ничего не нашли");
-    //     setInfo('');
-    // }
+    const navigate = useNavigate();
 
     const handleLoginClick = () => {
-        setIsOpen(true);
+        if (user) {
+            navigate("/profile");
+        } else {
+            setIsOpen(true);
+        }
     };
 
     return (
@@ -50,22 +36,9 @@ function Header() {
                          className={({isActive}) => classNames(isActive ? styles.linkActive : styles.link)}>Чемпионаты</NavLink>
             </nav>
             <ul className={classNames(styles.helpers)}>
-                {/*<li>*/}
-                {/*    <button>Сменить тему</button>*/}
-                {/*</li>*/}
-                {/*<li>*/}
-                {/*    <form className={classNames(styles.infoForSearch)} onSubmit={handleSubmit}>*/}
-                {/*        <input type="text" value={info} onChange={writeRequest} placeholder="Что ищем?"*/}
-                {/*               required/>*/}
-                {/*        <button type="submit">Поиск</button>*/}
-                {/*    </form>*/}
-                {/*</li>*/}
-                {/*<li>*/}
-                {/*    <button>Почта</button>*/}
-                {/*</li>*/}
                 <li>
                     <button onClick={handleLoginClick}>
-                        {userName}
+                        {user === null ? "Войти" : user.name}
                     </button>
                 </li>
                 <li>

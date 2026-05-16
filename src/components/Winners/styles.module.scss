@@ -2,36 +2,39 @@
 
 .root {
   width: 100%;
-  max-width: 1920px;
+  max-width: var(--content-width);
   flex-direction: column;
 }
 
 .title {
-  font-size: $font-giant;
-  line-height: 0;
-  margin-bottom: 100px;
+  font-size: clamp(2rem, 3vw, 2.5rem); /* 32px - 40px */
+  line-height: 1.2;
+  margin-bottom: 60px;
 }
 
 .winnersList {
-  @include flex-center;
+  display: flex;
+  justify-content: space-around;
   position: relative;
   padding: 0;
   list-style: none;
-  margin: 0 0 70px;
-  gap: 250px;
+  margin: 0 0 50px;
 }
 
 .winner {
   position: relative;
+  flex: 1;
+  display: flex;
+  justify-content: center;
 }
 
 .winner:not(:last-child)::after {
   content: "";
   position: absolute;
-  width: 3px;
-  height: 100%;
+  width: 2px;
+  height: 80%;
   background-color: $color-button-text;
-  top: 0;
-  right: calc(-45%);
+  top: 10%;
+  right: -1px;
   transform: rotate(15deg);
 }

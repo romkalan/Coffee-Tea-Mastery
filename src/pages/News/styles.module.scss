@@ -2,9 +2,9 @@
 
 .root {
   width: 100%;
-  max-width: 1920px;
+  max-width: var(--content-width);
   align-content: center;
-  margin-bottom: 120px;
+  margin-bottom: 80px;
 }
 
 .title {
@@ -21,8 +21,8 @@
 .newsList {
   display: flex;
   flex-direction: column;
-  gap: 70px;
-  margin: 0 0 70px;
+  gap: 40px;
+  margin: 0 0 40px;
   padding: 0;
 }
 
@@ -33,9 +33,9 @@
 }
 
 .loadMoreButton {
-  @include button-primary; // используйте ваш миксин для кнопок
-  padding: 15px 40px;
-  font-size: clamp(1rem, 2vw, 1.125rem); /* 16px - 18px */
+  @include button-primary;
+  @include button-small;
+  padding: 10px 32px;
   border: none;
   cursor: pointer;
   transition: all 0.3s ease;

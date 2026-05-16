@@ -10,7 +10,7 @@
 }
 
 .logoImage {
-  height: 155px;
+  height: clamp(80px, 8vw, 110px);
 }
 
 .logoText {
@@ -22,7 +22,7 @@
 .logoTitle {
   margin: 0;
   color: mixins.$color-accent;
-  font-size: mixins.$font-large;
+  font-size: clamp(1.25rem, 2vw, 1.75rem); /* 20px - 28px */
   align-self: center;
   position: relative;
 }
@@ -33,12 +33,12 @@
   left: 0;
   bottom: 0;
   width: 100%;
-  height: 3px;
+  height: 2px;
   background-color: mixins.$color-accent;
 }
 
 .logoSubTitle {
   margin: 0;
-  font-size: clamp(1.125rem, 2vw, 1.375rem); /* 18px - 22px */
+  font-size: clamp(0.875rem, 1.2vw, 1rem); /* 14px - 16px */
   color: mixins.$color-primary;
 }

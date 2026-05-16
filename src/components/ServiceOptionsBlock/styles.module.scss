@@ -1,19 +1,19 @@
 @use "../../styles/mixins" as *;
 
 .root {
-  margin-bottom: 120px;
+  margin-bottom: 80px;
 }
 
 .subtitle {
-  font-size: clamp(2.5rem, 4vw, 3.125rem); /* 40px - 50px */
+  font-size: clamp(2rem, 3vw, 2.5rem); /* 32px - 40px */
   @include flex-center;
   flex-direction: column;
-  line-height: 0;
-  margin-bottom: 100px;
+  line-height: 1.2;
+  margin-bottom: 60px;
   color: $color-secondary;
 }
 
 .options {
   @include flex-center;
-  gap: 70px;
+  gap: 40px;
 }

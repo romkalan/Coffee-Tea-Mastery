@@ -5,7 +5,7 @@
   background: linear-gradient(135deg, #FDF5E6 100%, #FFFFFF 0%);
   width: auto;
   border-radius: mixins.$border-radius-medium;
-  padding: 10px 20px 10px 0;
+  padding: 8px 16px 8px 0;
 }
 
 .icon {
@@ -23,9 +23,9 @@
 }
 
 .stage {
-  font-size: mixins.$font-large;
+  font-size: clamp(1rem, 1.5vw, 1.25rem); /* 16px - 20px */
 }
 
 .date {
-  font-size: mixins.$font-medium;
+  font-size: clamp(0.875rem, 1.2vw, 1rem); /* 14px - 16px */
 }
