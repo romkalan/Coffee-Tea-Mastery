@@ -130,6 +130,22 @@
     font-size: $font-standard;
 }
 
+.emptyBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+
+    .emptyText {
+        text-align: center;
+    }
+}
+
+.toCoursesBtn {
+    @include button-primary;
+    @include button-small;
+}
+
 .courseList {
     list-style: none;
     padding: 0;

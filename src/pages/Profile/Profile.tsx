@@ -92,7 +92,12 @@ function Profile() {
                             <p className={classNames(styles.emptyText)}>Нет пройденных курсов. Продолжайте обучение!</p>
                         )}
                         {enrollments.length > 0 && filteredEnrollments.length === 0 && filter === "enrolled" && !hasAnyEnrolled && (
-                            <p className={classNames(styles.emptyText)}>Нет активных записей. Все курсы пройдены!</p>
+                            <div className={classNames(styles.emptyBlock)}>
+                                <p className={classNames(styles.emptyText)}>Все курсы пройдены! Запишитесь на новый, чтобы продолжить развитие.</p>
+                                <button className={classNames(styles.toCoursesBtn)} onClick={() => navigate("/courses")}>
+                                    Выбрать курс
+                                </button>
+                            </div>
                         )}
                         {filteredEnrollments.length > 0 && (
                             <ul className={classNames(styles.courseList)}>
