@@ -9,21 +9,21 @@
 
 .title {
   font-size: mixins.$font-giant;
-  line-height: 60px;
+  line-height: 1.2;
   text-align: start;
 }
 
 .description {
   display: flex;
   justify-content: space-between;
-  font-size: mixins.$font-large;
-  line-height: 45px;
+  font-size: mixins.$font-standard;
+  line-height: 1.5;
   text-align: start;
   margin-bottom: 60px;
 }
 
 .link {
-  font-size: mixins.$font-medium;
+  font-size: mixins.$font-standard;
   display: block;
   text-align: right;
 }
