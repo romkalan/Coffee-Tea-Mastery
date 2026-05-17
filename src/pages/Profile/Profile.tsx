@@ -1,6 +1,5 @@
 import {useAppSelector, useAppDispatch} from "../../redux/hooks/hooks.ts";
-import {selectUser, logout} from "../../redux/entities/auth";
-import {useGetEnrollmentsQuery, useCompleteEnrollmentMutation} from "../../redux/entities/profile";
+import {selectUser, logout, completeCourse} from "../../redux/entities/auth";
 import {Navigate, useNavigate} from "react-router";
 import {useState} from "react";
 import classNames from "classnames";
@@ -15,12 +14,6 @@ function Profile() {
     const navigate = useNavigate();
     const [settingsOpen, setSettingsOpen] = useState(false);
 
-    const { data: enrollments = [] } = useGetEnrollmentsQuery(user?.id ?? "", {
-        skip: !user,
-    });
-
-    const [completeEnrollment] = useCompleteEnrollmentMutation();
-
     if (!user) {
         return <Navigate to="/" replace />;
     }
@@ -30,9 +23,8 @@ function Profile() {
             <ProfileHeader onLogout={() => { dispatch(logout()); navigate("/"); }} />
             <ProfileDashboard
                 user={user}
-                enrollments={enrollments}
                 onSettingsOpen={() => setSettingsOpen(true)}
-                onComplete={(id, completedAt) => completeEnrollment({ id, completedAt })}
+                onComplete={(courseId, completedAt) => dispatch(completeCourse({ courseId, completedAt }))}
             />
             <ProfileSettings isOpen={settingsOpen} onClose={() => setSettingsOpen(false)} />
         </div>

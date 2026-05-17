@@ -1,6 +1,4 @@
-export type TEnrollment = {
-    id: string;
-    userId: string;
+export type TUserCourse = {
     courseId: string;
     status: "enrolled" | "completed";
     enrolledAt: string;

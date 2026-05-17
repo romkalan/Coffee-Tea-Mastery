@@ -1,22 +1,24 @@
 import classNames from "classnames";
 import styles from "./styles.module.scss";
 
-interface SkillArea {
+interface TSkillArea {
     id: string;
     label: string;
     color: string;
-    courses: string[];
+    courseIds: string[];
 }
 
-const skillAreas: SkillArea[] = [
-    { id: "basics", label: "Эспрессо", color: "#8B4513", courses: ["course-3", "course-7"] },
-    { id: "latte-art", label: "Латте-арт", color: "#D2691E", courses: ["course-8"] },
-    { id: "cupping", label: "Каппинг", color: "#A0522D", courses: ["course-1"] },
-    { id: "tea", label: "Чай", color: "#2E7D32", courses: ["course-2", "course-5"] },
-    { id: "management", label: "Управление", color: "#1565C0", courses: ["course-4", "course-6"] },
-];
+interface TUserCourse {
+    courseId: string;
+    status: string;
+}
 
-const islandLayout = {
+interface SkillsMapProps {
+    skillAreas: TSkillArea[];
+    userCourses: TUserCourse[];
+}
+
+const islandLayout: Record<string, { cx: string; cy: string; rx: string; ry: string }> = {
     basics: { cx: "20%", cy: "30%", rx: "14%", ry: "14%" },
     "latte-art": { cx: "50%", cy: "22%", rx: "12%", ry: "12%" },
     cupping: { cx: "78%", cy: "55%", rx: "13%", ry: "13%" },
@@ -24,17 +26,15 @@ const islandLayout = {
     management: { cx: "58%", cy: "80%", rx: "15%", ry: "12%" },
 };
 
-interface SkillsMapProps {
-    enrollments: { courseId: string; status: string }[];
-}
-
-function SkillsMap({ enrollments }: SkillsMapProps) {
+function SkillsMap({ skillAreas, userCourses }: SkillsMapProps) {
     const completedCourseIds = new Set(
-        enrollments.filter(e => e.status === "completed").map(e => e.courseId)
+        userCourses.filter(c => c.status === "completed").map(c => c.courseId)
     );
 
-    const isCompleted = (area: SkillArea) =>
-        area.courses.some(cid => completedCourseIds.has(cid));
+    const isCompleted = (area: TSkillArea) =>
+        area.courseIds.some(cid => completedCourseIds.has(cid));
+
+    if (skillAreas.length === 0) return null;
 
     return (
         <div className={classNames(styles.root)}>
@@ -43,7 +43,8 @@ function SkillsMap({ enrollments }: SkillsMapProps) {
                 <text x="50%" y="48" textAnchor="middle" fill="#8B4513" fontSize="28" fontWeight="600">Моя карта навыков</text>
 
                 {skillAreas.map((area) => {
-                    const layout = islandLayout[area.id as keyof typeof islandLayout];
+                    const layout = islandLayout[area.id];
+                    if (!layout) return null;
                     return (
                         <g key={area.id}>
                             <ellipse

@@ -6,10 +6,11 @@ function generateUUID() {
     });
 }
 
-function formatDate(date: Date) {
-    const day = date.getDate();
-    const month = date.toLocaleString('ru-RU', {month: 'long'});
-    const year = date.getFullYear();
+function formatDate(date: string) {
+    const d = new Date(date);
+    const day = d.getDate();
+    const month = d.toLocaleString('ru-RU', {month: 'long'});
+    const year = d.getFullYear();
 
     return `${day} ${month} ${year}`
 }
@@ -21,8 +22,8 @@ function formatDateWithoutYear(date: Date) {
     return `${day} ${month}`
 }
 
-function sortByDate<T extends { date: Date }>(array: T[]) {
-    return [...array].sort((a, b) => b.date.getTime() - a.date.getTime());
+function sortByDate<T extends { date: string }>(array: T[]) {
+    return [...array].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 }
 
 function findElementById<T extends { id: string }>(collection: T[], id: string) {

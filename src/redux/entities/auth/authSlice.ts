@@ -10,11 +10,14 @@ type AuthState = {
 };
 
 const stored = localStorage.getItem("coffee_user");
-const initialUser: TUser | null = stored ? JSON.parse(stored) : null;
+const parsedStored: TUser | null = stored ? JSON.parse(stored) : null;
+if (parsedStored && !Array.isArray(parsedStored.courses)) {
+    parsedStored.courses = [];
+}
 
 const initialState: AuthState = {
-    user: initialUser,
-    isLoggedIn: !!initialUser,
+    user: parsedStored,
+    isLoggedIn: !!parsedStored,
     loading: false,
     error: null,
 };
@@ -59,6 +62,7 @@ export const registerUser = createAsyncThunk<
             email: data.email,
             password: data.password,
             role: "student",
+            courses: [],
         }),
     });
     const user: TUser = await res.json();
@@ -79,6 +83,57 @@ export const updateUser = createAsyncThunk<
             email: data.email,
             password: data.password,
         }),
+    });
+    const user: TUser = await res.json();
+    localStorage.setItem("coffee_user", JSON.stringify(user));
+    return user;
+});
+
+export const completeCourse = createAsyncThunk<
+    TUser,
+    { courseId: string; completedAt: string },
+    { state: State }
+>("auth/completeCourse", async (data, { getState }) => {
+    const state = getState() as State;
+    const currentUser = state.auth.user;
+    if (!currentUser) throw new Error("Пользователь не авторизован");
+
+    const updatedCourses = currentUser.courses.map(c =>
+        c.courseId === data.courseId
+            ? { ...c, status: "completed" as const, completedAt: data.completedAt }
+            : c
+    );
+
+    const res = await fetch(`http://localhost:3000/users/${currentUser.id}`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ courses: updatedCourses }),
+    });
+    const user: TUser = await res.json();
+    localStorage.setItem("coffee_user", JSON.stringify(user));
+    return user;
+});
+
+export const enrollCourse = createAsyncThunk<
+    TUser,
+    { courseId: string },
+    { state: State }
+>("auth/enrollCourse", async (data, { getState }) => {
+    const state = getState() as State;
+    const currentUser = state.auth.user;
+    if (!currentUser) throw new Error("Пользователь не авторизован");
+
+    const newCourse = {
+        courseId: data.courseId,
+        status: "enrolled" as const,
+        enrolledAt: new Date().toISOString(),
+    };
+    const updatedCourses = [...(currentUser.courses || []), newCourse];
+
+    const res = await fetch(`http://localhost:3000/users/${currentUser.id}`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ courses: updatedCourses }),
     });
     const user: TUser = await res.json();
     localStorage.setItem("coffee_user", JSON.stringify(user));
@@ -140,6 +195,30 @@ const authSlice = createSlice({
             .addCase(updateUser.rejected, (state, action) => {
                 state.loading = false;
                 state.error = action.error.message || "Ошибка обновления";
+            })
+            .addCase(completeCourse.pending, (state) => {
+                state.loading = true;
+                state.error = null;
+            })
+            .addCase(completeCourse.fulfilled, (state, action) => {
+                state.loading = false;
+                state.user = action.payload;
+            })
+            .addCase(completeCourse.rejected, (state, action) => {
+                state.loading = false;
+                state.error = action.error.message || "Ошибка обновления курса";
+            })
+            .addCase(enrollCourse.pending, (state) => {
+                state.loading = true;
+                state.error = null;
+            })
+            .addCase(enrollCourse.fulfilled, (state, action) => {
+                state.loading = false;
+                state.user = action.payload;
+            })
+            .addCase(enrollCourse.rejected, (state, action) => {
+                state.loading = false;
+                state.error = action.error.message || "Ошибка записи на курс";
             });
     },
 });

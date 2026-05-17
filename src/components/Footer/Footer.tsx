@@ -110,7 +110,7 @@ function Footer() {
                 </div>
                 <FeedbackForm />
             </div>
-            <p className={classNames(styles.rights)}>© 2025 Bee Barista. All Rights Reserved</p>
+            <p className={classNames(styles.rights)}>© 2026 Bee Barista. All Rights Reserved</p>
         </div>
     );
 }
