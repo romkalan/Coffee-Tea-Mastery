@@ -1,36 +1,40 @@
 import classNames from "classnames";
 import styles from "./styles.module.scss";
-import type {TService} from "../../types/service.ts";
 import {Navigate, useParams} from "react-router";
 import {useEffect} from "react";
 import ServiceRequestForm from "../../components/ServiceRequestForm/ServiceRequestForm.tsx";
 import ServiceOptionsBlock from "../../components/ServiceOptionsBlock/ServiceOptionsBlock.tsx";
 import Services from "../../components/Services/Services.tsx";
 import DetailServiceInfo from "../../components/DetailServiceInfo/DetailServiceInfo.tsx";
+import {useGetServiceByIdQuery, useGetServicesQuery} from "../../redux/services/api.ts";
+import Skeleton from "../../components/Skeleton/Skeleton.tsx";
+import ErrorState from "../../components/ErrorState/ErrorState.tsx";
 
-interface ServiceProps {
-    services: TService[];
-}
-
-function ServiceDetail({services}: ServiceProps) {
+function ServiceDetail() {
     const params = useParams();
-    const service = services.find((service) => service.id === params.id);
-    const anotherServices = services.sort((() => Math.random() - 0.5)).slice(0, 3);
+    const {data: service, isLoading, error, refetch} = useGetServiceByIdQuery(params.id!);
+    const {data: allServices} = useGetServicesQuery();
 
     useEffect(() => {
         window.scrollTo({top: 0, behavior: "smooth"});
     }, [params.id]);
 
-    if (!service) {
-        return <Navigate to="/not-found" replace />;
-    }
+    if (isLoading) return <Skeleton variant="card" count={3} />;
+    if (error) return <ErrorState onRetry={refetch} />;
+    if (!service) return <Navigate to="/not-found" replace />;
+
+    const otherServices = allServices
+        ? [...allServices].sort(() => Math.random() - 0.5).slice(0, 3)
+        : [];
 
     return (
         <div className={classNames(styles.root)}>
             <DetailServiceInfo service={service}/>
             <ServiceOptionsBlock actions={service.actions} results={service.results}/>
             <ServiceRequestForm/>
-            <Services services={anotherServices}>Другие услуги</Services>
+            {otherServices.length > 0 && (
+                <Services services={otherServices}>Другие услуги</Services>
+            )}
         </div>
     );
 }

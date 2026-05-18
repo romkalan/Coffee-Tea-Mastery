@@ -4,11 +4,11 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  margin-bottom: 80px;
+  @include section-bottom-margin;
 }
 
 .title {
-  margin-bottom: 40px;
+  margin-bottom: $space-4xl;
 }
 
 .previewImage {

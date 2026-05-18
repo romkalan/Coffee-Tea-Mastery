@@ -1,15 +1,13 @@
 @use "../../styles/mixins" as *;
 
 .root {
-  margin-bottom: 80px;
+  @include section-bottom-margin;
 }
 
 .subtitle {
-  font-size: clamp(2rem, 3vw, 2.5rem); /* 32px - 40px */
+  @include section-heading;
   @include flex-center;
   flex-direction: column;
-  line-height: 1.2;
-  margin-bottom: 60px;
   color: $color-secondary;
 }
 

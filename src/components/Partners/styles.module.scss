@@ -3,13 +3,11 @@
 .root {
   width: 100%;
   max-width: var(--content-width);
-  margin-bottom: 80px;
+  @include section-bottom-margin;
 }
 
 .title {
-  font-size: clamp(2rem, 3vw, 2.5rem);
-  line-height: 1.2;
-  margin-bottom: 60px;
+  @include section-heading;
   color: $color-secondary;
 }
 

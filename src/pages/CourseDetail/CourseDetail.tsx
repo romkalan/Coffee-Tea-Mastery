@@ -1,4 +1,3 @@
-import type {TCourse} from "../../types/course.ts";
 import styles from "./styles.module.scss";
 import {useEffect, useState} from "react";
 import {Navigate, useParams} from "react-router";
@@ -10,15 +9,14 @@ import ExpertOfCourse from "../../components/ExpertOfCourse/ExpertOfCourse.tsx";
 import {useAppSelector, useAppDispatch} from "../../redux/hooks/hooks.ts";
 import {selectUser, enrollCourse} from "../../redux/entities/auth";
 import ModalLogin from "../../components/ModalLogin/ModalLogin.tsx";
+import {useGetCourseByIdQuery, useGetCoursesQuery} from "../../redux/services/api.ts";
+import Skeleton from "../../components/Skeleton/Skeleton.tsx";
+import ErrorState from "../../components/ErrorState/ErrorState.tsx";
 
-interface CourseDetailProps {
-    courses: TCourse[];
-}
-
-function CourseDetail({courses}: CourseDetailProps){
+function CourseDetail(){
     const params = useParams();
-    const course = courses.find((course) => course.id === params.id);
-    const anotherCourses = courses.sort((() => Math.random() - 0.5)).slice(0, 3);
+    const {data: course, isLoading, error, refetch} = useGetCourseByIdQuery(params.id!);
+    const {data: allCourses} = useGetCoursesQuery();
     const user = useAppSelector(selectUser);
     const dispatch = useAppDispatch();
     const [showLogin, setShowLogin] = useState(false);
@@ -41,9 +39,13 @@ function CourseDetail({courses}: CourseDetailProps){
         window.scrollTo({top: 0, behavior: "smooth"});
     }, [params.id]);
 
-    if (!course) {
-        return <Navigate to="/not-found" replace />;
-    }
+    if (isLoading) return <Skeleton variant="card" count={3} />;
+    if (error) return <ErrorState onRetry={refetch} />;
+    if (!course) return <Navigate to="/not-found" replace />;
+
+    const otherCourses = allCourses
+        ? [...allCourses].sort(() => Math.random() - 0.5).slice(0, 3)
+        : [];
 
     return (
         <div>
@@ -69,7 +71,9 @@ function CourseDetail({courses}: CourseDetailProps){
                 </div>
 
                 <ServiceRequestForm/>
-                <Services services={anotherCourses}>Другие услуги</Services>
+                {otherCourses.length > 0 && (
+                    <Services services={otherCourses}>Другие курсы</Services>
+                )}
             </div>
             <ModalLogin isOpen={showLogin} onClose={() => setShowLogin(false)} />
         </div>

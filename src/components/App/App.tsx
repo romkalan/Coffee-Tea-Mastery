@@ -8,9 +8,6 @@ import NotFoundPage from "../../pages/NotFoundPage/NotFoundPage.tsx";
 import ServiceDetail from "../../pages/ServiceDetail/ServiceDetail.tsx";
 import ServicesPage from "../../pages/ServicesPage/ServicesPage.tsx";
 import NewsCardDetail from "../../pages/NewsCardDetail/NewsCardDetail.tsx";
-import {services} from "../../mocks/services.ts";
-import {courses} from "../../mocks/courses.ts";
-import {news} from "../../mocks/news.ts";
 import CourseDetail from "../../pages/CourseDetail/CourseDetail.tsx";
 import Profile from "../../pages/Profile/Profile.tsx";
 import {useEffect} from "react";
@@ -36,12 +33,12 @@ function App() {
                     <Route path="/" element={<Layout />}>
                         <Route index element={<Main />} />
                         <Route path={"news"} element={<News />} />
-                        <Route path={"news/:id"} element={<NewsCardDetail news={news}/>}/>
+                        <Route path={"news/:id"} element={<NewsCardDetail />}/>
                         <Route path={"courses"} element={<Courses />} />
-                        <Route path={"championships"} element={<Championships />} />
+                        <Route path={"courses/:id"} element={<CourseDetail />}/>
                         <Route path={"services"} element={<ServicesPage/>} />
-                        <Route path={"services/:id"} element={<ServiceDetail services={services}/>}/>
-                        <Route path={"courses/:id"} element={<CourseDetail courses={courses}/>}/>
+                        <Route path={"services/:id"} element={<ServiceDetail />}/>
+                        <Route path={"championships"} element={<Championships />} />
                         <Route path={"profile"} element={<Profile />} />
                     </Route>
                     <Route path="*" element={< NotFoundPage />} />

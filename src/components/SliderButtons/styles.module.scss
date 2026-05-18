@@ -14,3 +14,11 @@
   @include button-icon;
   transition: all 0.2s ease;
 }
+
+.button svg {
+  color: $color-primary;
+}
+
+.dot {
+  color: $color-accent;
+}

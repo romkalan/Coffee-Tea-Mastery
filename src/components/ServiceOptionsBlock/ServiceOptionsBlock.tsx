@@ -16,8 +16,8 @@ function ServiceOptionsBlock({actions, results}: ServiceOptionsBlockProps) {
         <div className={classNames(styles.root)}>
             <h2 className={classNames(styles.subtitle)}>Все выполним на высшем уровне</h2>
             <div className={classNames(styles.options)}>
-                <ServiceOption options={actions} children={"Что мы предлагаем?"}/>
-                <ServiceOption options={results} children={"Что Вы получаете?"}/>
+                <ServiceOption options={actions} title={"Что мы предлагаем?"}/>
+                <ServiceOption options={results} title={"Что Вы получаете?"}/>
             </div>
         </div>
     );

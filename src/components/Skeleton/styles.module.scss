@@ -1,0 +1,57 @@
+@use "../../styles/mixins" as *;
+
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.block {
+  position: relative;
+  overflow: hidden;
+  background-color: rgba($color-primary, 0.06);
+  border-radius: $border-radius-medium;
+}
+
+.card {
+  height: 280px;
+}
+
+.text {
+  height: 16px;
+  border-radius: $border-radius-small;
+  width: 100%;
+}
+
+.image {
+  height: 200px;
+  border-radius: $border-radius-medium;
+}
+
+.title {
+  height: 28px;
+  width: 60%;
+  border-radius: $border-radius-small;
+}
+
+.shimmer {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.4) 50%,
+    transparent 100%
+  );
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}

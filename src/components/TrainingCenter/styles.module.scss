@@ -6,16 +6,15 @@
 }
 
 .title {
+  @include section-heading;
   @include flex-center;
   flex-direction: column;
-  font-size: clamp(1.75rem, 3vw, 2.25rem); /* 28px - 36px */
-  line-height: 1.2;
-  margin-bottom: 60px;
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
 }
 
 .imageContainer {
   position: relative;
-  margin-bottom: 100px;
+  margin-bottom: clamp(60px, 8vw, 100px);
 }
 
 .imageContainer::after {

@@ -9,9 +9,8 @@
 }
 
 .root h2 {
-  font-size: clamp(2rem, 3vw, 2.5rem); /* 32px - 40px */
+  @include section-heading;
   align-self: flex-end;
-  line-height: 1.2;
   margin-bottom: 40px;
 }
 

@@ -7,34 +7,25 @@
 }
 
 .title {
-  font-size: clamp(2rem, 3vw, 2.5rem); /* 32px - 40px */
-  line-height: 1.2;
-  margin-bottom: 60px;
+  @include section-heading;
+}
+
+.embla {
+  overflow: hidden;
+  width: 100%;
 }
 
 .winnersList {
   display: flex;
-  justify-content: space-around;
-  position: relative;
   padding: 0;
   list-style: none;
-  margin: 0 0 50px;
+  margin: 0 0 $space-5xl;
 }
 
 .winner {
   position: relative;
-  flex: 1;
+  flex: 0 0 100%;
+  min-width: 0;
   display: flex;
   justify-content: center;
-}
-
-.winner:not(:last-child)::after {
-  content: "";
-  position: absolute;
-  width: 2px;
-  height: 80%;
-  background-color: $color-button-text;
-  top: 10%;
-  right: -1px;
-  transform: rotate(15deg);
 }

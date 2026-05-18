@@ -3,15 +3,13 @@
 .root {
   width: 100%;
   max-width: var(--content-width);
-  margin-bottom: 80px;
+  @include section-bottom-margin;
 }
 
 .title {
+  @include section-heading;
   @include flex-center;
-  font-size: clamp(2rem, 3vw, 2.5rem); /* 32px - 40px */
   flex-direction: column;
-  line-height: 1.2;
-  margin-bottom: 60px;
 }
 
 .content {

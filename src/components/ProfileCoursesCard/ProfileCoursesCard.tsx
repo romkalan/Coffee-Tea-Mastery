@@ -2,7 +2,7 @@ import {useState} from "react";
 import {useNavigate} from "react-router";
 import classNames from "classnames";
 import styles from "./styles.module.scss";
-import {courses as allCourses} from "../../mocks/courses.ts";
+import {useGetCoursesQuery} from "../../redux/services/api.ts";
 
 interface TUserCourse {
     courseId: string;
@@ -19,13 +19,14 @@ interface ProfileCoursesCardProps {
 function ProfileCoursesCard({ courses, onComplete }: ProfileCoursesCardProps) {
     const navigate = useNavigate();
     const [filter, setFilter] = useState<"enrolled" | "completed">("enrolled");
+    const {data: allCourses} = useGetCoursesQuery();
 
     const filteredEnrollments = courses.filter(
         (e: TUserCourse) => e.status === filter
     );
 
     const getCourseTitle = (courseId: string) => {
-        return allCourses.find(c => c.id === courseId)?.title ?? courseId;
+        return allCourses?.find(c => c.id === courseId)?.title ?? courseId;
     };
 
     return (

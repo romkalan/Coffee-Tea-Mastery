@@ -1,13 +1,9 @@
 import {configureStore} from "@reduxjs/toolkit";
-import courseReducer from "./entities/course";
-import serviceReducer from "./entities/service";
 import { authReducer } from "./entities/auth";
 import api from "./services/api.js";
 
 const store = configureStore({
     reducer: {
-        courses: courseReducer,
-        services: serviceReducer,
         auth: authReducer,
         [api.reducerPath]: api.reducer,
     },
