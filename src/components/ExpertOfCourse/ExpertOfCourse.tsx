@@ -1,15 +1,17 @@
-// import type {TExpert} from "../../types/expert.ts";
 import classNames from "classnames";
 import styles from "./styles.module.scss";
-import {findElementById} from "../../utils/utils.ts";
-import {experts} from "../../mocks/experts.ts";
+import {useGetExpertByIdQuery} from "../../redux/services/api.ts";
 
 interface ExpertOfCourseProp {
     expertId: string;
 }
 
 function ExpertOfCourse({expertId}: ExpertOfCourseProp) {
-    const expert = findElementById(experts, expertId);
+    const {data: expert, isLoading} = useGetExpertByIdQuery(expertId);
+
+    if (isLoading) {
+        return <h2 className={classNames(styles.title)}>Загрузка информации об эксперте...</h2>
+    }
 
     if (!expert) {
         return <h2 className={classNames(styles.title)}>На этот курс еще не назначен эксперт</h2>

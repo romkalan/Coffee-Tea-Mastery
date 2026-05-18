@@ -6,11 +6,9 @@
 }
 
 .title {
-  font-size: clamp(2rem, 3vw, 2.5rem); /* 32px - 40px */
+  @include section-heading;
   @include flex-center;
   flex-direction: column;
-  line-height: 1.2;
-  margin-bottom: 60px;
   color: $color-secondary;
 }
 
@@ -22,7 +20,7 @@
 .list {
   list-style-type: none;
   border-radius: 50px;
-  margin-bottom: 70px;
+  margin-bottom: $space-6xl;
   display: flex;
 }
 

@@ -22,7 +22,7 @@ function ProfileDashboard({ user, onSettingsOpen, onComplete }: ProfileDashboard
     const [skillAreas, setSkillAreas] = useState<TSkillArea[]>([]);
 
     useEffect(() => {
-        fetch("http://localhost:3000/skillAreas")
+        fetch(`${import.meta.env.VITE_API_URL}/skillAreas`)
             .then(r => r.json())
             .then(setSkillAreas)
             .catch(() => {});

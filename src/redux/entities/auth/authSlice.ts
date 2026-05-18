@@ -28,7 +28,7 @@ export const loginUser = createAsyncThunk<
     { state: State }
 >("auth/login", async (credentials) => {
     const res = await fetch(
-        `http://localhost:3000/users?email=${encodeURIComponent(credentials.email)}`
+        `${import.meta.env.VITE_API_URL}/users?email=${encodeURIComponent(credentials.email)}`
     );
     const users: TUser[] = await res.json();
     if (users.length === 0) {
@@ -48,13 +48,13 @@ export const registerUser = createAsyncThunk<
     { state: State }
 >("auth/register", async (data) => {
     const check = await fetch(
-        `http://localhost:3000/users?email=${encodeURIComponent(data.email)}`
+        `${import.meta.env.VITE_API_URL}/users?email=${encodeURIComponent(data.email)}`
     );
     const existing: TUser[] = await check.json();
     if (existing.length > 0) {
         throw new Error("Email уже зарегистрирован");
     }
-    const res = await fetch("http://localhost:3000/users", {
+    const res = await fetch(`${import.meta.env.VITE_API_URL}/users`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -75,7 +75,7 @@ export const updateUser = createAsyncThunk<
     { id: string; name: string; email: string; password: string },
     { state: State }
 >("auth/update", async (data) => {
-    const res = await fetch(`http://localhost:3000/users/${data.id}`, {
+    const res = await fetch(`${import.meta.env.VITE_API_URL}/users/${data.id}`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -104,7 +104,7 @@ export const completeCourse = createAsyncThunk<
             : c
     );
 
-    const res = await fetch(`http://localhost:3000/users/${currentUser.id}`, {
+    const res = await fetch(`${import.meta.env.VITE_API_URL}/users/${currentUser.id}`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ courses: updatedCourses }),
@@ -130,7 +130,7 @@ export const enrollCourse = createAsyncThunk<
     };
     const updatedCourses = [...(currentUser.courses || []), newCourse];
 
-    const res = await fetch(`http://localhost:3000/users/${currentUser.id}`, {
+    const res = await fetch(`${import.meta.env.VITE_API_URL}/users/${currentUser.id}`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ courses: updatedCourses }),

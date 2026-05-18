@@ -1,4 +1,5 @@
 import {useState} from "react";
+import {useNavigate} from "react-router";
 import classNames from "classnames";
 import styles from "./styles.module.scss";
 import {useAppDispatch, useAppSelector} from "../../redux/hooks/hooks.ts";
@@ -16,6 +17,7 @@ interface LoginFormProps {
 
 function LoginForm({ onClose }: LoginFormProps) {
     const dispatch = useAppDispatch();
+    const navigate = useNavigate();
     const loading = useAppSelector(selectAuthLoading);
     const error = useAppSelector(selectAuthError);
 
@@ -49,6 +51,7 @@ function LoginForm({ onClose }: LoginFormProps) {
             }));
             if (loginUser.fulfilled.match(result)) {
                 onClose();
+                navigate("/profile");
             }
         }
     };
