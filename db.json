@@ -139,7 +139,7 @@
       "image": "/images/courseImage.png",
       "previewImage": "#",
       "video": "#",
-      "skillArea": "management"
+      "skillArea": "basics"
     },
     {
       "id": "course-5",
@@ -171,7 +171,23 @@
       "image": "/images/courseImage.png",
       "previewImage": "#",
       "video": "#",
-      "skillArea": "management"
+      "skillArea": "basics"
+    },
+    {
+      "id": "course-9",
+      "title": "Мастерство обжарки кофе",
+      "type": "Курсы",
+      "price": 25000,
+      "time": "3 дня",
+      "seats": 20,
+      "format": "В тренинг центре",
+      "description": "От зелёного зерна до идеальной чашки: научитесь управлять профилем обжарки и раскрывать потенциал любого кофе",
+      "text": "",
+      "expertId": "3454hvgjgfdbcrcbsdfgs",
+      "image": "/images/courseImage.png",
+      "previewImage": "#",
+      "video": "#",
+      "skillArea": "roasting"
     },
     {
       "id": "course-7",
@@ -211,7 +227,7 @@
       "id": "basics",
       "label": "Эспрессо",
       "color": "#8B4513",
-      "courseIds": ["course-3", "course-7"]
+      "courseIds": ["course-3", "course-7", "course-4", "course-6"]
     },
     {
       "id": "latte-art",
@@ -221,7 +237,7 @@
     },
     {
       "id": "cupping",
-      "label": "Каппинг",
+      "label": "Земля Свободных Водопадов",
       "color": "#A0522D",
       "courseIds": ["course-1"]
     },
@@ -232,10 +248,10 @@
       "courseIds": ["course-2", "course-5", "course-7"]
     },
     {
-      "id": "management",
-      "label": "Управление",
-      "color": "#1565C0",
-      "courseIds": ["course-4", "course-6"]
+      "id": "roasting",
+      "label": "Обжарка",
+      "color": "#E65100",
+      "courseIds": ["course-9"]
     }
   ],
   "news": [

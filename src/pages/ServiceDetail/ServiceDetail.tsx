@@ -9,6 +9,7 @@ import DetailServiceInfo from "../../components/DetailServiceInfo/DetailServiceI
 import {useGetServiceByIdQuery, useGetServicesQuery} from "../../redux/services/api.ts";
 import Skeleton from "../../components/Skeleton/Skeleton.tsx";
 import ErrorState from "../../components/ErrorState/ErrorState.tsx";
+import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs.tsx";
 
 function ServiceDetail() {
     const params = useParams();
@@ -29,6 +30,11 @@ function ServiceDetail() {
 
     return (
         <div className={classNames(styles.root)}>
+            <Breadcrumbs crumbs={[
+                { label: "Главная", href: "/" },
+                { label: "Услуги", href: "/services" },
+                { label: service.title },
+            ]} />
             <DetailServiceInfo service={service}/>
             <ServiceOptionsBlock actions={service.actions} results={service.results}/>
             <ServiceRequestForm/>

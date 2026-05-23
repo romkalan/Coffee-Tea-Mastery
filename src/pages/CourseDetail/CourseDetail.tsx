@@ -12,6 +12,7 @@ import ModalLogin from "../../components/ModalLogin/ModalLogin.tsx";
 import {useGetCourseByIdQuery, useGetCoursesQuery} from "../../redux/services/api.ts";
 import Skeleton from "../../components/Skeleton/Skeleton.tsx";
 import ErrorState from "../../components/ErrorState/ErrorState.tsx";
+import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs.tsx";
 
 function CourseDetail(){
     const params = useParams();
@@ -49,6 +50,11 @@ function CourseDetail(){
 
     return (
         <div>
+            <Breadcrumbs crumbs={[
+                { label: "Главная", href: "/" },
+                { label: "Курсы", href: "/courses" },
+                { label: course.title },
+            ]} />
             <div className={classNames(styles.root)}>
                 <DetailCourseInfo course={course}/>
                 <ExpertOfCourse expertId={course.expertId}/>

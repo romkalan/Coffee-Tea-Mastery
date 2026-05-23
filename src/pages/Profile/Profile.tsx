@@ -25,6 +25,7 @@ function Profile() {
                 user={user}
                 onSettingsOpen={() => setSettingsOpen(true)}
                 onComplete={(courseId, completedAt) => dispatch(completeCourse({ courseId, completedAt }))}
+                onTerritoryClick={(territoryId) => navigate(`/courses?skillArea=${territoryId}`)}
             />
             <ProfileSettings isOpen={settingsOpen} onClose={() => setSettingsOpen(false)} />
         </div>

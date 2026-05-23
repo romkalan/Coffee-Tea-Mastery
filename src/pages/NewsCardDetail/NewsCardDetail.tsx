@@ -6,6 +6,7 @@ import DetailNewInfo from "../../components/DetailNewInfo/DetailNewInfo.tsx";
 import {useGetNewByIdQuery} from "../../redux/services/api.ts";
 import Skeleton from "../../components/Skeleton/Skeleton.tsx";
 import ErrorState from "../../components/ErrorState/ErrorState.tsx";
+import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs.tsx";
 
 function NewsCardDetail() {
     const params = useParams();
@@ -21,6 +22,11 @@ function NewsCardDetail() {
 
     return (
         <div className={classNames(styles.root)}>
+            <Breadcrumbs crumbs={[
+                { label: "Главная", href: "/" },
+                { label: "Новости", href: "/news" },
+                { label: newCard.title },
+            ]} />
             <h1 className={classNames(styles.title)}>{newCard.type} / {newCard.title}</h1>
             <div className={classNames(styles.root)}>
                 <DetailNewInfo newCard={newCard}/>

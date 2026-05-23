@@ -2,7 +2,7 @@ import {useState, useEffect} from "react";
 import classNames from "classnames";
 import styles from "./styles.module.scss";
 import ProfileSidebar from "../ProfileSidebar/ProfileSidebar.tsx";
-import SkillsMap from "../SkillsMap/SkillsMap.tsx";
+import FantasyMap from "../FantasyMap/FantasyMap.tsx";
 import type { TUser } from "../../types/user.ts";
 
 interface TSkillArea {
@@ -16,9 +16,10 @@ interface ProfileDashboardProps {
     user: TUser;
     onSettingsOpen: () => void;
     onComplete: (courseId: string, completedAt: string) => void;
+    onTerritoryClick: (territoryId: string) => void;
 }
 
-function ProfileDashboard({ user, onSettingsOpen, onComplete }: ProfileDashboardProps) {
+function ProfileDashboard({ user, onSettingsOpen, onComplete, onTerritoryClick }: ProfileDashboardProps) {
     const [skillAreas, setSkillAreas] = useState<TSkillArea[]>([]);
 
     useEffect(() => {
@@ -36,7 +37,11 @@ function ProfileDashboard({ user, onSettingsOpen, onComplete }: ProfileDashboard
                 onComplete={onComplete}
             />
             <div className={classNames(styles.mapArea)}>
-                <SkillsMap skillAreas={skillAreas} userCourses={user.courses} />
+                <FantasyMap
+                    skillAreas={skillAreas}
+                    userCourses={user.courses}
+                    onTerritoryClick={onTerritoryClick}
+                />
             </div>
         </div>
     );

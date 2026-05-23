@@ -1,0 +1,44 @@
+$gold: #c8a96e;
+$textLight: #e8d5b0;
+$darkBlue: #0f2440;
+
+.legend {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, rgba(15, 36, 64, 0.9) 0%, rgba(8, 20, 40, 0.9) 100%);
+    border: 1px solid $gold;
+    border-radius: 8px;
+    padding: 12px 16px;
+    min-width: 120px;
+    z-index: 10;
+}
+
+.legendTitle {
+    font-size: 13px;
+    font-weight: 700;
+    color: $gold;
+    margin-bottom: 8px;
+    font-family: "Roboto Slab", "Georgia", serif;
+    letter-spacing: 1px;
+}
+
+.legendItem {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: $textLight;
+    margin-bottom: 4px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.legendDot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}

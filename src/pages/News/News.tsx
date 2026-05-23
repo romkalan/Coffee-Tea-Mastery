@@ -8,6 +8,7 @@ import {sortByDate} from "../../utils/utils.ts";
 import {useState} from "react";
 import Skeleton from "../../components/Skeleton/Skeleton.tsx";
 import ErrorState from "../../components/ErrorState/ErrorState.tsx";
+import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs.tsx";
 
 function News() {
     const {data: news, isLoading, error, refetch} = useGetNewsQuery();
@@ -29,6 +30,10 @@ function News() {
 
     return (
         <div className={classNames(styles.root)}>
+            <Breadcrumbs crumbs={[
+                { label: "Главная", href: "/" },
+                { label: "Новости" },
+            ]} />
             <h1 className={classNames(styles.title)}>Новости</h1>
             <FilterMenu
                 searchQuery={searchQuery}

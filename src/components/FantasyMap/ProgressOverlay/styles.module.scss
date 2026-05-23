@@ -1,0 +1,37 @@
+$gold: #c8a96e;
+
+.progressOverlay {
+    pointer-events: none;
+}
+
+.progressBorder {
+    transition: stroke-opacity 0.5s ease;
+}
+
+.progressBorderCompleted {
+    animation: borderPulse 2s ease-in-out infinite;
+}
+
+.completedGlow {
+    animation: areaGlow 3s ease-in-out infinite;
+}
+
+@keyframes borderPulse {
+    0%,
+    100% {
+        stroke-opacity: 0.6;
+    }
+    50% {
+        stroke-opacity: 1;
+    }
+}
+
+@keyframes areaGlow {
+    0%,
+    100% {
+        fill-opacity: 0.15;
+    }
+    50% {
+        fill-opacity: 0.25;
+    }
+}
