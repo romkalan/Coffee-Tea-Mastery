@@ -9,8 +9,9 @@ interface ServiceProps {
 }
 
 function Service({service}: ServiceProps) {
-    const buttonText = 'date' in service ? 'Записаться' : 'Подробнее';
-    const pageLink = 'date' in service ? `/courses/${service.id}` : `/services/${service.id}`
+    const isCourse = 'expertId' in service;
+    const buttonText = isCourse ? 'Записаться' : 'Подробнее';
+    const pageLink = isCourse ? `/courses/${service.id}` : `/services/${service.id}`
 
     return (
         <li className={classNames(styles.root)}>

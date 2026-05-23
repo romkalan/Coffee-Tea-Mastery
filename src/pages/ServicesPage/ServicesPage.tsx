@@ -3,6 +3,7 @@ import {useGetServicesQuery} from "../../redux/services/api.ts";
 import Skeleton from "../../components/Skeleton/Skeleton.tsx";
 import ErrorState from "../../components/ErrorState/ErrorState.tsx";
 import EmptyState from "../../components/EmptyState/EmptyState.tsx";
+import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs.tsx";
 
 function ServicesPage() {
     const {data: services, isLoading, error, refetch} = useGetServicesQuery();
@@ -12,6 +13,10 @@ function ServicesPage() {
 
     return (
         <div>
+            <Breadcrumbs crumbs={[
+                { label: "Главная", href: "/" },
+                { label: "Услуги" },
+            ]} />
             {services && services.length > 0 ? (
                 <Services services={services}>Услуги для бизнеса</Services>
             ) : (
