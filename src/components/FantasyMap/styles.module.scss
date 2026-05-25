@@ -1,0 +1,37 @@
+@use "../../styles/mixins" as *;
+
+$gold: #c8a96e;
+
+.root {
+    position: relative;
+    width: 100%;
+    font-family: "Roboto Slab", "Georgia", serif;
+}
+
+.map {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.mapTitle {
+    fill: $gold;
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    font-family: "Roboto Slab", "Georgia", serif;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    opacity: 0.85;
+}
+
+.territoryGroup {
+    transition: transform 0.3s ease;
+}
+
+.status_locked,
+.status_inProgress,
+.status_completed {
+    /* status classes available for parent-level targeting */
+}

@@ -11,7 +11,7 @@ function DetailServiceInfo({service}: DetailServiceInfoProps) {
         <div>
             <h1 className={classNames(styles.title)}>{service.type} / {service.title}</h1>
             <div className={classNames(styles.previewRoot)}>
-                <img className={classNames(styles.previewImage)} src={"/images/serviceImage.jpg"}
+                <img className={classNames(styles.previewImage)} src={service.image}
                      alt="Фотография услуги"/>
                 <div className={classNames(styles.preview)}>
                     <h2 className={classNames(styles.previewTitle)}>{service.title}</h2>

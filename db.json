@@ -25,7 +25,7 @@
       "description": "Профессиональная дегустация и оценка качества кофе. Научим ваших сотрудников разбираться в кофе!",
       "actions": ["Поставим каппинг ваших образцов", "Опишем каждый", "Научим ваших сотрудников"],
       "results": ["Качественный продукт", "Надежных партнеров", "Гарантию на 1 год"],
-      "image": "/images/serviceImage.jpg",
+      "image": "/images/cuppingSession.jpeg",
       "previewImage": "#",
       "reviews": ["Комментарий 1", "Комментарий 2"],
       "video": "#"
@@ -40,7 +40,7 @@
       "description": "Создадим уникальное меню, которое увеличит продажи и порадует ваших гостей!",
       "actions": ["Проведем анализ вашего заведения", "Составим меню"],
       "results": ["Качественный продукт", "Надежных партнеров", "Гарантию на 1 год"],
-      "image": "/images/serviceImage.jpg",
+      "image": "/images/menuDelivering.jpg",
       "previewImage": "#",
       "reviews": ["Комментарий 1", "Комментарий 2"],
       "video": "#"
@@ -55,7 +55,7 @@
       "description": "Профессиональное обучение для ваших сотрудников",
       "actions": ["Разработаем программу", "Проведем обучение", "Проведем аудит"],
       "results": ["Качественный продукт", "Надежных партнеров", "Гарантию на 1 год"],
-      "image": "/images/serviceImage.jpg",
+      "image": "/images/trainingSession.png",
       "previewImage": "#",
       "reviews": ["Комментарий 1", "Комментарий 2"],
       "video": "#"
@@ -70,7 +70,7 @@
       "description": "Проведем диагностику слабых мест ваших работников и доведем до профессионального уровня их навыки",
       "actions": ["Диагностика бариста", "Тренировка настройки помола", "Каппинг-сессия"],
       "results": ["Рост продаж", "Довольные гости"],
-      "image": "/images/serviceImage.jpg",
+      "image": "/images/teamBuilding.png",
       "previewImage": "#",
       "reviews": ["Комментарий 1", "Комментарий 2"],
       "video": "#"
@@ -88,7 +88,7 @@
       "description": "Вы когда-нибудь задумывались, почему кофе описывается как \"с нотками черники и шоколада\", а чай как \"с оттенками меда и цветов\". Все дело в сложных химических соединениях, формирующихся в процессе выращивания, обработки и приготовления!",
       "text": "",
       "expertId": "34543623632fdgasdfgs",
-      "image": "/images/courseImage.png",
+      "image": "/images/sensoricScills.jpg",
       "previewImage": "#",
       "video": "#",
       "skillArea": "cupping"
@@ -120,7 +120,7 @@
       "description": "Освойте классические методы приготовления кофе",
       "text": "",
       "expertId": "34543623632fdgasdfgs",
-      "image": "/images/courseImage.png",
+      "image": "/images/coffeeClassic.jpg",
       "previewImage": "#",
       "video": "#",
       "skillArea": "basics"
@@ -136,7 +136,7 @@
       "description": "Как открыть и развивать кофейню",
       "text": "",
       "expertId": "3454hvgjgfdbcrcbsdfgs",
-      "image": "/images/courseImage.png",
+      "image": "/images/CoffeeConception.webp",
       "previewImage": "#",
       "video": "#",
       "skillArea": "basics"
@@ -152,7 +152,7 @@
       "description": "Разработка чайного меню для заведения",
       "text": "",
       "expertId": "3454362hjhg8fbd789sdfgs",
-      "image": "/images/courseImage.png",
+      "image": "/images/teaMapCreation.webp",
       "previewImage": "#",
       "video": "#",
       "skillArea": "tea"
@@ -168,7 +168,7 @@
       "description": "Как обучать и вовлекать гостей",
       "text": "",
       "expertId": "34543623632fdgasdfgs",
-      "image": "/images/courseImage.png",
+      "image": "/images/teaAndCoffeeEducation.jpg",
       "previewImage": "#",
       "video": "#",
       "skillArea": "basics"
@@ -184,7 +184,7 @@
       "description": "От зелёного зерна до идеальной чашки: научитесь управлять профилем обжарки и раскрывать потенциал любого кофе",
       "text": "",
       "expertId": "3454hvgjgfdbcrcbsdfgs",
-      "image": "/images/courseImage.png",
+      "image": "/images/coffeeRoasting.webp",
       "previewImage": "#",
       "video": "#",
       "skillArea": "roasting"
@@ -200,7 +200,7 @@
       "description": "Полный курс от бариста до титестера",
       "text": "",
       "expertId": "3454362hjhg8fbd789sdfgs",
-      "image": "/images/courseImage.png",
+      "image": "/images/coffeeAndTeaMastery.png",
       "previewImage": "#",
       "video": "#",
       "skillArea": "basics"
@@ -216,7 +216,7 @@
       "description": "Научитесь рисовать на кофе",
       "text": "",
       "expertId": "3454hvgjgfdbcrcbsdfgs",
-      "image": "/images/courseImage.png",
+      "image": "/images/latteArtBasic.webp",
       "previewImage": "#",
       "video": "#",
       "skillArea": "latte-art"

@@ -17,8 +17,10 @@ function ServiceDetail() {
     const {data: allServices} = useGetServicesQuery();
 
     useEffect(() => {
-        window.scrollTo({top: 0, behavior: "smooth"});
-    }, [params.id]);
+        if (service) {
+            window.scrollTo({top: 0, behavior: "smooth"});
+        }
+    }, [params.id, service]);
 
     if (isLoading) return <Skeleton variant="card" count={3} />;
     if (error) return <ErrorState onRetry={refetch} />;

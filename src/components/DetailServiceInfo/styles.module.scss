@@ -20,14 +20,14 @@
 
 .previewImage {
   width: 100%;
-  border-radius: 32px;
+  border-radius: 20px;
   height: 400px;
   flex: 0 0 50%;
   object-fit: cover;
   transition: transform 0.5s ease;
 
   &:hover {
-    transform: scale(1.02);
+    @include image-hover;
   }
 
   @media (max-width: 1024px) {
@@ -37,7 +37,6 @@
 
   @media (max-width: 768px) {
     height: 200px;
-    border-radius: 16px;
   }
 }
 
