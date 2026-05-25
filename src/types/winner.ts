@@ -4,4 +4,5 @@ export type TWinner = {
     region: string,
     year: number,
     photo: string,
+    quote: string,
 }
