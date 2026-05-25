@@ -11,7 +11,7 @@ function DetailCourseInfo({course}: DetailCourseInfoProps) {
         <div>
             <h1 className={classNames(styles.title)}>{course.type} / {course.title}</h1>
             <div className={classNames(styles.previewRoot)}>
-                <img className={classNames(styles.previewImage)} src={"/images/courseImage.png"}
+                <img className={classNames(styles.previewImage)} src={course.image}
                      alt="Фотография курса"/>
                 <div className={classNames(styles.preview)}>
                     <h2 className={classNames(styles.previewTitle)}>{course.title}</h2>
