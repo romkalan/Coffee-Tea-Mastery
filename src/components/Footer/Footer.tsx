@@ -100,10 +100,12 @@ function Footer() {
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="https://t.me/CoffeeAndTeaBrewingChannel"
+                               target="_blank"
+                               rel="noopener noreferrer">
                                 <img className={classNames(styles.link)}
                                      src="/images/TGIcon.png"
-                                     alt="Ссылка на сообщество в Телеграмм"/>
+                                     alt="Ссылка на сообщество в Телеграм"/>
                             </a>
                         </li>
                     </ul>

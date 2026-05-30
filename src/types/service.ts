@@ -12,4 +12,5 @@ export type TService = {
     previewImage: string;
     reviews: string[];
     video?: string;
+    audience?: "coffee-shop" | "restaurant" | "hotel" | "production";
 };

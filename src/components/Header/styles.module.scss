@@ -49,6 +49,7 @@
   &:hover {
     color: mixins.$color-accent;
     transform: translateY(0);
+    background-color: transparent;
   }
 }
 

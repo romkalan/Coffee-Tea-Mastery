@@ -35,7 +35,7 @@ function ServiceRequestForm() {
     }
 
     return (
-        <div>
+        <div id="request-form">
             <h2 className={classNames(styles.subtitle)}>Оставить заявку</h2>
             <div className={classNames(styles.root)}>
                 <div className={classNames(styles.card)}>

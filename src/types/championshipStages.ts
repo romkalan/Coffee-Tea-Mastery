@@ -1,5 +1,5 @@
 export type TChampionshipStage = {
-    id: string,
-    stage: string,
-    date: string,
+    id: string;
+    stage: string;
+    date: string;
 }
