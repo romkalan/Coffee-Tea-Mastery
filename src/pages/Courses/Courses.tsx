@@ -24,10 +24,12 @@ function Courses() {
     useEffect(() => {
         const section = searchParams.get("section");
         if (section === "training-center") {
-            const element = document.getElementById("training-center");
-            if (element) {
-                element.scrollIntoView({behavior: "smooth"});
-            }
+            setTimeout(() => {
+                const element = document.getElementById("training-center");
+                if (element) {
+                    element.scrollIntoView({behavior: "smooth"});
+                }
+            }, 100);
         }
     }, [searchParams]);
 
@@ -57,7 +59,6 @@ function Courses() {
                 ),
             ]} />
             {!skillArea && <CoursesPreview />}
-            <Experts />
             {activeTerritory && (
                 <div className={classNames(styles.filterHeader)}>
                     <h2 className={classNames(styles.filterTitle)}>
@@ -91,6 +92,7 @@ function Courses() {
                     {activeTerritory ? `Онлайн-курсы` : `Ближайшие занятия в онлайн-школе`}
                 </Services>
             ) : activeTerritory ? null : null}
+            <Experts />
         </div>
     );
 }

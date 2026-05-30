@@ -16,6 +16,13 @@ function ServiceDetail() {
     const {data: service, isLoading, error, refetch} = useGetServiceByIdQuery(params.id!);
     const {data: allServices} = useGetServicesQuery();
 
+    const scrollToForm = () => {
+        const form = document.getElementById("request-form");
+        if (form) {
+            form.scrollIntoView({ behavior: "smooth" });
+        }
+    };
+
     useEffect(() => {
         if (service) {
             window.scrollTo({top: 0, behavior: "smooth"});
@@ -37,7 +44,7 @@ function ServiceDetail() {
                 { label: "Услуги", href: "/services" },
                 { label: service.title },
             ]} />
-            <DetailServiceInfo service={service}/>
+            <DetailServiceInfo service={service} onRequestClick={scrollToForm}/>
             <ServiceOptionsBlock actions={service.actions} results={service.results}/>
             <ServiceRequestForm/>
             {otherServices.length > 0 && (
