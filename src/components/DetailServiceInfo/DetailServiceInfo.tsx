@@ -4,9 +4,10 @@ import type {TService} from "../../types/service.ts";
 
 interface DetailServiceInfoProps {
     service: TService;
+    onRequestClick?: () => void;
 }
 
-function DetailServiceInfo({service}: DetailServiceInfoProps) {
+function DetailServiceInfo({service, onRequestClick}: DetailServiceInfoProps) {
     return (
         <div>
             <h1 className={classNames(styles.title)}>{service.type} / {service.title}</h1>
@@ -20,7 +21,7 @@ function DetailServiceInfo({service}: DetailServiceInfoProps) {
                         <div><p><b>Время:</b></p>{service.time}</div>
                         <div><p><b>Стоимость:</b></p>От {service.price} руб</div>
                         <div><p><b>Формат:</b></p>{service.format}</div>
-                        <button className={classNames(styles.previewButton)}>Оставить заявку</button>
+                        <button className={classNames(styles.previewButton)} onClick={onRequestClick}>Оставить заявку</button>
                     </div>
                 </div>
             </div>

@@ -4,9 +4,10 @@ import type {TCourse} from "../../types/course.ts";
 
 interface DetailCourseInfoProps {
     course: TCourse;
+    onRequestClick?: () => void;
 }
 
-function DetailCourseInfo({course}: DetailCourseInfoProps) {
+function DetailCourseInfo({course, onRequestClick}: DetailCourseInfoProps) {
     return (
         <div>
             <h1 className={classNames(styles.title)}>{course.type} / {course.title}</h1>
@@ -20,7 +21,7 @@ function DetailCourseInfo({course}: DetailCourseInfoProps) {
                         <div><p><b>Время:</b></p>{course.time}</div>
                         <div><p><b>Стоимость:</b></p>От {course.price} руб</div>
                         <div><p><b>Формат обучения:</b></p>{course.format}</div>
-                        <button className={classNames(styles.previewButton)}>Оставить заявку</button>
+                        <button className={classNames(styles.previewButton)} onClick={onRequestClick}>Оставить заявку</button>
                     </div>
                 </div>
             </div>
