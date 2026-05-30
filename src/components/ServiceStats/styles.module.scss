@@ -1,0 +1,61 @@
+@use "../../styles/mixins" as *;
+
+.root {
+    width: 100%;
+    max-width: var(--content-width);
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    @include section-heading;
+    color: $color-secondary;
+}
+
+.grid {
+    display: flex;
+    justify-content: space-between;
+    gap: $space-3xl;
+}
+
+.statItem {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    @include card-style;
+    padding: $space-3xl;
+}
+
+.statValue {
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    font-weight: 700;
+    color: $color-accent;
+    line-height: 1;
+    margin-bottom: $space-sm;
+}
+
+.statLabel {
+    font-size: clamp(0.875rem, 1.2vw, 1rem);
+    color: $color-info-text;
+    line-height: 1.4;
+}
+
+.animate .statItem {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate .statItem:nth-child(1) { animation-delay: 0s; }
+.animate .statItem:nth-child(2) { animation-delay: 0.1s; }
+.animate .statItem:nth-child(3) { animation-delay: 0.2s; }
+.animate .statItem:nth-child(4) { animation-delay: 0.3s; }
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

@@ -13,6 +13,10 @@
 .button {
   @include button-icon;
   transition: all 0.2s ease;
+
+  &:hover {
+    background-color: transparent;
+  }
 }
 
 .button svg {

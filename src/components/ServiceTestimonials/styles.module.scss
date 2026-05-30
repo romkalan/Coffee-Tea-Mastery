@@ -1,0 +1,58 @@
+@use "../../styles/mixins" as *;
+
+.root {
+    width: 100%;
+    max-width: var(--content-width);
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    @include section-heading;
+    color: $color-secondary;
+}
+
+.embla {
+    overflow: hidden;
+    width: 100%;
+    margin-bottom: $space-5xl;
+}
+
+.list {
+    display: flex;
+}
+
+.slide {
+    position: relative;
+    flex: 0 0 50%;
+    min-width: 0;
+    padding: 0 $space-lg;
+}
+
+.card {
+    padding: $space-2xl;
+    display: flex;
+    flex-direction: column;
+    gap: $space-lg;
+    min-height: 180px;
+    border-radius: 20px;
+    transition: all 400ms ease-in-out;
+
+    &:hover {
+        box-shadow: 0 10px 30px rgba(141, 69, 19, 0.1);
+        transform: translateY(-4px);
+    }
+}
+
+.quoteIcon {
+    color: $color-accent;
+    opacity: 0.4;
+    flex-shrink: 0;
+}
+
+.text {
+    font-size: clamp(0.875rem, 1.2vw, 1rem);
+    color: $color-info-text;
+    line-height: 1.6;
+    margin: 0;
+}

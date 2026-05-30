@@ -1,0 +1,72 @@
+@use "../../styles/mixins" as *;
+
+.root {
+    width: 100%;
+    max-width: var(--content-width);
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    @include section-heading;
+    color: $color-secondary;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: $space-md;
+}
+
+.item {
+    @include card-style;
+    overflow: hidden;
+}
+
+.question {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: $space-xl $space-2xl;
+    background: none;
+    border: none;
+    font-size: clamp(1rem, 1.4vw, 1.125rem);
+    font-weight: 600;
+    color: $color-primary;
+    cursor: pointer;
+    text-align: left;
+    font-family: inherit;
+    line-height: 1.4;
+    gap: $space-lg;
+}
+
+.item:hover .question {
+    background-color: rgba(210, 105, 30, 0.05);
+    color: $color-primary;
+}
+
+.item:hover .answer {
+    background-color: rgba(210, 105, 30, 0.05);
+}
+
+.arrow {
+    flex-shrink: 0;
+    transition: transform 300ms ease;
+    color: $color-accent;
+}
+
+.arrowOpen {
+    transform: rotate(180deg);
+}
+
+.answer {
+    padding: 0 $space-2xl $space-xl;
+    font-size: clamp(0.875rem, 1.2vw, 1rem);
+    color: $color-info-text;
+    line-height: 1.6;
+
+    p {
+        margin: 0;
+    }
+}

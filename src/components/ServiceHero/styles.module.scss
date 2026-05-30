@@ -1,0 +1,104 @@
+@use "../../styles/mixins" as *;
+
+.root {
+    width: 100%;
+    max-width: var(--content-width);
+    @include flex-center;
+    position: relative;
+    overflow: hidden;
+}
+
+.stain {
+    position: absolute;
+    right: min(70px, 22vw);
+    top: 50%;
+    transform: translateY(-50%);
+    width: min(42vw, 506px);
+    pointer-events: none;
+    z-index: 0;
+    filter: blur(0.5px);
+
+    svg {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    @media (max-width: 1024px) {
+        width: min(48vw, 368px);
+        right: min(200px, 20vw);
+    }
+
+    @media (max-width: 640px) {
+        width: 52vw;
+        right: min(160px, 24vw);
+    }
+}
+
+.splatters {
+    position: absolute;
+    left: max(180px, 16vw);
+    top: 20%;
+    width: min(35vw, 370px);
+    pointer-events: none;
+    z-index: 0;
+    rotate: -90deg;
+    filter: blur(0.5px);
+
+    svg {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    @media (max-width: 1024px) {
+        width: min(38vw, 253px);
+        left: max(120px, 14vw);
+        top: 35%;
+    }
+
+    @media (max-width: 640px) {
+        display: none;
+    }
+}
+
+.content {
+    max-width: 750px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.subtitle {
+    font-size: clamp(0.875rem, 1.2vw, 1rem);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: $color-accent;
+    margin: 0 0 $space-lg;
+    font-weight: 600;
+}
+
+.title {
+    font-size: clamp(2.5rem, 4vw, 3.75rem);
+    line-height: 1.1;
+    color: $color-secondary;
+    margin: 0 0 $space-xl;
+}
+
+.description {
+    font-size: clamp(1.125rem, 1.6vw, 1.375rem);
+    line-height: 1.6;
+    color: $color-info-text;
+    margin: 0 0 $space-4xl;
+    max-width: 600px;
+}
+
+.ctaButton {
+    @include button-primary;
+    text-decoration: none;
+    font-size: clamp(1rem, 1.4vw, 1.25rem);
+    padding: 12px 32px;
+}

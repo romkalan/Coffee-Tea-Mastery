@@ -36,24 +36,46 @@ function Partners() {
                 <EmptyState message="Партнеры пока не добавлены" />
             ) : (
                 <ul className={classNames(styles.partnersList)}>
-                    {partners.map((partner: TPartner) => (
-                        <li key={partner.id}>
-                            <div className={classNames(styles.imageContainer)}>
-                                {partner.image ? (
-                                    <img src={partner.image} alt={partner.name} />
-                                ) : (
-                                    <div
-                                        className={classNames(styles.avatar)}
-                                        style={{ backgroundColor: getColor(partner.name) }}
-                                        aria-hidden="true"
+                    {partners.map((partner: TPartner) => {
+                        const linkContent = (
+                            <>
+                                <div className={classNames(styles.imageContainer)}>
+                                    {partner.image ? (
+                                        <img src={partner.image} alt={partner.name} />
+                                    ) : (
+                                        <div
+                                            className={classNames(styles.avatar)}
+                                            style={{ backgroundColor: getColor(partner.name) }}
+                                            aria-hidden="true"
+                                        >
+                                            {getInitials(partner.name)}
+                                        </div>
+                                    )}
+                                </div>
+                                <span className={classNames(styles.partnerName)}>{partner.name}</span>
+                            </>
+                        );
+
+                        return (
+                            <li key={partner.id}>
+                                {partner.url ? (
+                                    <a
+                                        className={classNames(styles.link)}
+                                        href={partner.url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        aria-label={`${partner.name} — сайт партнёра`}
                                     >
-                                        {getInitials(partner.name)}
+                                        {linkContent}
+                                    </a>
+                                ) : (
+                                    <div className={classNames(styles.link)}>
+                                        {linkContent}
                                     </div>
                                 )}
-                            </div>
-                            <span className={classNames(styles.partnerName)}>{partner.name}</span>
-                        </li>
-                    ))}
+                            </li>
+                        );
+                    })}
                 </ul>
             )}
         </div>
