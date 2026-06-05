@@ -1,16 +1,10 @@
-import {useState, useEffect} from "react";
+import {useState} from "react";
 import classNames from "classnames";
 import styles from "./styles.module.scss";
 import ProfileSidebar from "../ProfileSidebar/ProfileSidebar.tsx";
 import FantasyMap from "../FantasyMap/FantasyMap.tsx";
 import type { TUser } from "../../types/user.ts";
-
-interface TSkillArea {
-    id: string;
-    label: string;
-    color: string;
-    courseIds: string[];
-}
+import { skillAreas as mockSkillAreas } from "../../mocks/skillAreas.ts";
 
 interface ProfileDashboardProps {
     user: TUser;
@@ -20,14 +14,7 @@ interface ProfileDashboardProps {
 }
 
 function ProfileDashboard({ user, onSettingsOpen, onComplete, onTerritoryClick }: ProfileDashboardProps) {
-    const [skillAreas, setSkillAreas] = useState<TSkillArea[]>([]);
-
-    useEffect(() => {
-        fetch(`${import.meta.env.VITE_API_URL}/skillAreas`)
-            .then(r => r.json())
-            .then(setSkillAreas)
-            .catch(() => {});
-    }, []);
+    const [skillAreas] = useState(mockSkillAreas);
 
     return (
         <div className={classNames(styles.layout)}>

@@ -18,7 +18,7 @@ function MainServerTest() {
         isSuccess,
         isError,
         status
-    } = useGetServicesQuery(undefined);
+    } = useGetServicesQuery();
 
     // Отладка: логируем состояние запроса
     useEffect(() => {
