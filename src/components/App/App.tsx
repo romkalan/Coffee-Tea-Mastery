@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { HashRouter, Routes, Route, useLocation } from "react-router-dom";
 import Layout from "../Layout/Layout.tsx";
 import Main from "../../pages/Main/Main.tsx";
 import News from "../../pages/News/News.tsx";
@@ -31,7 +31,7 @@ function ScrollToTop() {
 function App() {
     return (
         <Provider store={store}>
-            <BrowserRouter basename="/Coffee-Tea-Mastery">
+            <HashRouter>
                 <ScrollToTop />
                 <Routes>
                     <Route path="/" element={<Layout />}>
@@ -47,7 +47,7 @@ function App() {
                     </Route>
                     <Route path="*" element={< NotFoundPage />} />
                 </Routes>
-            </BrowserRouter>
+            </HashRouter>
         </Provider>
     )
 }
