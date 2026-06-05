@@ -5,26 +5,26 @@ export const partners: TPartner[] = [
     {
         id: generateUUID(),
         name: "Submarine",
-        image: "",
+        image: "/images/submarineIcon.png",
     },
     {
         id: generateUUID(),
         name: "Cafe Store",
-        image: "",
+        image: "/images/serviceImage.jpg",
     },
     {
         id: generateUUID(),
         name: "Mahlkoning",
-        image: "",
+        image: "/images/MahlkoenigLogo.webp",
     },
     {
         id: generateUUID(),
         name: "Hi WATER",
-        image: "",
+        image: "/images/HiWaterLogo.svg",
     },
     {
         id: generateUUID(),
         name: "Tasty Coffee",
-        image: "",
+        image: "/images/rocketsCoffeeLogo.png",
     },
 ]
