@@ -3,6 +3,8 @@ import type { TUser } from "../../../types/user.ts";
 import type { State } from "../../index.ts";
 import { users as mockUsers } from "../../../mocks/users.ts";
 
+const IS_MOCK = import.meta.env.VITE_USE_MOCKS === 'true';
+const API_URL = import.meta.env.VITE_API_URL;
 const REGISTERED_USERS_KEY = "coffee_registered_users";
 
 function getAllUsers(): TUser[] {
@@ -68,9 +70,22 @@ export const loginUser = createAsyncThunk<
     { email: string; password: string },
     { state: State }
 >("auth/login", async (credentials) => {
-    const all = getAllUsers();
-    const user = all.find(u => u.email === credentials.email);
-    if (!user || user.password !== credentials.password) {
+    if (IS_MOCK) {
+        const all = getAllUsers();
+        const user = all.find(u => u.email === credentials.email);
+        if (!user || user.password !== credentials.password) {
+            throw new Error("Неверный email или пароль");
+        }
+        localStorage.setItem("coffee_user", JSON.stringify(user));
+        return user;
+    }
+    const res = await fetch(`${API_URL}/users?email=${encodeURIComponent(credentials.email)}`);
+    const users: TUser[] = await res.json();
+    if (users.length === 0) {
+        throw new Error("Неверный email или пароль");
+    }
+    const user = users[0];
+    if (user.password !== credentials.password) {
         throw new Error("Неверный email или пароль");
     }
     localStorage.setItem("coffee_user", JSON.stringify(user));
@@ -82,21 +97,42 @@ export const registerUser = createAsyncThunk<
     { name: string; email: string; password: string },
     { state: State }
 >("auth/register", async (data) => {
-    const all = getAllUsers();
-    if (all.some(u => u.email === data.email)) {
+    if (IS_MOCK) {
+        const all = getAllUsers();
+        if (all.some(u => u.email === data.email)) {
+            throw new Error("Email уже зарегистрирован");
+        }
+        const newUser: TUser = {
+            id: generateId(),
+            name: data.name,
+            email: data.email,
+            password: data.password,
+            role: "student",
+            courses: [],
+        };
+        localStorage.setItem("coffee_user", JSON.stringify(newUser));
+        saveCustomUser(newUser);
+        return newUser;
+    }
+    const check = await fetch(`${API_URL}/users?email=${encodeURIComponent(data.email)}`);
+    const existing: TUser[] = await check.json();
+    if (existing.length > 0) {
         throw new Error("Email уже зарегистрирован");
     }
-    const newUser: TUser = {
-        id: generateId(),
-        name: data.name,
-        email: data.email,
-        password: data.password,
-        role: "student",
-        courses: [],
-    };
-    localStorage.setItem("coffee_user", JSON.stringify(newUser));
-    saveCustomUser(newUser);
-    return newUser;
+    const res = await fetch(`${API_URL}/users`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            name: data.name,
+            email: data.email,
+            password: data.password,
+            role: "student",
+            courses: [],
+        }),
+    });
+    const user: TUser = await res.json();
+    localStorage.setItem("coffee_user", JSON.stringify(user));
+    return user;
 });
 
 export const updateUser = createAsyncThunk<
@@ -104,17 +140,31 @@ export const updateUser = createAsyncThunk<
     { id: string; name: string; email: string; password: string },
     { state: State }
 >("auth/update", async (data) => {
-    const all = getAllUsers();
-    const existing = all.find(u => u.id === data.id);
-    if (!existing) throw new Error("Пользователь не найден");
-    const updated: TUser = {
-        ...existing,
-        name: data.name,
-        email: data.email,
-        password: data.password,
-    };
-    updateStoredUser(updated);
-    return updated;
+    if (IS_MOCK) {
+        const all = getAllUsers();
+        const existing = all.find(u => u.id === data.id);
+        if (!existing) throw new Error("Пользователь не найден");
+        const updated: TUser = {
+            ...existing,
+            name: data.name,
+            email: data.email,
+            password: data.password,
+        };
+        updateStoredUser(updated);
+        return updated;
+    }
+    const res = await fetch(`${API_URL}/users/${data.id}`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            name: data.name,
+            email: data.email,
+            password: data.password,
+        }),
+    });
+    const user: TUser = await res.json();
+    localStorage.setItem("coffee_user", JSON.stringify(user));
+    return user;
 });
 
 export const completeCourse = createAsyncThunk<
@@ -130,9 +180,19 @@ export const completeCourse = createAsyncThunk<
             ? { ...c, status: "completed" as const, completedAt: data.completedAt }
             : c
     );
-    const updated: TUser = { ...currentUser, courses: updatedCourses };
-    updateStoredUser(updated);
-    return updated;
+    if (IS_MOCK) {
+        const updated: TUser = { ...currentUser, courses: updatedCourses };
+        updateStoredUser(updated);
+        return updated;
+    }
+    const res = await fetch(`${API_URL}/users/${currentUser.id}`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ courses: updatedCourses }),
+    });
+    const user: TUser = await res.json();
+    localStorage.setItem("coffee_user", JSON.stringify(user));
+    return user;
 });
 
 export const enrollCourse = createAsyncThunk<
@@ -149,9 +209,19 @@ export const enrollCourse = createAsyncThunk<
         enrolledAt: new Date().toISOString(),
     };
     const updatedCourses = [...(currentUser.courses || []), newCourse];
-    const updated: TUser = { ...currentUser, courses: updatedCourses };
-    updateStoredUser(updated);
-    return updated;
+    if (IS_MOCK) {
+        const updated: TUser = { ...currentUser, courses: updatedCourses };
+        updateStoredUser(updated);
+        return updated;
+    }
+    const res = await fetch(`${API_URL}/users/${currentUser.id}`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ courses: updatedCourses }),
+    });
+    const user: TUser = await res.json();
+    localStorage.setItem("coffee_user", JSON.stringify(user));
+    return user;
 });
 
 const authSlice = createSlice({
