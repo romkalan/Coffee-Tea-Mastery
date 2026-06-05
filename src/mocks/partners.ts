@@ -28,8 +28,8 @@ export const partners: TPartner[] = [
     },
     {
         id: generateUUID(),
-        name: "Tasty Coffee",
+        name: "Rockets Coffee",
         image: "/images/rocketsCoffeeLogo.png",
-        url: "https://shop.tastycoffee.ru/",
+        url: "https://rockets.coffee/",
     },
 ]
