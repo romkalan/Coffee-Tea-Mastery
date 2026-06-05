@@ -6,8 +6,6 @@ import ServiceRequestForm from "../../components/ServiceRequestForm/ServiceReque
 import Services from "../../components/Services/Services.tsx";
 import DetailCourseInfo from "../../components/DetailCourseInfo/DetailCourseInfo.tsx";
 import ExpertOfCourse from "../../components/ExpertOfCourse/ExpertOfCourse.tsx";
-import {useAppSelector} from "../../redux/hooks/hooks.ts";
-import {selectUser} from "../../redux/entities/auth";
 import {useGetCourseByIdQuery, useGetCoursesQuery} from "../../redux/services/api.ts";
 import Skeleton from "../../components/Skeleton/Skeleton.tsx";
 import ErrorState from "../../components/ErrorState/ErrorState.tsx";
@@ -17,11 +15,6 @@ function CourseDetail(){
     const params = useParams();
     const {data: course, isLoading, error, refetch} = useGetCourseByIdQuery(params.id!);
     const {data: allCourses} = useGetCoursesQuery();
-    const user = useAppSelector(selectUser);
-
-    const myEnrollment = user && course
-        ? (user.courses || []).find(c => c.courseId === course.id)
-        : null;
 
     const scrollToForm = () => {
         const form = document.getElementById("request-form");

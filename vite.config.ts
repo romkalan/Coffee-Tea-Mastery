@@ -6,4 +6,7 @@ export default defineConfig({
   plugins: [react()],
   envPrefix: 'VITE_',
   base: '/Coffee-Tea-Mastery/',
+  build: {
+    outDir: 'docs',
+  },
 })
