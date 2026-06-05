@@ -31,7 +31,7 @@ function ScrollToTop() {
 function App() {
     return (
         <Provider store={store}>
-            <BrowserRouter>
+            <BrowserRouter basename="/Coffee-Tea-Mastery">
                 <ScrollToTop />
                 <Routes>
                     <Route path="/" element={<Layout />}>
