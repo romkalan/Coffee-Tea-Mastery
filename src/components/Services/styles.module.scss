@@ -47,26 +47,9 @@
   }
 }
 
-@include respond-lg-max {
-  .slider {
-    overflow: visible;
-  }
-
-  .list {
-    flex-direction: column;
-    border-radius: 0;
-    margin-bottom: $space-4xl;
-    gap: 24px;
-  }
-
+@include respond-sm-max {
   .cardSlide {
     width: 100%;
-    padding: 0;
-    flex: none;
-  }
-
-  .sliderButtons {
-    display: none;
   }
 }
 
