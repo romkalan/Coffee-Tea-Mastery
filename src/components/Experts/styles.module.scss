@@ -22,6 +22,12 @@
   list-style-type: none;
 }
 
+@include respond-lg {
+  .expertsList {
+    flex-wrap: nowrap;
+  }
+}
+
 @include respond-md-max {
   .expertsList {
     gap: 24px;
