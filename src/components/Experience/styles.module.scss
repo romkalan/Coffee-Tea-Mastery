@@ -40,6 +40,12 @@
   padding-top: clamp(90px, 15vw, 150px);
 }
 
+@include mixins.respond-sm-max {
+  .info {
+    display: none;
+  }
+}
+
 @include mixins.respond-md-max {
   .root {
     flex-direction: column;
