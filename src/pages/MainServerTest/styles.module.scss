@@ -9,6 +9,14 @@
   gap: 90px;
 }
 
+@include respond-md-max {
+  .root { gap: 48px; }
+}
+
+@include respond-sm-max {
+  .root { gap: 32px; }
+}
+
 .loading {
   display: flex;
   flex-direction: column;

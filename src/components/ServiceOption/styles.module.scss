@@ -17,10 +17,17 @@
 }
 
 .options {
-  width: clamp(300px, 45vw, 480px);
+  width: clamp(280px, 45vw, 480px);
   margin: 0;
   padding: 16px;
   border-radius: 20px;
+}
+
+@include mixins.respond-sm-max {
+  .options {
+    width: 100%;
+    min-width: 0;
+  }
 }
 
 .options li {
