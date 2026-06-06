@@ -43,3 +43,16 @@
     color: $color-primary;
   }
 }
+
+@include respond-sm-max {
+  .root {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .button {
+    min-width: 0;
+    flex: 1 1 calc(50% - 6px);
+    text-align: center;
+  }
+}

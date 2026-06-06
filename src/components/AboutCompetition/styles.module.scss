@@ -31,6 +31,17 @@
   padding: 30px;
 }
 
+@include mixins.respond-sm-max {
+  .description {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .link {
+    text-align: left;
+  }
+}
+
 .root::after {
   content: "";
   position: absolute;

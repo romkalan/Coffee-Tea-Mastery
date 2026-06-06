@@ -92,3 +92,21 @@
   transform: translate(-50%, 0);
   width: 101%;
 }
+
+@include respond-md-max {
+  .images {
+    gap: 12px;
+  }
+}
+
+@include respond-sm-max {
+  .images {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .imageWrapper {
+    width: 100%;
+    max-width: 400px;
+  }
+}

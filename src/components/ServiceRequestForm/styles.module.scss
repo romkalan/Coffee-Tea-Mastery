@@ -56,3 +56,20 @@
   padding: 12px;
   font-size: clamp(1rem, 1.4vw, 1.125rem); /* 16px - 18px */
 }
+
+@include respond-md-max {
+  .root {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 480px;
+  }
+
+  .form {
+    width: 100%;
+    max-width: 480px;
+  }
+}

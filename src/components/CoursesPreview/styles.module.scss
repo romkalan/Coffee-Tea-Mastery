@@ -65,3 +65,15 @@
     color: $color-button-text;
   }
 }
+
+@include respond-md-max {
+  .root {
+    flex-direction: column;
+    width: 100%;
+    gap: 24px;
+  }
+
+  .info {
+    width: 100%;
+  }
+}

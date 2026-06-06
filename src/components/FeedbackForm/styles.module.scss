@@ -49,3 +49,24 @@
   font-size: mixins.$font-small;
   margin: 8px 0 0;
 }
+
+@include mixins.respond-sm-max {
+  .feedback {
+    max-width: 100%;
+  }
+
+  .feedbackAddress {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .feedbackAddress input {
+    border-radius: 10px;
+    border-right: 1px solid mixins.$color-accent;
+  }
+
+  .feedbackAddress button {
+    border-radius: 10px;
+    width: 100%;
+  }
+}

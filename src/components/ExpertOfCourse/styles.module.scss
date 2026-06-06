@@ -123,3 +123,16 @@
   @include button-secondary;
   @include button-small;
 }
+
+@include respond-md-max {
+  .content {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .imageContainer {
+    width: 100%;
+    max-width: 380px;
+    margin: 0 auto;
+  }
+}
