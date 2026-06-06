@@ -21,7 +21,7 @@ function NewsCardDetail() {
     if (!newCard) return <Navigate to="/not-found" replace />;
 
     return (
-        <div className={classNames(styles.root)}>
+        <div className={classNames(styles.root, "page")}>
             <Breadcrumbs crumbs={[
                 { label: "Главная", href: "/" },
                 { label: "Новости", href: "/news" },

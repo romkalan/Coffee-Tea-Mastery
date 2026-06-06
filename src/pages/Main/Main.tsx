@@ -15,7 +15,7 @@ function Main() {
     const {data: allServices, isLoading, error, refetch} = useGetServicesQuery();
 
     return (
-        <div className={classNames(styles.root)}>
+        <div className={classNames(styles.root, "page")}>
             <Hero />
             <Experience />
             <About />

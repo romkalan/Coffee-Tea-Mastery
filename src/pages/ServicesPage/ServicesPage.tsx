@@ -24,7 +24,7 @@ function ServicesPage() {
     if (error) return <ErrorState onRetry={refetch} />;
 
     return (
-        <div className={classNames(styles.root)}>
+        <div className={classNames(styles.root, "page")}>
             <Breadcrumbs crumbs={[
                 { label: "Главная", href: "/" },
                 { label: "Услуги" },

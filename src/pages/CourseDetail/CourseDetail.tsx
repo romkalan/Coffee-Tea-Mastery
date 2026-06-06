@@ -38,7 +38,7 @@ function CourseDetail(){
         : [];
 
     return (
-        <div>
+        <div className="page">
             <Breadcrumbs crumbs={[
                 { label: "Главная", href: "/" },
                 { label: "Курсы", href: "/courses" },

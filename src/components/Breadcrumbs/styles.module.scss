@@ -43,3 +43,11 @@
   line-height: 1.4;
   font-weight: 500;
 }
+
+@include respond-md-max {
+  .root {
+    font-size: 13px;
+    gap: 2px;
+    padding: 12px 0;
+  }
+}

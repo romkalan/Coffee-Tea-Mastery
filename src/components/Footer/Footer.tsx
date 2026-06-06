@@ -8,6 +8,19 @@ import {useState} from "react";
 
 function Footer() {
     const [isTooltipOpen, setIsTooltipOpen] = useState(false);
+    const [expandedSections, setExpandedSections] = useState<Set<string>>(new Set());
+
+    const toggleSection = (section: string) => {
+        setExpandedSections(prev => {
+            const next = new Set(prev);
+            if (next.has(section)) {
+                next.delete(section);
+            } else {
+                next.add(section);
+            }
+            return next;
+        });
+    };
 
     return (
         <div className={classNames(styles.root)}>
@@ -49,41 +62,61 @@ function Footer() {
                 </li>
             </ul>
             <div className={classNames(styles.additionalInfo)}>
-                <nav className={classNames(styles.footerPages)}>
-                    <h4 className={classNames(styles.socialsTitle)}>Навигация по сайту</h4>
-                    <div className={classNames(styles.navColumns)}>
-                        <div className={classNames(styles.navColumn)}>
-                            <NavLink to={"/"}>Главная</NavLink>
-                            <NavLink to={"/news"}>Новости</NavLink>
-                            <NavLink to={"/courses"}>Курсы</NavLink>
-                        </div>
-                        <div className={classNames(styles.navColumn)}>
-                            <NavLink to={"/services"}>Услуги</NavLink>
-                            <NavLink to={"/championships"}>Чемпионаты</NavLink>
-                        </div>
+                <div className={classNames(styles.accordionSection)}>
+                    <button
+                        className={classNames(styles.accordionHeader)}
+                        onClick={() => toggleSection("navigation")}
+                    >
+                        <h4 className={classNames(styles.socialsTitle)}>Навигация по сайту</h4>
+                        <span className={classNames(styles.accordionIcon, expandedSections.has("navigation") && styles.accordionIconOpen)}>▼</span>
+                    </button>
+                    <div className={classNames(styles.accordionContent, expandedSections.has("navigation") && styles.accordionContentOpen)}>
+                        <nav className={classNames(styles.footerPages)}>
+                            <div className={classNames(styles.navColumns)}>
+                                <div className={classNames(styles.navColumn)}>
+                                    <NavLink to={"/"}>Главная</NavLink>
+                                    <NavLink to={"/news"}>Новости</NavLink>
+                                    <NavLink to={"/courses"}>Курсы</NavLink>
+                                </div>
+                                <div className={classNames(styles.navColumn)}>
+                                    <NavLink to={"/services"}>Услуги</NavLink>
+                                    <NavLink to={"/championships"}>Чемпионаты</NavLink>
+                                </div>
+                            </div>
+                        </nav>
                     </div>
-                </nav>
-                <nav className={classNames(styles.footerPages)}>
-                    <h4 className={classNames(styles.socialsTitle)}>Помощь</h4>
-                    <NavLink to={"/courses"}>Как записаться на курсы?</NavLink>
-                    <div className={classNames(styles.tooltipContainer)}>
-                        <span
-                            className={classNames(styles.linkButton)}
-                            onClick={() => setIsTooltipOpen(true)}
-                        >
-                            Как стать экспертом?
-                        </span>
-                        <Tooltip
-                            isOpen={isTooltipOpen}
-                            onClose={() => setIsTooltipOpen(false)}
-                            title="Как стать экспертом"
-                            content="Чтобы стать экспертом, необходимо иметь глубокие знания в области кофе и чая, пройти обучение и получить соответствующую сертификацию. Свяжитесь с нами по телефону или электронной почте для получения подробной информации."
-                        />
+                </div>
+                <div className={classNames(styles.accordionSection)}>
+                    <button
+                        className={classNames(styles.accordionHeader)}
+                        onClick={() => toggleSection("help")}
+                    >
+                        <h4 className={classNames(styles.socialsTitle)}>Помощь</h4>
+                        <span className={classNames(styles.accordionIcon, expandedSections.has("help") && styles.accordionIconOpen)}>▼</span>
+                    </button>
+                    <div className={classNames(styles.accordionContent, expandedSections.has("help") && styles.accordionContentOpen)}>
+                        <nav className={classNames(styles.footerPages)}>
+                            <NavLink to={"/courses"}>Как записаться на курсы?</NavLink>
+                            <div className={classNames(styles.tooltipContainer)}>
+                                <span
+                                    className={classNames(styles.linkButton)}
+                                    onClick={() => setIsTooltipOpen(true)}
+                                >
+                                    Как стать экспертом?
+                                </span>
+                                <Tooltip
+                                    isOpen={isTooltipOpen}
+                                    onClose={() => setIsTooltipOpen(false)}
+                                    title="Как стать экспертом"
+                                    content="Чтобы стать экспертом, необходимо иметь глубокие знания в области кофе и чая, пройти обучение и получить соответствующую сертификацию. Свяжитесь с нами по телефону или электронной почте для получения подробной информации."
+                                />
+                            </div>
+                            <NavLink to={"/championships"}>Как принять участвовать в чемпионате?</NavLink>
+                        </nav>
                     </div>
-                    <NavLink to={"/championships"}>Как принять участвовать в чемпионате?</NavLink>
-                </nav>
+                </div>
                 <div className={classNames(styles.socials)}>
-                <h4 className={classNames(styles.socialsTitle)}>Мы в социальных сетях</h4>
+                    <h4 className={classNames(styles.socialsTitle)}>Мы в социальных сетях</h4>
                     <ul className={classNames(styles.socialsList)}>
                         <li>
                             <a href="#">

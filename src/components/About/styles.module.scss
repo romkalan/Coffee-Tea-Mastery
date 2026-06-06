@@ -74,3 +74,32 @@
   align-self: flex-end;
   padding-right: 15%;
 }
+
+@include mixins.respond-md-max {
+  .root {
+    width: 100%;
+    padding: 0 16px;
+  }
+
+  .title {
+    width: 100%;
+  }
+
+  .blockAboutText {
+    width: 100%;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .aboutUsTitle::after {
+    display: none;
+  }
+
+  .disk {
+    display: none;
+  }
+
+  .linkToCompetition {
+    padding-right: 0;
+  }
+}

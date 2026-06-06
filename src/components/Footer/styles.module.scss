@@ -92,6 +92,88 @@
   }
 }
 
+.accordionSection {
+  width: 100%;
+}
+
+.accordionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 16px 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: mixins.$color-primary;
+  font-size: mixins.$font-standard;
+
+  &:hover {
+    background: none;
+    color: mixins.$color-accent;
+  }
+}
+
+.accordionIcon {
+  transition: transform 300ms ease;
+  font-size: 12px;
+}
+
+.accordionIconOpen {
+  transform: rotate(180deg);
+}
+
+.accordionContent {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 300ms ease;
+
+  nav {
+    padding-bottom: 16px;
+  }
+}
+
+.accordionContentOpen {
+  max-height: 300px;
+}
+
+@include mixins.respond-md {
+  .accordionSection {
+    width: auto;
+  }
+
+  .accordionHeader {
+    cursor: default;
+    pointer-events: none;
+    padding: 0;
+  }
+
+  .accordionIcon {
+    display: none;
+  }
+
+  .accordionContent {
+    max-height: none !important;
+    overflow: visible;
+
+    nav {
+      padding-bottom: 0;
+    }
+  }
+}
+
+@include mixins.respond-md-max {
+  .additionalInfo {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .contacts {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
 .socials {
 
 }
