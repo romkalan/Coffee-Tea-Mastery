@@ -18,13 +18,27 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+
+  @include respond-sm-max {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  @include respond-sm {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  @include respond-lg {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
 }
 
 .advantagesList li {
-  width: 22%;
   position: relative;
   counter-increment: item-counter;
 }

@@ -1,3 +1,5 @@
+@use "breakpoints" as bp;
+
 // COLORS
 $color-primary: #4D0505;
 $color-secondary: #8B4513;
@@ -537,3 +539,11 @@ $space-7xl: 80px;
   filter: none;
   box-shadow: 0 15px 30px rgba(77, 5, 5, 0.15);
 }
+
+// Responsive mixins
+@mixin respond-sm { @media (min-width: bp.$bp-sm) { @content; } }
+@mixin respond-md { @media (min-width: bp.$bp-md) { @content; } }
+@mixin respond-lg { @media (min-width: bp.$bp-lg) { @content; } }
+@mixin respond-sm-max { @media (max-width: bp.$bp-sm - 1px) { @content; } }
+@mixin respond-md-max { @media (max-width: bp.$bp-md - 1px) { @content; } }
+@mixin respond-lg-max { @media (max-width: bp.$bp-lg - 1px) { @content; } }

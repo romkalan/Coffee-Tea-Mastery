@@ -57,6 +57,12 @@
   color: mixins.$color-accent;
 }
 
+@media (max-width: 767px) {
+  .root {
+    margin-bottom: 24px;
+  }
+}
+
 .infoForSearch {
   display: grid;
   grid-template-columns: 0.8fr auto;

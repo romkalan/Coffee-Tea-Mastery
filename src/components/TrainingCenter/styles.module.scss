@@ -47,3 +47,10 @@
   width: 55%;
   font-size: $font-standard;
 }
+
+@include respond-md-max {
+  .text {
+    width: 100%;
+    padding: 0 16px;
+  }
+}

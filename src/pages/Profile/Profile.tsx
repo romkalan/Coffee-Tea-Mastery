@@ -19,7 +19,7 @@ function Profile() {
     }
 
     return (
-        <div className={classNames(styles.root)}>
+        <div className={classNames(styles.root, "page")}>
             <ProfileHeader onLogout={() => { dispatch(logout()); navigate("/"); }} />
             <ProfileDashboard
                 user={user}

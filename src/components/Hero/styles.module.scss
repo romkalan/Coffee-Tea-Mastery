@@ -51,3 +51,24 @@
 .heroImage {
   width: 50%;
 }
+
+@include mixins.respond-md-max {
+  .root {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 30px;
+  }
+
+  .heroText {
+    align-items: center;
+  }
+
+  .heroButton {
+    margin: 0 auto;
+  }
+
+  .heroImage {
+    display: none;
+  }
+}

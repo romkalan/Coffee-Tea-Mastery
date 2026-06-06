@@ -1,0 +1,46 @@
+@use "../../styles/mixins" as *;
+
+.root {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  gap: 5px;
+  padding: 0;
+  z-index: 1001;
+  position: relative;
+
+  &:hover {
+    background: none;
+    transform: none;
+  }
+}
+
+.line {
+  width: 24px;
+  height: 2px;
+  background-color: $color-primary;
+  border-radius: 2px;
+  transition: all 300ms ease;
+  transform-origin: center;
+  display: block;
+}
+
+.open {
+  .line:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .line:nth-child(2) {
+    opacity: 0;
+  }
+
+  .line:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+}

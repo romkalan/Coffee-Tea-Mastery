@@ -114,6 +114,18 @@ textarea {
   color: $color-info-text-dark;
 }
 
+.page {
+  padding: 0 16px;
+
+  @include respond-md {
+    padding: 0 32px;
+  }
+
+  @include respond-lg {
+    padding: 0 80px;
+  }
+}
+
 /* ✅ МЕДИА-ЗАПРОСЫ ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ */
 @media (max-width: 768px) {
   html {
