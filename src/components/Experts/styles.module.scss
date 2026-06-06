@@ -17,6 +17,20 @@
 .expertsList {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 40px;
   list-style-type: none;
+}
+
+@include respond-md-max {
+  .expertsList {
+    gap: 24px;
+  }
+}
+
+@include respond-sm-max {
+  .expertsList {
+    flex-direction: column;
+    align-items: center;
+  }
 }

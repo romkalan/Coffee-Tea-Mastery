@@ -53,6 +53,18 @@
 .animate .statItem:nth-child(3) { animation-delay: 0.2s; }
 .animate .statItem:nth-child(4) { animation-delay: 0.3s; }
 
+@include respond-sm-max {
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: $space-lg;
+    }
+
+    .statItem {
+        padding: $space-xl;
+    }
+}
+
 @keyframes fadeInUp {
     to {
         opacity: 1;

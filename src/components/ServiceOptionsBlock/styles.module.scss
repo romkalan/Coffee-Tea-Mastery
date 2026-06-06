@@ -15,3 +15,11 @@
   @include flex-center;
   gap: 40px;
 }
+
+@include respond-md-max {
+  .options {
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+  }
+}

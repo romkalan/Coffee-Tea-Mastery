@@ -32,3 +32,15 @@
   padding: 0 20px;
 }
 
+@include respond-md-max {
+  .cardSlide {
+    width: 50%;
+  }
+}
+
+@include respond-sm-max {
+  .cardSlide {
+    width: 100%;
+  }
+}
+
