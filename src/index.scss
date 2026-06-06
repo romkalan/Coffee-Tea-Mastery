@@ -137,8 +137,13 @@ textarea {
 
   body {
     zoom: 1;
-    /*-webkit-transform: scale(1);*/
     transform: scale(1);
+  }
+}
+
+@include respond-sm-max {
+  button {
+    font-size: 1em;
   }
 }
 

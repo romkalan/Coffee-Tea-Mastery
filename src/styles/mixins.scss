@@ -34,11 +34,11 @@ $shadow-card-hover: 0 20px 40px rgba(0, 0, 0, 0.12),
                     inset 0 1px 0 rgba(255, 255, 255, 0.9);
 
 // SIZES
-$font-small: 16px;
-$font-standard: 18px;
-$font-medium: 24px;
-$font-large: clamp(1.5rem, 2vw, 2rem); /* 24px - 32px */
-$font-giant: clamp(2rem, 3vw, 2.5rem); /* 32px - 40px */
+$font-small: clamp(0.875rem, 1vw, 1rem);       /* 14px - 16px */
+$font-standard: clamp(1rem, 1.2vw, 1.125rem);  /* 16px - 18px */
+$font-medium: clamp(1.125rem, 1.6vw, 1.5rem);  /* 18px - 24px */
+$font-large: clamp(1.5rem, 2vw, 2rem);          /* 24px - 32px */
+$font-giant: clamp(2rem, 3vw, 2.5rem);          /* 32px - 40px */
 
 $border-radius-small: 8px;
 $border-radius-medium: 12px;
