@@ -12,7 +12,7 @@ import {selectUser} from "../../redux/entities/auth";
 function Header() {
     const user = useAppSelector(selectUser);
     const [isOpen, setIsOpen] = useState(false);
-    const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 1024);
     const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
     const navigate = useNavigate();
     const location = useLocation();
@@ -20,7 +20,7 @@ function Header() {
 
     useEffect(() => {
         const handleResize = () => {
-            setIsMobile(window.innerWidth < 768);
+            setIsMobile(window.innerWidth < 1024);
         };
         window.addEventListener("resize", handleResize);
         return () => window.removeEventListener("resize", handleResize);

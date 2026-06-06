@@ -23,9 +23,15 @@ function ChampionshipCycle() {
                     <div className={classNames(styles.centerLine)}></div>
                     <ul className={classNames(styles.stageList)}>
                         {stages.map((stage, index) => (
-                            <li className={classNames(styles.stageItem, index % 2 === 0 ? styles.left : styles.right)}
-                                key={stage.id}>
-                                <ChampionshipStage stage={stage}/>
+                            <li key={stage.id} className={classNames(styles.stageItemWrapper)}>
+                                <div className={classNames(styles.stageItem, index % 2 === 0 ? styles.left : styles.right)}>
+                                    <ChampionshipStage stage={stage}/>
+                                </div>
+                                {index < stages.length - 1 && (
+                                    <svg className={classNames(styles.arrow)} width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 5v14M5 12l7 7 7-7" stroke="#D2691E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                                    </svg>
+                                )}
                             </li>
                         ))}
                     </ul>

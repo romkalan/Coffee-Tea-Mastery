@@ -57,9 +57,16 @@
   color: mixins.$color-accent;
 }
 
-@media (max-width: 767px) {
+@include mixins.respond-lg-max {
   .root {
     margin-bottom: 24px;
+  }
+}
+
+@include mixins.respond-lg-max {
+  .headerPages,
+  .helpers {
+    display: none;
   }
 }
 

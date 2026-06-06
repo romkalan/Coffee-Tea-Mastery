@@ -42,3 +42,9 @@
   font-size: clamp(0.875rem, 1.2vw, 1rem); /* 14px - 16px */
   color: mixins.$color-primary;
 }
+
+@include mixins.respond-lg-max {
+  .logoText {
+    display: none;
+  }
+}
