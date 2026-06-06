@@ -34,9 +34,8 @@
 .stageItem {
   position: relative;
   display: flex;
+  flex-direction: row;
   align-items: center;
-  justify-items: stretch;
-  width: 100%;
 
   &::after {
     content: "";
@@ -75,21 +74,13 @@
   }
 }
 
-.stageItemWrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-}
-
 .arrow {
   display: none;
-  margin: 8px 0;
-  animation: bounceArrow 1.5s ease-in-out infinite;
+  flex-shrink: 0;
 }
 
 @for $i from 1 through 10 {
-  .stageItemWrapper:nth-child(#{$i}) .arrow {
+  .stageItem:nth-child(#{$i}) .arrow {
     animation-delay: #{$i * 0.3 - 0.3}s;
   }
 }
@@ -103,23 +94,21 @@
     display: none;
   }
 
-  .stageItemWrapper {
+  .stageItem {
+    flex-direction: column;
     align-items: stretch;
+
+    &.left, &.right {
+      margin: 0 !important;
+      justify-content: flex-start;
+    }
   }
 
   .arrow {
     display: block;
     align-self: center;
-  }
-
-  .stageItem {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .left, .right {
-    margin: 0 !important;
-    justify-content: flex-start;
+    margin: 8px 0;
+    animation: bounceArrow 1.5s ease-in-out infinite;
   }
 }
 
