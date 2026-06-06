@@ -39,10 +39,12 @@ function Header() {
             <Logo />
             {isMobile ? (
                 <>
-                    <Hamburger
-                        isOpen={isMobileNavOpen}
-                        onClick={() => setIsMobileNavOpen(prev => !prev)}
-                    />
+                    <div className={classNames(styles.hamburgerWrapper)}>
+                        <Hamburger
+                            isOpen={isMobileNavOpen}
+                            onClick={() => setIsMobileNavOpen(prev => !prev)}
+                        />
+                    </div>
                     <MobileNav
                         isOpen={isMobileNavOpen}
                         onClose={() => setIsMobileNavOpen(false)}

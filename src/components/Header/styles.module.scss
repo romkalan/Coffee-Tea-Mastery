@@ -60,6 +60,8 @@
 @include mixins.respond-lg-max {
   .root {
     margin-bottom: 24px;
+    justify-content: center;
+    position: relative;
   }
 }
 
@@ -68,6 +70,13 @@
   .helpers {
     display: none;
   }
+}
+
+.hamburgerWrapper {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .infoForSearch {
