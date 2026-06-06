@@ -38,6 +38,15 @@
   }
 }
 
+@include respond-lg {
+  .slider,
+  .sliderButtons {
+    width: calc(100% + 160px);
+    margin-left: -80px;
+    margin-right: -80px;
+  }
+}
+
 @include respond-lg-max {
   .slider {
     overflow: visible;
