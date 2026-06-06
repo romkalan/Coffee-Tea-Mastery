@@ -26,6 +26,10 @@
   padding: 0;
 }
 
+@include respond-sm-max {
+  .newsList { gap: 24px; }
+}
+
 .loadMoreContainer {
   display: flex;
   justify-content: center;

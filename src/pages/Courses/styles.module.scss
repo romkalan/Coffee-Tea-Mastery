@@ -9,6 +9,14 @@
   gap: 70px;
 }
 
+@include respond-md-max {
+  .root { gap: 40px; }
+}
+
+@include respond-sm-max {
+  .root { gap: 24px; }
+}
+
 .filterHeader {
   display: flex;
   align-items: center;
@@ -20,7 +28,7 @@
 
 .filterTitle {
   margin: 0;
-  font-size: 32px;
+  font-size: clamp(1.25rem, 5vw, 2rem);
   font-weight: 600;
   color: var(--color-text);
 }

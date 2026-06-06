@@ -9,3 +9,11 @@
   flex-direction: column;
   gap: 70px;
 }
+
+@include respond-md-max {
+  .root { gap: 40px; }
+}
+
+@include respond-sm-max {
+  .root { gap: 24px; }
+}
