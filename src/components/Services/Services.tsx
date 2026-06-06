@@ -61,12 +61,14 @@ function Services({children, services}: ServicesProps) {
                     ))}
                 </ul>
             </div>
-            <SliderButtons
-                prevButton={scrollPrev}
-                nextButton={scrollNext}
-                currentSlide={selectedIndex}
-                totalSlides={services.length}
-            />
+            <div className={classNames(styles.sliderButtons)}>
+                <SliderButtons
+                    prevButton={scrollPrev}
+                    nextButton={scrollNext}
+                    currentSlide={selectedIndex}
+                    totalSlides={services.length}
+                />
+            </div>
         </div>
     );
 }
