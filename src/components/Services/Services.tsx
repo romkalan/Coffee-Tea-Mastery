@@ -10,9 +10,10 @@ import type {TCourse} from "../../types/course.ts";
 interface ServicesProps {
     children: string;
     services: TService[] | TCourse[];
+    id?: string;
 }
 
-function Services({children, services}: ServicesProps) {
+function Services({children, services, id}: ServicesProps) {
     const [emblaRef, emblaApi] = useEmblaCarousel({
         loop: false,
         align: 'start',
@@ -48,7 +49,7 @@ function Services({children, services}: ServicesProps) {
     }, [emblaApi, onSelect]);
 
     return (
-        <div className={classNames(styles.root)} role="region" aria-roledescription="carousel" aria-label={children}>
+        <div id={id} className={classNames(styles.root)} role="region" aria-roledescription="carousel" aria-label={children}>
             <h2 className={classNames(styles.title)}>
                 {children}
             </h2>

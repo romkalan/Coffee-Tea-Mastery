@@ -72,19 +72,17 @@ function Courses() {
                     </button>
                 </div>
             )}
-            <div id="training-center">
-                {isLoading ? (
-                    <Skeleton variant="card" count={3} />
-                ) : error ? (
-                    <ErrorState onRetry={refetch} />
-                ) : offlineCourses.length > 0 ? (
-                    <Services services={offlineCourses}>
-                        {activeTerritory ? `Занятия в тренинг-центре` : `Ближайшие занятия в тренинг-центре`}
-                    </Services>
-                ) : !activeTerritory ? (
-                    <EmptyState message="Очные занятия пока не запланированы" />
-                ) : null}
-            </div>
+            {isLoading ? (
+                <div id="training-center"><Skeleton variant="card" count={3} /></div>
+            ) : error ? (
+                <div id="training-center"><ErrorState onRetry={refetch} /></div>
+            ) : offlineCourses.length > 0 ? (
+                <Services id="training-center" services={offlineCourses}>
+                    {activeTerritory ? `Занятия в тренинг-центре` : `Ближайшие занятия в тренинг-центре`}
+                </Services>
+            ) : !activeTerritory ? (
+                <div id="training-center"><EmptyState message="Очные занятия пока не запланированы" /></div>
+            ) : null}
             {isLoading ? (
                 <Skeleton variant="card" count={2} />
             ) : error ? null : onlineCourses.length > 0 ? (
