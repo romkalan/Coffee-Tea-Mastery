@@ -22,7 +22,7 @@ function Service({service}: ServiceProps) {
                 <h3 className={classNames(styles.descriptionTitle)}>
                     {service.title}
                 </h3>
-                <div className={classNames(styles.descriptionInfo)}>
+                <div className={classNames(styles.descriptionInfo, isCourse && styles.grid)}>
                     <div className={classNames(styles.descriptionText)}>
                         <span>Стоимость</span>
                         <span>{service.price} руб.</span>
