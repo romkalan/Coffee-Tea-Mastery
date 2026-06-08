@@ -7,7 +7,15 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 40px;
-  padding-top: 10px;
+  padding: 10px 16px 0;
+
+  @include mixins.respond-md {
+    padding: 10px 32px 0;
+  }
+
+  @include mixins.respond-lg {
+    padding: 10px 80px 0;
+  }
 }
 
 .link {

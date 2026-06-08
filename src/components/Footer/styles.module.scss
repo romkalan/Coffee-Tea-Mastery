@@ -6,9 +6,17 @@
   max-width: var(--content-width);
   flex-direction: column;
   justify-content: space-between;
-  padding-bottom: 40px;
+  padding: 0 16px 40px;
   gap: 30px;
   position: relative;
+
+  @include mixins.respond-md {
+    padding: 0 32px 40px;
+  }
+
+  @include mixins.respond-lg {
+    padding: 0 80px 40px;
+  }
 }
 
 .contacts {
