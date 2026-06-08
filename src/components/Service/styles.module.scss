@@ -55,8 +55,13 @@
 .descriptionText {
   display: flex;
   flex-direction: column;
-  font-size: clamp(0.875rem, 1.2vw, 1rem); /* 14px - 16px */
+  font-size: clamp(0.875rem, 1.2vw, 1rem);
   line-height: 1.5;
+
+  span:first-child {
+    font-weight: 700;
+    color: mixins.$color-primary;
+  }
 }
 
 .linkButton {
