@@ -31,7 +31,7 @@
   display: flex;
   list-style: none;
   gap: 40px;
-  font-size: clamp(1.125rem, 1.5vw, 1.25rem); /* 18px - 20px */
+  font-size: clamp(1.125rem, 1.5vw, 1.25rem);
 }
 
 .helpers {
@@ -65,11 +65,59 @@
   color: mixins.$color-accent;
 }
 
+.menuButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border: 1px solid mixins.$color-accent;
+  border-radius: 8px;
+  background: transparent;
+  color: mixins.$color-accent;
+  cursor: pointer;
+  font-size: mixins.$font-standard;
+  transition: all 200ms ease;
+
+  &:hover {
+    background: mixins.$color-link-hover;
+    transform: translateY(0);
+  }
+
+  svg {
+    flex-shrink: 0;
+  }
+}
+
+.loginButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: mixins.$font-standard;
+  color: mixins.$color-primary;
+  transition: all 200ms ease;
+
+  &:hover {
+    color: mixins.$color-accent;
+    transform: translateY(0);
+    background: none;
+  }
+
+  svg {
+    flex-shrink: 0;
+  }
+}
+
+.loginButtonActive {
+  color: mixins.$color-accent;
+}
+
 @include mixins.respond-lg-max {
   .root {
     margin-bottom: 24px;
-    justify-content: center;
-    position: relative;
   }
 }
 
@@ -80,21 +128,13 @@
   }
 }
 
-.hamburgerWrapper {
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
 .infoForSearch {
   display: grid;
   grid-template-columns: 0.8fr auto;
 
-  // Блок поиска в шапке
-  visibility: hidden; // стили для невидимости
-  opacity: 0; // стили для невидимости
-  position: absolute; // стили для невидимости
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
 }
 
 .infoForSearch input {

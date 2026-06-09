@@ -1,5 +1,6 @@
 import classNames from "classnames";
 import styles from "./styles.module.scss";
+import {useNavigate} from "react-router";
 
 interface TSkillArea {
     id: string;
@@ -27,12 +28,17 @@ const islandLayout: Record<string, { cx: string; cy: string; rx: string; ry: str
 };
 
 function SkillsMap({ skillAreas, userCourses }: SkillsMapProps) {
+    const navigate = useNavigate();
     const completedCourseIds = new Set(
         userCourses.filter(c => c.status === "completed").map(c => c.courseId)
     );
 
     const isCompleted = (area: TSkillArea) =>
         area.courseIds.some(cid => completedCourseIds.has(cid));
+
+    const handleTerritoryClick = (areaId: string) => {
+        navigate(`/courses?skillArea=${areaId}`);
+    };
 
     if (skillAreas.length === 0) return null;
 
@@ -46,7 +52,7 @@ function SkillsMap({ skillAreas, userCourses }: SkillsMapProps) {
                     const layout = islandLayout[area.id];
                     if (!layout) return null;
                     return (
-                        <g key={area.id}>
+                        <g key={area.id} onClick={() => handleTerritoryClick(area.id)} style={{cursor: 'pointer'}}>
                             <ellipse
                                 cx={layout.cx}
                                 cy={layout.cy}

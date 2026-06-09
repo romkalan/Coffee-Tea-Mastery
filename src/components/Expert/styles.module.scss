@@ -63,10 +63,13 @@
 .info {
   text-align: center;
   padding: 0 10px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .name {
-  font-size: clamp(1.25rem, 1.8vw, 1.5rem); /* 20px - 24px */
+  font-size: clamp(1.25rem, 1.8vw, 1.5rem);
   color: mixins.$color-primary;
   margin-bottom: 12px;
   font-weight: 700;
@@ -74,8 +77,9 @@
 }
 
 .description {
-  font-size: clamp(0.875rem, 1.2vw, 1rem); /* 14px - 16px */
+  font-size: clamp(0.875rem, 1.2vw, 1rem);
   line-height: 1.5;
   color: mixins.$color-info-text;
   opacity: 0.9;
+  flex: 1;
 }

@@ -50,7 +50,7 @@
   margin: 8px 0 0;
 }
 
-@include mixins.respond-sm-max {
+@include mixins.respond-md-max {
   .feedback {
     max-width: 100%;
   }
