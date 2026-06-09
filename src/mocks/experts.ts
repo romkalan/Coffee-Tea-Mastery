@@ -62,7 +62,7 @@ export const experts: TExpert[] = [
         },
         photo: "/images/Бродская.jpg",
         previewPhoto: '',
-        status: 'Главный эксперт по г. Москве по юниорскому направлению компетенции',
+        status: 'Главный эксперт по г. Москве по юниорам',
     },{
         id: "3454hvgjgfdbcrcbsdfgs",
         name: "Кудрявцев Артем",

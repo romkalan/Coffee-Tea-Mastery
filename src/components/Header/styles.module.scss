@@ -65,66 +65,90 @@
   color: mixins.$color-accent;
 }
 
-.menuButton {
-  display: inline-flex;
+.mobileNav {
+  display: flex;
   align-items: center;
-  gap: 6px;
-  padding: 8px 16px;
-  border: 1px solid mixins.$color-accent;
-  border-radius: 8px;
-  background: transparent;
-  color: mixins.$color-accent;
-  cursor: pointer;
-  font-size: mixins.$font-standard;
-  transition: all 200ms ease;
+  gap: 8px;
 
-  &:hover {
-    background: mixins.$color-link-hover;
-    transform: translateY(0);
-  }
-
-  svg {
-    flex-shrink: 0;
-  }
-}
-
-.loginButton {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 8px 16px;
-  border: none;
-  background: none;
-  cursor: pointer;
-  font-size: mixins.$font-standard;
-  color: mixins.$color-primary;
-  transition: all 200ms ease;
-
-  &:hover {
+  .menuButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 8px 16px;
+    border: 1px solid mixins.$color-accent;
+    border-radius: 8px;
+    background: transparent;
     color: mixins.$color-accent;
-    transform: translateY(0);
+    cursor: pointer;
+    font-size: mixins.$font-standard;
+    transition: all 200ms ease;
+
+    &:hover {
+      background: mixins.$color-link-hover;
+      transform: translateY(0);
+    }
+
+    svg {
+      flex-shrink: 0;
+    }
+  }
+
+  .loginButton {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 12px;
+    border: none;
     background: none;
+    cursor: pointer;
+    font-size: mixins.$font-standard;
+    color: mixins.$color-primary;
+    transition: all 200ms ease;
+    position: relative;
+    z-index: 5;
+
+    &:hover {
+      color: mixins.$color-accent;
+      transform: translateY(0);
+      background: none;
+    }
+
+    svg {
+      flex-shrink: 0;
+    }
   }
 
-  svg {
-    flex-shrink: 0;
+  .loginButtonActive {
+    color: mixins.$color-accent;
   }
-}
-
-.loginButtonActive {
-  color: mixins.$color-accent;
 }
 
 @include mixins.respond-lg-max {
   .root {
     margin-bottom: 24px;
   }
-}
 
-@include mixins.respond-lg-max {
   .headerPages,
   .helpers {
     display: none;
+  }
+}
+
+@media (max-width: 420px) {
+  .mobileNav {
+    .menuButton span,
+    .loginButton span {
+      display: none;
+    }
+
+    .menuButton {
+      padding: 8px;
+    }
+
+    .loginButton {
+      padding: 8px;
+    }
   }
 }
 
