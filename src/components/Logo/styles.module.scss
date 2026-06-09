@@ -19,11 +19,7 @@
   justify-content: space-between;
 }
 
-@include mixins.respond-lg-max {
-  .logoText {
-    display: none;
-  }
-}
+
 
 .logoTitle {
   margin: 0;
