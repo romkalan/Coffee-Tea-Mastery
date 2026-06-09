@@ -8,6 +8,66 @@
     overflow: hidden;
 }
 
+.stain {
+    position: absolute;
+    right: min(70px, 22vw);
+    top: 50%;
+    transform: translateY(-50%);
+    width: min(42vw, 506px);
+    pointer-events: none;
+    z-index: 0;
+    filter: blur(0.5px);
+
+    svg {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    @media (max-width: 1024px) {
+        width: min(48vw, 368px);
+        right: min(200px, 20vw);
+    }
+
+    @media (max-width: 640px) {
+        width: 52vw;
+        right: min(160px, 24vw);
+    }
+}
+
+.splatters {
+    position: absolute;
+    left: max(180px, 16vw);
+    top: 20%;
+    width: min(35vw, 370px);
+    pointer-events: none;
+    z-index: 0;
+    rotate: -90deg;
+    filter: blur(0.5px);
+
+    svg {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    @media (max-width: 1024px) {
+        width: min(38vw, 253px);
+        left: max(120px, 14vw);
+        top: 35%;
+    }
+
+    @media (max-width: 768px) {
+        display: none;
+    }
+}
+
+@include respond-md-max {
+    .stain {
+        display: none;
+    }
+}
+
 .content {
     max-width: 750px;
     text-align: center;
