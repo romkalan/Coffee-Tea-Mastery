@@ -88,43 +88,24 @@
   }
 }
 
-.loginButton {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 8px 16px;
-  border: none;
-  background: none;
-  cursor: pointer;
-  font-size: mixins.$font-standard;
-  color: mixins.$color-primary;
-  transition: all 200ms ease;
-
-  &:hover {
-    color: mixins.$color-accent;
-    transform: translateY(0);
-    background: none;
-  }
-
-  svg {
-    flex-shrink: 0;
-  }
-}
-
-.loginButtonActive {
-  color: mixins.$color-accent;
-}
-
 @include mixins.respond-lg-max {
   .root {
     margin-bottom: 24px;
   }
-}
 
-@include mixins.respond-lg-max {
   .headerPages,
   .helpers {
     display: none;
+  }
+}
+
+@media (max-width: 420px) {
+  .menuButton span {
+    display: none;
+  }
+
+  .menuButton {
+    padding: 8px;
   }
 }
 
